@@ -68,10 +68,13 @@ For each input statement, models are evaluated on:
 
 ### 3.2 Argument Verification Matrix
 
-| Lean4 Verification | Label Consistency: Match | Label Consistency: Mismatch |
-|--------------------|--------------------------|-----------------------------|
-| **Pass**           | Valid-Correct<br>(Pass & Match) | Valid-Alternative<br>(Pass & Mismatch) |
-| **Fail**           | Invalid-Correct<br>(Fail & Match) | Invalid-Incorrect<br>(Fail & Mismatch) |
+Table 1. LLM Argument Verification Matrix
+| LLM Argument Verification Matrix |               | **Label Consistency** |               |
+|----------------------------------|---------------|-----------------------|---------------|
+|                                  |               | **Match**             | **Mismatch**  |
+| **Lean4 Verification**           | **Pass**      | Valid-Correct<br>(Pass & Match) | Valid-Alternative<br>(Pass & Mismatch) |
+|                                  | **Fail**      | Invalid-Correct<br>(Fail & Match) | Invalid-Incorrect<br>(Fail & Mismatch) |
+
 
 Each output is assigned to one of four categories:
 - **Valid-Correct (VC)**: Reasoning passes verification and label matches
