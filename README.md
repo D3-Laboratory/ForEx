@@ -31,7 +31,7 @@ accuracy-based metrics.
 
 ## 2. Framework Pipeline
 
-<img width="1000" height="707" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
+<img width="500" height="354" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
 
 The ForEx workflow consists of three stages:
 
