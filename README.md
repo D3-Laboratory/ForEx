@@ -128,14 +128,15 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 ---
 ## 7. Repository Structure
 ForEx/
-
-├── data/                # Dataset and preprocessing scripts
-
-├── lean/                # Lean4 templates and verification logic
-
-├── src/                 # Core framework implementation 
-
-├── experiments/         # Benchmark and evaluation scripts
-
-└── README.md
+├── data/                   # Input datasets (e.g., logic/climate.json)
+├── src/                    # Source code
+│   ├── experiment_processor.py # Core logic for the 3-stage pipeline
+│   ├── llm_interface.py    # LLM API interaction
+│   ├── lean_verifier.py    # Interface to Lean verification service
+│   └── format_converter.py 
+├── lean_verifier_service/  # Service for verifying Lean code
+├── results/                # Output directory for experiment logs
+├── main_runner.py          # Entry point script
+├── analysis.py             # Log consolidation and reporting tools
+└── README.md               # This file
 
