@@ -127,6 +127,9 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 
 ---
 ## 7. Repository Structure
+
+```
+.
 ForEx/
 ├── data/                   # Input datasets (e.g., logic/climate.json)
 ├── src/                    # Source code
@@ -139,4 +142,52 @@ ForEx/
 ├── main_runner.py          # Entry point script
 ├── analysis.py             # Log consolidation and reporting tools
 └── README.md               # This file
+```
 
+---
+## 8. Prerequisites
+
+*   Python 3.8+
+*   Access to OpenRouter API
+*   A running instance of the Lean 4 verification service (or local setup)
+
+---
+## 9. Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository_url>
+    cd <repository_name>
+    ```
+
+2.  Install Python dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(Note: If `requirements.txt` is missing, you may need to install `openai`, `google-generativeai`, `python-dotenv`, `openpyxl`, etc.)*
+
+3.  Set up environment variables:
+    *   Create a `.env` file or configure your API keys directly in `config/llm_credentials.json`.
+    *   
+---
+## 11. Usage
+
+Run the main experiment script:
+
+```bash
+python main_runner.py
+```
+
+This script will:
+1.  Load the datasets and LLM configurations.
+2.  Run the analysis pipeline for each question.
+3.  Save detailed logs to the `results/` directory.
+4.  Automatically consolidate logs and generate an Excel summary (e.g., `YYYYMMDD_summary.xlsx`).
+
+---
+## 12. Output
+
+*   **JSON Logs**: Detailed step-by-step records of the Analyst, Coder, and Verifier stages.
+*   **Excel Summary**: A spreadsheet comparing the Ground Truth with the LLM's identified fallacies and verification status.
+    *   **Green**: Correct fallacy identification or successful Lean verification.
+    *   **Red**: Verification failure.
