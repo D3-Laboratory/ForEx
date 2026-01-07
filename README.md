@@ -138,7 +138,6 @@ ForEx/
 │   ├── lean_verifier.py    # Interface to Lean verification service
 │   └── format_converter.py 
 ├── lean_verifier_service/  # Service for verifying Lean code
-├── results/                # Output directory for experiment logs
 ├── main_runner.py          # Entry point script
 ├── analysis.py             # Log consolidation and reporting tools
 └── README.md               # This file
