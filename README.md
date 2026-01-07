@@ -32,6 +32,8 @@ accuracy-based metrics.
 
 ## 2. Framework Pipeline
 
+<img width="1175" height="831" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
+
 The ForEx workflow consists of three stages:
 
 1. **Reasoning Candidate Generation**  
