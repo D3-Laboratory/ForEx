@@ -1,5 +1,4 @@
 # ForEx: A Formal Verification Framework with Execution Feedback
-for Interpretable Logical Fallacy Detection
 
 This repository contains the official implementation of **ForEx**, a formal
 verification framework proposed in the paper:
@@ -32,7 +31,7 @@ accuracy-based metrics.
 
 ## 2. Framework Pipeline
 
-<img width="1175" height="831" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
+<img width="1000" height="707" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
 
 The ForEx workflow consists of three stages:
 
@@ -69,14 +68,16 @@ For each input statement, models are evaluated on:
 
 ### 3.2 Argument Verification Matrix
 
-Each output is assigned to one of four categories:
+| Lean4 Verification | Label Consistency: Match | Label Consistency: Mismatch |
+|--------------------|--------------------------|-----------------------------|
+| **Pass**           | Valid-Correct<br>(Pass & Match) | Valid-Alternative<br>(Pass & Mismatch) |
+| **Fail**           | Invalid-Correct<br>(Fail & Match) | Invalid-Incorrect<br>(Fail & Mismatch) |
 
+Each output is assigned to one of four categories:
 - **Valid-Correct (VC)**: Reasoning passes verification and label matches
 - **Valid-Alternative (VA)**: Reasoning is valid but label differs (plausible alternative)
 - **Invalid-Correct (IC)**: Correct label without valid reasoning
 - **Invalid-Incorrect (II)**: Both reasoning and label are incorrect
-
-Evaluation is performed under a success-based @k setting.
 
 ---
 
