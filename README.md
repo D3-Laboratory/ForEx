@@ -10,7 +10,6 @@ reasoning or surface-level correlations by converting natural language arguments
 into Lean4 formalizations and validating them through an execution feedback loop.
 
 ---
-
 ## 1. Overview
 
 Logical fallacy detection is often evaluated as a classification task, which fails
@@ -68,13 +67,7 @@ For each input statement, models are evaluated on:
 
 ### 3.2 Argument Verification Matrix
 
-Table 1. LLM Argument Verification Matrix
-| LLM Argument Verification Matrix               | **Label Consistency** |               |
-|-------------------------------------------------|-----------------------|---------------|
-|                                  |               | **Match**             | **Mismatch**  |
-| **Lean4 Verification**           | **Pass**      | Valid-Correct<br>(Pass & Match) | Valid-Alternative<br>(Pass & Mismatch) |
-|                                  | **Fail**      | Invalid-Correct<br>(Fail & Match) | Invalid-Incorrect<br>(Fail & Mismatch) |
-
+<img width="694" height="213" alt="image" src="https://github.com/user-attachments/assets/eb78294e-9963-4b5d-8875-b49f98247912" />
 
 Each output is assigned to one of four categories:
 - **Valid-Correct (VC)**: Reasoning passes verification and label matches
@@ -133,6 +126,12 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
   `VC > VA > IC > II`
 
 ---
-
 ## 7. Repository Structure
+ForEx/
+├── data/                # Dataset and preprocessing scripts
+├── prompts/             # Prompt templates for Reasoner and Executor
+├── lean/                # Lean4 templates and verification logic
+├── src/                 # Core framework implementation 
+├── experiments/         # Benchmark and evaluation scripts
+└── README.md
 
