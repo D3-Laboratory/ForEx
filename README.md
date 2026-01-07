@@ -69,8 +69,8 @@ For each input statement, models are evaluated on:
 ### 3.2 Argument Verification Matrix
 
 Table 1. LLM Argument Verification Matrix
-| LLM Argument Verification Matrix |               | **Label Consistency** |               |
-|----------------------------------|---------------|-----------------------|---------------|
+| LLM Argument Verification Matrix               | **Label Consistency** |               |
+|-------------------------------------------------|-----------------------|---------------|
 |                                  |               | **Match**             | **Mismatch**  |
 | **Lean4 Verification**           | **Pass**      | Valid-Correct<br>(Pass & Match) | Valid-Alternative<br>(Pass & Mismatch) |
 |                                  | **Fail**      | Invalid-Correct<br>(Fail & Match) | Invalid-Incorrect<br>(Fail & Mismatch) |
