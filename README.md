@@ -128,9 +128,8 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 ---
 ## 7. Repository Structure
 ForEx/
-├── data/                # Dataset and preprocessing scripts
 
-├── prompts/             # Prompt templates for Reasoner and Executor
+├── data/                # Dataset and preprocessing scripts
 
 ├── lean/                # Lean4 templates and verification logic
 
