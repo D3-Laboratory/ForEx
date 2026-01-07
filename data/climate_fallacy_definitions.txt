@@ -1,0 +1,15 @@
+Please analyze the provided article content based on the following 13 logical fallacy definitions:
+
+1. **faulty generalization:** an informal fallacy wherein a conclusion is drawn about all or many instances of a phenomenon on the basis of one or a few instances of that phenomenon. is an example of jumping to conclusions.
+2. **false causality:** statement that jumps to a conclusion implying a causal relationship without supporting evidence
+3. **circular reasoning:** when the end of an argument comes back to the beginning without having proven itself.
+4. **ad populum:** a fallacious argument which is based on affirming that something is real or better because the majority thinks so.
+5. **ad hominem:**  instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+6. **fallacy of logic:** an error in the logical structure of an argument.
+7. **appeal to emotion:** manipulation of the recipient's emotions in order to win an argument.
+8. **false dilemma:** presenting only two options or sides when there are many options or sides.
+9. **equivocation:** when a key term or phrase in an argument is used in an ambiguous way, with one meaning in one portion of the argument and then another meaning in another portion of the argument.
+10. **fallacy of extension:** attacking an exaggerated or caricatured version of your opponent's position.
+11. **fallacy of relevance:** introducing premises or conclusions that have nothing to do with the subject matter.
+12. **fallacy of credibility:** attempts to disprove an argument by attacking the character of the speaker.
+13. **intentional:** some intentional (sometimes subconscious) action/choice to incorrectly support an argument
