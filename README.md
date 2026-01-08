@@ -69,7 +69,8 @@ For each input statement, models are evaluated on:
 
 ### 3.2 Argument Verification Matrix
 
-<img width="694" height="213" alt="image" src="https://github.com/user-attachments/assets/eb78294e-9963-4b5d-8875-b49f98247912" />
+<img width="500" height="153" alt="image" src="https://github.com/user-attachments/assets/1cad3489-629e-40d7-980f-af0bfd06bd5f" />
+
 
 Each output is assigned to one of four categories:
 - **Valid-Correct (VC)**: Reasoning passes verification and label matches
