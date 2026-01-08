@@ -135,6 +135,9 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 .
 ForEx/
 ├── data/                   # Input datasets (e.g., logic/climate.json)
+│   ├── climate_fallacy_definitions.txt # Fallacy definitions script
+│   ├── data_extract.ipynb # Extract data code
+│   ├── logic_climate_subset.json # sub dataset
 ├── src/                    # Source code
 │   ├── experiment_processor.py # Core logic for the 3-stage pipeline
 │   ├── llm_interface.py    # LLM API interaction
