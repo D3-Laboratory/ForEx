@@ -171,7 +171,7 @@ ForEx/
     *   Create a `.env` file or configure your API keys directly in `config/llm_credentials.json`.
     *   
 ---
-## 11. Usage
+## 10. Usage
 
 Run the main experiment script:
 
@@ -186,7 +186,7 @@ This script will:
 4.  Automatically consolidate logs and generate an Excel summary (e.g., `YYYYMMDD_summary.xlsx`).
 
 ---
-## 12. Output
+## 11. Output
 
 *   **JSON Logs**: Detailed step-by-step records of the Analyst, Coder, and Verifier stages.
 *   **Excel Summary**: A spreadsheet comparing the Ground Truth with the LLM's identified fallacies and verification status.
