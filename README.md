@@ -4,9 +4,7 @@ ForEx evaluates whether Large Language Models (LLMs) rely on genuine logical
 reasoning or surface-level correlations by converting natural language arguments
 into Lean4 formalizations and validating them through an execution feedback loop.
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-
-[![Lean 4](https://img.shields.io/badge/L ean-4-orange.svg)](https://leanprover.github.io/)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![Lean 4](https://img.shields.io/badge/Lean-4-orange.svg)](https://leanprover.github.io/)
 
 ---
 ## 1. Overview
@@ -76,28 +74,45 @@ Each output is assigned to one of four categories:
 - **Invalid-Incorrect (II)**: Both reasoning and label are incorrect  
 
 ---
+## 4. Annotation Augmentation
 
-## 4. Dataset
+In addition to evaluation, ForEx supports **annotation augmentation**
+by identifying additional plausible fallacy labels.
 
-### 4.1 Source
+The augmented labels released in this repository are constructed using a
+**consensus-guided approach**, which combines:
+- agreement across multiple LLMs  
+- alignment with human annotation patterns  
+
+Only labels with sufficient support are retained, ensuring that augmented
+annotations reflect **plausible and consistent interpretations** rather than noise.
+
+> Note: This repository provides the final augmented annotations.
+> The full consensus generation pipeline (e.g., model aggregation and filtering)
+> is described in the paper but not included in this codebase.
+---
+
+## 5. Dataset
+
+### 5.1 Source
 We use the **LOGIC-Climate** dataset, derived from:
 - Jin et al., *Logical Fallacy Detection* (2022)
 
 The original dataset contains 1,351 instances across 13 fallacy categories.
 
-### 4.2 Subset Construction
+### 5.2 Subset Construction
 To focus on reasoning validation rather than class imbalance:
 - All instances of *Circular Reasoning* are included
 - 10 instances are randomly sampled from each remaining category
 - Final subset size: **127 instances (class-balanced)**
 
-### 4.3 Usage Notes
+### 5.3 Usage Notes
 - The dataset is used strictly for research purposes
 - Please refer to the original dataset license and terms of use
 
 ---
 
-## 5. Models
+## 6. Models
 
 ### Reasoner LLMs
 We evaluate a diverse set of thinking and non-thinking models, including:
@@ -118,7 +133,7 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 
 ---
 
-## 6. Experimental Setup
+## 7. Experimental Setup
 
 - Number of candidates per instance: `k = 3`
 - Maximum repair iterations: `iter_max = 5`
@@ -126,7 +141,7 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
   `VC > VA > IC > II`
 
 ---
-## 7. Repository Structure
+## 8. Repository Structure
 
 ```
 .
@@ -147,14 +162,14 @@ ForEx/
 ```
 
 ---
-## 8. Prerequisites
+## 9. Prerequisites
 
 *   Python 3.8+
 *   Access to OpenRouter API
 *   A running instance of the Lean 4 verification service (or local setup)
 
 ---
-## 9. Installation
+## 10. Installation
 
 1.  Clone the repository:
     ```bash
@@ -172,7 +187,7 @@ ForEx/
     *   Create a `.env` file or configure your API keys directly in `config/llm_credentials.json`.
     *   
 ---
-## 10. Usage
+## 11. Usage
 
 Run the main experiment script:
 
@@ -187,7 +202,7 @@ This script will:
 4.  Automatically consolidate logs and generate an Excel summary (e.g., `YYYYMMDD_summary.xlsx`).
 
 ---
-## 11. Output
+## 12. Output
 
 *   **JSON Logs**: Detailed step-by-step records of the Analyst, Coder, and Verifier stages.
 *   **Excel Summary**: A spreadsheet comparing the Ground Truth with the LLM's identified fallacies and verification status.
