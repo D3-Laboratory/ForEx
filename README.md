@@ -1,32 +1,28 @@
-# ForEx: A Formal Verification Framework with Execution Feedback
-
-This repository contains the official implementation of **ForEx**, a formal
-verification framework proposed in the paper:
-
-> **ForEx: A Formal Verification Framework with Execution Feedback for Interpretable Logical Fallacy Detection**
+> **ForEx: A Formal Verification Framework for Explainable Reasoning in Logical Fallacy Detection and Annotation**
 
 ForEx evaluates whether Large Language Models (LLMs) rely on genuine logical
 reasoning or surface-level correlations by converting natural language arguments
 into Lean4 formalizations and validating them through an execution feedback loop.
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Lean 4](https://img.shields.io/badge/Lean-4-orange.svg)](https://leanprover.github.io/)
+[![Lean 4](https://img.shields.io/badge/L ean-4-orange.svg)](https://leanprover.github.io/)
 ---
 ## 1. Overview
 
-Logical fallacy detection is often evaluated as a classification task, which fails
-to distinguish correct answers supported by valid reasoning from those produced
-by superficial pattern matching.
+Large Language Models (LLMs) achieve high accuracy in logical fallacy detection,
+but their reasoning processes remain unverified.
 
-ForEx addresses this limitation by:
-- Translating LLM-generated natural language arguments into Lean4 code
-- Iteratively repairing formalizations using execution feedback
-- Verifying reasoning validity at the proof level
-- Evaluating outputs through the **LLM Argument Verification Matrix**, which
-  separates correctness from reasoning validity
+**ForEx** addresses this by providing a formal verification framework that:
 
-This framework enables fine-grained analysis of LLM reasoning behavior beyond
-accuracy-based metrics.
+- Translates LLM-generated reasoning into **Lean4 formal representations**
+- Uses an **execution feedback loop** to iteratively repair formalizations
+- Verifies reasoning at the **proof level**, not just prediction accuracy
+- Introduces the **LLM Argument Verification Matrix** to separate:
+  - label correctness  
+  - reasoning validity  
+
+This enables a more fine-grained analysis of LLM reasoning and reveals the gap
+between formally valid reasoning and alignment with human annotations.
 
 ---
 
@@ -36,24 +32,33 @@ accuracy-based metrics.
 
 The ForEx workflow consists of three stages:
 
-1. **Reasoning Candidate Generation**  
-   A Reasoner LLM generates multiple candidates, each consisting of:
-   - A predicted fallacy label
-   - A natural language argument (reasoning trace)
-   - An initial Lean4 formalization inserted into a predefined template
+### 2.1 Reasoning Candidate Generation  
+A Reasoner LLM generates multiple candidates, each represented as:
+- Predicted fallacy label  
+- Natural language argument (reasoning)  
+- Lean4 structure  
 
-2. **Execution Feedback & Lean4 Verification**  
-   - Lean4 code is compiled
-   - Compilation errors are fed back to an Executor LLM
-   - The Executor iteratively repairs the code under strict constraints
-   - The process terminates upon successful compilation or after a maximum
-     number of repair iterations
+These are converted by a **Modifier** into executable Lean4 code.
 
-3. **Label Consistency Evaluation**  
-   Each candidate is categorized using the **LLM Argument Verification Matrix**
-   based on:
-   - Label Consistency (match / mismatch with dataset annotation)
-   - Lean4 Verification (pass / fail)
+---
+
+### 2.2 Execution Feedback & Lean4 Verification  
+- Lean4 attempts to compile the generated code  
+- If compilation fails, error messages are sent to an **Executor LLM**  
+- The Executor iteratively repairs the code **based only on the original reasoning and code**  
+- No new logic can be introduced during repair  
+- The process stops when:
+  - compilation succeeds, or  
+  - maximum iterations are reached  
+
+---
+
+### 2.3 Label Consistency Evaluation  
+Each candidate is evaluated by a **Checker** using the  
+**LLM Argument Verification Matrix**, based on:
+
+- **Label Consistency** (match / mismatch with ground truth)  
+- **Lean4 Verification** (pass / fail)  
 
 ---
 
@@ -64,19 +69,21 @@ The benchmark evaluates LLMs on **logical fallacy detection with reasoning
 verification**, rather than classification accuracy alone.
 
 For each input statement, models are evaluated on:
-- Whether the predicted fallacy label matches the dataset annotation
-- Whether the reasoning can be formalized into a valid Lean4 proof
+- Whether the predicted fallacy label matches the dataset annotation  
+- Whether the reasoning can be formalized into a valid Lean4 proof  
+
+---
 
 ### 3.2 Argument Verification Matrix
 
 <img width="500" height="153" alt="image" src="https://github.com/user-attachments/assets/1cad3489-629e-40d7-980f-af0bfd06bd5f" />
 
-
 Each output is assigned to one of four categories:
-- **Valid-Correct (VC)**: Reasoning passes verification and label matches
-- **Valid-Alternative (VA)**: Reasoning is valid but label differs (plausible alternative)
-- **Invalid-Correct (IC)**: Correct label without valid reasoning
-- **Invalid-Incorrect (II)**: Both reasoning and label are incorrect
+
+- **Valid-Correct (VC)**: Reasoning passes verification and label matches  
+- **Valid-Alternative (VA)**: Reasoning is valid but label differs  
+- **Invalid-Correct (IC)**: Correct label without valid reasoning  
+- **Invalid-Incorrect (II)**: Both reasoning and label are incorrect  
 
 ---
 
