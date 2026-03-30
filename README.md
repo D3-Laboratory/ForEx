@@ -5,6 +5,7 @@ reasoning or surface-level correlations by converting natural language arguments
 into Lean4 formalizations and validating them through an execution feedback loop.
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+
 [![Lean 4](https://img.shields.io/badge/L ean-4-orange.svg)](https://leanprover.github.io/)
 
 ---
@@ -31,7 +32,7 @@ between formally valid reasoning and alignment with human annotations.
 
 <img width="500" height="354" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
 
-The ForEx workflow consists of three stages:
+## The ForEx workflow consists of three stages:
 
 ### 2.1 Reasoning Candidate Generation  
 A Reasoner LLM generates multiple candidates, each represented as:
@@ -41,7 +42,6 @@ A Reasoner LLM generates multiple candidates, each represented as:
 
 These are converted by a **Modifier** into executable Lean4 code.
 
----
 
 ### 2.2 Execution Feedback & Lean4 Verification  
 - Lean4 attempts to compile the generated code  
@@ -52,7 +52,6 @@ These are converted by a **Modifier** into executable Lean4 code.
   - compilation succeeds, or  
   - maximum iterations are reached  
 
----
 
 ### 2.3 Label Consistency Evaluation  
 Each candidate is evaluated by a **Checker** using the  
