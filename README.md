@@ -156,7 +156,7 @@ ForEx/
 ├── lean_verifier_service/ # Lean4 execution / verification service
 │
 ├── main_runner.py # Entry point for running experiments
-├── analysis.py # Evaluation and result analysis
+├── analysis.py # Execution feedback loop result analysis
 ├── Verification_Matrix.ipynb # Verification matrix analysis notebook
 │
 └── README.md # Project documentation
@@ -190,7 +190,7 @@ ForEx/
 ---
 ## 11. Usage
 
-Run the main experiment script:
+Run the execution feedback loop experiment script:
 
 ```bash
 python main_runner.py
