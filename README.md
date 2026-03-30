@@ -1,9 +1,5 @@
 # ForEx: A Formal Verification Framework for Explainable Reasoning in Logical Fallacy Detection and Annotation
 
-ForEx evaluates whether Large Language Models (LLMs) rely on genuine logical
-reasoning or surface-level correlations by converting natural language arguments
-into Lean4 formalizations and validating them through an execution feedback loop.
-
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![Lean 4](https://img.shields.io/badge/Lean-4-orange.svg)](https://leanprover.github.io/)
 
 ---
