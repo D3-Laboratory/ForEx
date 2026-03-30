@@ -98,10 +98,7 @@ We use the **LOGIC-Climate** dataset, derived from:
 The original dataset contains 1,351 instances across 13 fallacy categories.
 
 ### 5.2 Subset Construction
-To focus on reasoning validation rather than class imbalance:
-- All instances of *Circular Reasoning* are included
-- 10 instances are randomly sampled from each remaining category
-- Final subset size: **127 instances (class-balanced)**
+- Final subset size: **107 instances (class-balanced)**
 
 ### 5.3 Usage Notes
 - The dataset is used strictly for research purposes
