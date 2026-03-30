@@ -28,7 +28,7 @@ between formally valid reasoning and alignment with human annotations.
 
 ## 2. Framework Pipeline
 
-<img width="500" height="354" alt="image" src="https://github.com/user-attachments/assets/0d8ce610-ffa4-48fa-bc94-865eb0de81be" />
+<img width="500" height="354" alt="ForEx_framework" src="https://github.com/user-attachments/assets/530dd659-29ab-452e-9032-24c345a15972" />
 
 ## The ForEx workflow consists of three stages:
 
@@ -65,6 +65,7 @@ Each candidate is evaluated by a **Checker** using the
 ### 3.1 Argument Verification Matrix
 
 <img width="500" height="153" alt="image" src="https://github.com/user-attachments/assets/1cad3489-629e-40d7-980f-af0bfd06bd5f" />
+
 
 Each output is assigned to one of four categories:
 
