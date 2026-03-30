@@ -146,19 +146,26 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 ```
 .
 ForEx/
-├── data/                   # Input datasets (e.g., logic/climate.json)
-│   ├── climate_fallacy_definitions.txt # Fallacy definitions script
-│   ├── data_extract.ipynb # Extract data code
-│   ├── logic_climate_subset.json # sub dataset
-├── src/                    # Source code
-│   ├── experiment_processor.py # Core logic for the 3-stage pipeline
-│   ├── llm_interface.py    # LLM API interaction
-│   ├── lean_verifier.py    # Interface to Lean verification service
-│   └── format_converter.py 
-├── lean_verifier_service/  # Service for verifying Lean code
-├── main_runner.py          # Entry point script
-├── analysis.py             # Log consolidation and reporting tools
-└── README.md               # This file
+├── data/ # Datasets and annotation resources
+│ ├── climate_fallacy_definitions.txt # Fallacy definitions
+│ ├── data_extract.ipynb # Data preprocessing / extraction
+│ ├── sampling_logical_fallacy_data.xlsx # Sampled dataset
+│ ├── sampling_ground_truth.xlsx # Ground truth annotations
+│ └── new_labels_result.xlsx # Augmented labels (consensus-based)
+│
+├── src/ # Core framework implementation
+│ ├── experiment_processor.py # Main pipeline (3-stage workflow)
+│ ├── llm_interface.py # LLM interaction (Reasoner / Executor)
+│ ├── lean_verifier.py # Lean4 verification interface
+│ └── format_converter.py # NL ↔ Lean format conversion
+│
+├── lean_verifier_service/ # Lean4 execution / verification service
+│
+├── main_runner.py # Entry point for running experiments
+├── analysis.py # Evaluation and result analysis
+├── Verification_Matrix.ipynb # Verification matrix analysis notebook
+│
+└── README.md # Project documentation
 ```
 
 ---
