@@ -64,17 +64,7 @@ Each candidate is evaluated by a **Checker** using the
 
 ## 3. Benchmark
 
-### 3.1 Task Definition
-The benchmark evaluates LLMs on **logical fallacy detection with reasoning
-verification**, rather than classification accuracy alone.
-
-For each input statement, models are evaluated on:
-- Whether the predicted fallacy label matches the dataset annotation  
-- Whether the reasoning can be formalized into a valid Lean4 proof  
-
----
-
-### 3.2 Argument Verification Matrix
+### 3.1 Argument Verification Matrix
 
 <img width="500" height="153" alt="image" src="https://github.com/user-attachments/assets/1cad3489-629e-40d7-980f-af0bfd06bd5f" />
 
