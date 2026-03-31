@@ -141,7 +141,7 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 .
 ForEx/
 ├── data/ # Datasets and annotation resources
-│ ├── climate_fallacy_definitions.txt # Fallacy definitions
+│ ├── climate_fallacy_definitions.txt # Fallacy definitions from Jin et al., *Logical Fallacy Detection* (2022)
 │ ├── data_extract.ipynb # Data preprocessing / extraction
 │ ├── sampling_logical_fallacy_data.xlsx # Sampled dataset
 │ ├── sampling_ground_truth.xlsx # Ground truth annotations
