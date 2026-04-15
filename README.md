@@ -60,15 +60,15 @@ Each candidate is evaluated by a **Checker** using the
 
 ### 3.1 Argument Verification Matrix
 
-<img width="500" height="153" alt="image" src="https://github.com/user-attachments/assets/1cad3489-629e-40d7-980f-af0bfd06bd5f" />
+<img width="500" height="153" alt="image" src="https://github.com/user-attachments/assets/f948689e-8ce9-43a9-b7e5-f6af728bd1ed" />
 
 
 Each output is assigned to one of four categories:
 
-- **Valid-Correct (VC)**: Reasoning passes verification and label matches  
-- **Valid-Alternative (VA)**: Reasoning is valid but label differs  
-- **Invalid-Correct (IC)**: Correct label without valid reasoning  
-- **Invalid-Incorrect (II)**: Both reasoning and label are incorrect  
+- **Compilable-Correct (CC)**: Reasoning passes verification and label matches  
+- **Compilable-Alternative (CA)**: Reasoning is valid but label differs  
+- **Uncompilable-Correct (UC)**: Correct label without valid reasoning  
+- **Uncompilable-Incorrect (UI)**: Both reasoning and label are incorrect  
 
 ---
 ## 4. Annotation Augmentation
