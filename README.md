@@ -147,7 +147,7 @@ ForEx/
 │ ├── sampling_ground_truth.xlsx # Ground truth annotations
 │ └── new_labels_result.xlsx # Augmented labels (consensus-based)
 │
-├── src/ # Core framework implementation
+├── scr/ # Core framework implementation
 │ ├── experiment_processor.py # Main pipeline (3-stage workflow)
 │ ├── llm_interface.py # LLM interaction (Reasoner / Executor)
 │ ├── lean_verifier.py # Lean4 verification interface
