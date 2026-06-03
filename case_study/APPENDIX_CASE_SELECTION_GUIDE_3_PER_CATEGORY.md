@@ -5,7 +5,23 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ## Category 1, Compilable and Correct
 
-### Case 1, Question ID 25
+### Case 1, Question ID 7
+
+- **Statement:** He now says : “ Anyone who tries to predict more than five to 10 years is a bit of an idiot , because so many things can change unexpectedly. ”
+
+- **Model Prediction:** ad hominem
+
+- **Human Annotation:** ad hominem
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** selected for representative category coverage
+
+- **Representative value:** chosen to show what this category looks like
+
+---
+
+### Case 2, Question ID 25
 
 - **Statement:** The glaciers of Pine Island Bay are two of the largest and fastest-melting in Antarctica . ( A Rolling Stone feature earlier this year dubbed Thwaites “ The Doomsday Glacier. ” ) Together , they act as a plug holding back enough ice to pour 11 feet of sea-level rise into the world ’ s oceans — an amount that would submerge every coastal city on the planet .
 
@@ -13,27 +29,11 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** appeal to emotion
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 1 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen mainly to show what this category looks like
-
----
-
-### Case 2, Question ID 96
-
-- **Statement:** The strongest heat wave ever recorded occurred in July 1936 , generating high temperatures in half of America ’ s 50 states . In 1935 , fossil fuel emissions were 25 times lower than today .
-
-- **Model Prediction:** false causality
-
-- **Human Annotation:** false causality
-
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 1 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
-
-- **Why this case was selected:** top representative row by support/visibility for this category
-
-- **Representative value:** chosen mainly to show what this category looks like
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
@@ -45,34 +45,18 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** appeal to emotion
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 1 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen mainly to show what this category looks like
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
 
 ## Category 2, Compilable Alternative
 
-### Case 1, Question ID 76
-
-- **Statement:** There is a popular theory that atmospheric CO2 amplifies the creation of water vapor , thereby increasing warming through a “ positive feedback loop. ” But that theory so far is mostly speculative ; climate projections using models based on it have consistently failed , nearly always predicting far more warming than has occurred .
-
-- **Model Prediction:** faulty generalization
-
-- **Human Annotation:** fallacy of logic
-
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 2 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
-
-- **Why this case was selected:** top representative row by support/visibility for this category
-
-- **Representative value:** chosen for representative or interpretable category behavior
-
----
-
-### Case 2, Question ID 3
+### Case 1, Question ID 3
 
 - **Statement:** For good reason : In the U.S. , and for much of the world , the most dangerous environmental pollutants have been cleaned up . U.S. emissions of particulates , metals and varied gases—all of these : ozone , lead , carbon monoxide , oxides of nitrogen and sulfur—fell almost 70 % between 1970 and 2014 .
 
@@ -80,15 +64,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 2 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
-### Case 3, Question ID 6
+### Case 2, Question ID 6
 
 - **Statement:** Sounding more like an Old Testament doomsayer than a president , Obama warned in his Alaska speech that unless carbon fuels are restricted , “ we will condemn our children to a planet beyond their capacity to repair : Submerged countries .
 
@@ -96,11 +80,27 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 2 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
+
+---
+
+### Case 3, Question ID 53
+
+- **Statement:** “ Global warming ” is a myth — so say 80 graphs from 58 peer-reviewed scientific papers published in 2017 .
+
+- **Model Prediction:** faulty generalization
+
+- **Human Annotation:** fallacy of credibility; intentional
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** selected for representative category coverage
+
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
@@ -115,11 +115,11 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** N/A
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 3 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
@@ -131,27 +131,27 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** N/A
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 3 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
-### Case 3, Question ID 115
+### Case 3, Question ID 27
 
-- **Statement:** Two years ago , a polar bear made it to the Summit Station , which was unusual since polar bears live in coastal regions where they can easily find food .
+- **Statement:** “ It ’ s sobering to think of this magnificent landscape and how fundamentally it can change over a relatively short time period , ” he added .
 
 - **Model Prediction:** no_fallacy
 
 - **Human Annotation:** N/A
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 3 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
@@ -166,31 +166,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** This case shows a recurring alternative reading that is understandable from the text, but still not close enough to the benchmark annotation standard to justify retention. Its value lies in showing why systematic divergence is not automatically accepted.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** It is representative because it helps define the boundary between interpretable disagreement and usable augmentation.
-
----
-
-### Case 2, Question ID 3
-
-- **Statement:** For good reason : In the U.S. , and for much of the world , the most dangerous environmental pollutants have been cleaned up . U.S. emissions of particulates , metals and varied gases—all of these : ozone , lead , carbon monoxide , oxides of nitrogen and sulfur—fell almost 70 % between 1970 and 2014 .
-
-- **Model Prediction:** faulty generalization
-
-- **Human Annotation:** ad hominem
-
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 4 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
-
-- **Why this case was selected:** replacement chosen to avoid duplicate case within Category 4
-
-- **Representative value:** chosen to preserve category coverage without repetition
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
-### Case 3, Question ID 8
+### Case 2, Question ID 8
 
 - **Statement:** “ The Caitlin Expedition – supported by the Prince of Wales – in which Pen Haddow and his team had to abandon their trip to the North Pole because it was colder than they ’ d expected , ” he continued .
 
@@ -198,11 +182,27 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 4 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** replacement chosen to avoid duplicate case within Category 4
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen to preserve category coverage without repetition
+- **Representative value:** chosen to show what this category looks like
+
+---
+
+### Case 3, Question ID 12
+
+- **Statement:** Nor is there evidence of an increase in floods globally . Since 1965 , more parts of the U.S. have seen a decrease in flooding than have seen an increase . And from 1940 to today , flood damage as a percentage of GDP has fallen to less than 0.05 per cent per year from about 0.2 per cent .
+
+- **Model Prediction:** faulty generalization
+
+- **Human Annotation:** ad populum
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** selected for representative category coverage
+
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
@@ -217,31 +217,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** fallacy of logic
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 5 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
-
----
-
-### Case 2, Question ID 6
-
-- **Statement:** Sounding more like an Old Testament doomsayer than a president , Obama warned in his Alaska speech that unless carbon fuels are restricted , “ we will condemn our children to a planet beyond their capacity to repair : Submerged countries .
-
-- **Model Prediction:** appeal to emotion
-
-- **Human Annotation:** ad hominem
-
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 5 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
-
-- **Why this case was selected:** top representative row by support/visibility for this category
-
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
-### Case 3, Question ID 90
+### Case 2, Question ID 90
 
 - **Statement:** The fossil record shows that a thriving and diversification of plant and animal life occurs every time the atmosphere had a very high carbon dioxide content .
 
@@ -249,50 +233,34 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** false causality
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 5 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
+
+---
+
+### Case 3, Question ID 16
+
+- **Statement:** Over the past decades , our culture has gone apocalyptic with zombie movies and Mad Max dystopias , perhaps the collective result of displaced climate anxiety , and yet when it comes to contemplating real-world warming dangers , we suffer from an incredible failure of imagination .
+
+- **Model Prediction:** false causality
+
+- **Human Annotation:** ad populum
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** selected for representative category coverage
+
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
 
 ## Category 6, Correct Label but Uncompilable Reasoning
 
-### Case 1, Question ID 92
-
-- **Statement:** Ocean acidification will fry fish populations directly , too , though scientists aren ’ t yet sure how to predict the effects on the stuff we haul out of the ocean to eat ; they do know that in acid waters , oysters and mussels will struggle to grow their shells , and that when the pH of human blood drops as much as the oceans ’ pH has over the past generation , it induces seizures , comas , and sudden death .
-
-- **Model Prediction:** false causality
-
-- **Human Annotation:** false causality
-
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 6 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
-
-- **Why this case was selected:** top representative row by support/visibility for this category
-
-- **Representative value:** chosen for representative or interpretable category behavior
-
----
-
-### Case 2, Question ID 94
-
-- **Statement:** Rebounding ground can accelerate the ice cracking and falling away , which may be what happened with this new island that potentially emerged off the coast of Antarctica around 2010 .
-
-- **Model Prediction:** false causality
-
-- **Human Annotation:** false causality
-
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 6 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
-
-- **Why this case was selected:** top representative row by support/visibility for this category
-
-- **Representative value:** chosen for representative or interpretable category behavior
-
----
-
-### Case 3, Question ID 89
+### Case 1, Question ID 89
 
 - **Statement:** But like most claims regarding global warming , the real effect is small , probably temporary , and most likely due to natural weather patterns .
 
@@ -300,42 +268,58 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** false causality
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 6 visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
-- **Why this case was selected:** top representative row by support/visibility for this category
+- **Why this case was selected:** selected for representative category coverage
 
-- **Representative value:** chosen for representative or interpretable category behavior
+- **Representative value:** chosen to show what this category looks like
+
+---
+
+### Case 2, Question ID 92
+
+- **Statement:** Ocean acidification will fry fish populations directly , too , though scientists aren ’ t yet sure how to predict the effects on the stuff we haul out of the ocean to eat ; they do know that in acid waters , oysters and mussels will struggle to grow their shells , and that when the pH of human blood drops as much as the oceans ’ pH has over the past generation , it induces seizures , comas , and sudden death .
+
+- **Model Prediction:** false causality
+
+- **Human Annotation:** false causality
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** selected for representative category coverage
+
+- **Representative value:** chosen to show what this category looks like
+
+---
+
+### Case 3, Question ID 94
+
+- **Statement:** Rebounding ground can accelerate the ice cracking and falling away , which may be what happened with this new island that potentially emerged off the coast of Antarctica around 2010 .
+
+- **Model Prediction:** false causality
+
+- **Human Annotation:** false causality
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** selected for representative category coverage
+
+- **Representative value:** chosen to show what this category looks like
 
 ---
 
 
 ## Category 7 Success, Repair Recovered Verification
 
-### Case 1, Question ID 3
+### Case 1, Question ID 5
 
-- **Statement:** 
-
-- **Model Prediction:** faulty generalization
-
-- **Human Annotation:** ad hominem
-
-- **Analysis:** The statement moves from pollution trends in one setting to a broader evaluative claim, which gave the model a path toward Faulty Generalization even though the human annotation differs. What makes the case especially valuable here is that the formalization initially failed but was later repaired into a verifiable result.
-
-- **Why this case was selected:** included because option_is_correct=false but final_verification_status=pass
-
-- **Representative value:** This is a strong success case because it shows that repair can recover formal verifiability even when the semantic interpretation remains contestable.
-
----
-
-### Case 2, Question ID 2
-
-- **Statement:** 
+- **Statement:** You can say this for bleeding-heart liberals : They certainly have a flair for the ironic .
 
 - **Model Prediction:** ad hominem
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 7_success visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
 - **Why this case was selected:** one example retained for this model
 
@@ -343,15 +327,31 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ---
 
-### Case 3, Question ID 5
+### Case 2, Question ID 21
 
-- **Statement:** 
+- **Statement:** Another study revealed that , by 2100 , there will be 2 billion climate refugees – and several million of them will be migrating from Florida to places further inland .
 
-- **Model Prediction:** ad hominem
+- **Model Prediction:** appeal to emotion
 
-- **Human Annotation:** ad hominem
+- **Human Annotation:** appeal to emotion
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 7_success visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
+
+- **Why this case was selected:** one example retained for this model
+
+- **Representative value:** chosen to illustrate repair success behavior
+
+---
+
+### Case 3, Question ID 22
+
+- **Statement:** And since the biggest risk to humanity is poverty , if we allow policymakers to have their way , the resulting energy poverty will indeed cause the deaths of some of our children and grandchildren .
+
+- **Model Prediction:** appeal to emotion
+
+- **Human Annotation:** appeal to emotion
+
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
 - **Why this case was selected:** one example retained for this model
 
@@ -364,13 +364,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ### Case 1, Question ID 48
 
-- **Statement:** 
+- **Statement:** The liberal media might take issue with a U.S. think tank funding a study that says global warming does n't exist -- or at least has n't for 19 years -- but they 'll accept the findings from little ol ' Denmark , wo n't they ?
 
 - **Model Prediction:** fallacy of credibility
 
 - **Human Annotation:** fallacy of credibility
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 7_failure visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
 - **Why this case was selected:** preferred failure: option_is_correct=true and final_verification_status!=pass
 
@@ -380,13 +380,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ### Case 2, Question ID 84
 
-- **Statement:** 
+- **Statement:** Next week he will be in Paris , a city terrorized yet again by mass murderers , for a summit with other world leaders on climate change , not terrorism .
 
 - **Model Prediction:** fallacy of relevance
 
 - **Human Annotation:** fallacy of relevance
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 7_failure visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
 - **Why this case was selected:** preferred failure: option_is_correct=true and final_verification_status!=pass
 
@@ -396,13 +396,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ### Case 3, Question ID 98
 
-- **Statement:** 
+- **Statement:** Will they be held legally responsible when floods do occur ? A strict policy could force some people from their homes . Conversely , should public money be spent to do the work , even if it largely benefits private property ?
 
 - **Model Prediction:** false dilemma
 
 - **Human Annotation:** false dilemma
 
-- **Analysis:** This case is useful because the statement itself makes the defining behavior of 7_failure visible in a compact form. The wording and argumentative move are concrete enough to support category-level discussion rather than only abstract summary.
+- **Analysis:** This case is included because it makes the category boundary visible in a concrete textual example and supports appendix-level interpretation beyond summary statistics.
 
 - **Why this case was selected:** preferred failure: option_is_correct=true and final_verification_status!=pass
 
@@ -416,7 +416,23 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ## Category 1，Compilable and Correct
 
-### 案例 1，Question ID 25
+### 案例 1，Question ID 7
+
+- **Statement:** He now says : “ Anyone who tries to predict more than five to 10 years is a bit of an idiot , because so many things can change unexpectedly. ”
+
+- **Model Prediction:** ad hominem
+
+- **Human Annotation:** ad hominem
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** selected for representative category coverage
+
+- **代表性評估：** chosen to show what this category looks like
+
+---
+
+### 案例 2，Question ID 25
 
 - **Statement:** The glaciers of Pine Island Bay are two of the largest and fastest-melting in Antarctica . ( A Rolling Stone feature earlier this year dubbed Thwaites “ The Doomsday Glacier. ” ) Together , they act as a plug holding back enough ice to pour 11 feet of sea-level rise into the world ’ s oceans — an amount that would submerge every coastal city on the planet .
 
@@ -424,27 +440,11 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** appeal to emotion
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen mainly to show what this category looks like
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen mainly to show what this category looks like
-
----
-
-### 案例 2，Question ID 96
-
-- **Statement:** The strongest heat wave ever recorded occurred in July 1936 , generating high temperatures in half of America ’ s 50 states . In 1935 , fossil fuel emissions were 25 times lower than today .
-
-- **Model Prediction:** false causality
-
-- **Human Annotation:** false causality
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen mainly to show what this category looks like
-
-- **為什麼選這題：** top representative row by support/visibility for this category
-
-- **代表性評估：** chosen mainly to show what this category looks like
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
@@ -456,34 +456,18 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** appeal to emotion
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen mainly to show what this category looks like
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen mainly to show what this category looks like
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
 
 ## Category 2，Compilable Alternative
 
-### 案例 1，Question ID 76
-
-- **Statement:** There is a popular theory that atmospheric CO2 amplifies the creation of water vapor , thereby increasing warming through a “ positive feedback loop. ” But that theory so far is mostly speculative ; climate projections using models based on it have consistently failed , nearly always predicting far more warming than has occurred .
-
-- **Model Prediction:** faulty generalization
-
-- **Human Annotation:** fallacy of logic
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
-
-- **為什麼選這題：** top representative row by support/visibility for this category
-
-- **代表性評估：** chosen for representative or interpretable category behavior
-
----
-
-### 案例 2，Question ID 3
+### 案例 1，Question ID 3
 
 - **Statement:** For good reason : In the U.S. , and for much of the world , the most dangerous environmental pollutants have been cleaned up . U.S. emissions of particulates , metals and varied gases—all of these : ozone , lead , carbon monoxide , oxides of nitrogen and sulfur—fell almost 70 % between 1970 and 2014 .
 
@@ -491,15 +475,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
-### 案例 3，Question ID 6
+### 案例 2，Question ID 6
 
 - **Statement:** Sounding more like an Old Testament doomsayer than a president , Obama warned in his Alaska speech that unless carbon fuels are restricted , “ we will condemn our children to a planet beyond their capacity to repair : Submerged countries .
 
@@ -507,11 +491,27 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
+
+---
+
+### 案例 3，Question ID 53
+
+- **Statement:** “ Global warming ” is a myth — so say 80 graphs from 58 peer-reviewed scientific papers published in 2017 .
+
+- **Model Prediction:** faulty generalization
+
+- **Human Annotation:** fallacy of credibility; intentional
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** selected for representative category coverage
+
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
@@ -526,11 +526,11 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** N/A
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
@@ -542,27 +542,27 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** N/A
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
-### 案例 3，Question ID 115
+### 案例 3，Question ID 27
 
-- **Statement:** Two years ago , a polar bear made it to the Summit Station , which was unusual since polar bears live in coastal regions where they can easily find food .
+- **Statement:** “ It ’ s sobering to think of this magnificent landscape and how fundamentally it can change over a relatively short time period , ” he added .
 
 - **Model Prediction:** no_fallacy
 
 - **Human Annotation:** N/A
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
@@ -577,31 +577,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。It is representative because it helps define the boundary between interpretable disagreement and usable augmentation.
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** It is representative because it helps define the boundary between interpretable disagreement and usable augmentation.
-
----
-
-### 案例 2，Question ID 3
-
-- **Statement:** For good reason : In the U.S. , and for much of the world , the most dangerous environmental pollutants have been cleaned up . U.S. emissions of particulates , metals and varied gases—all of these : ozone , lead , carbon monoxide , oxides of nitrogen and sulfur—fell almost 70 % between 1970 and 2014 .
-
-- **Model Prediction:** faulty generalization
-
-- **Human Annotation:** ad hominem
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to preserve category coverage without repetition
-
-- **為什麼選這題：** replacement chosen to avoid duplicate case within Category 4
-
-- **代表性評估：** chosen to preserve category coverage without repetition
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
-### 案例 3，Question ID 8
+### 案例 2，Question ID 8
 
 - **Statement:** “ The Caitlin Expedition – supported by the Prince of Wales – in which Pen Haddow and his team had to abandon their trip to the North Pole because it was colder than they ’ d expected , ” he continued .
 
@@ -609,11 +593,27 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to preserve category coverage without repetition
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** replacement chosen to avoid duplicate case within Category 4
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen to preserve category coverage without repetition
+- **代表性評估：** chosen to show what this category looks like
+
+---
+
+### 案例 3，Question ID 12
+
+- **Statement:** Nor is there evidence of an increase in floods globally . Since 1965 , more parts of the U.S. have seen a decrease in flooding than have seen an increase . And from 1940 to today , flood damage as a percentage of GDP has fallen to less than 0.05 per cent per year from about 0.2 per cent .
+
+- **Model Prediction:** faulty generalization
+
+- **Human Annotation:** ad populum
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** selected for representative category coverage
+
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
@@ -628,31 +628,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** fallacy of logic
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
-
----
-
-### 案例 2，Question ID 6
-
-- **Statement:** Sounding more like an Old Testament doomsayer than a president , Obama warned in his Alaska speech that unless carbon fuels are restricted , “ we will condemn our children to a planet beyond their capacity to repair : Submerged countries .
-
-- **Model Prediction:** appeal to emotion
-
-- **Human Annotation:** ad hominem
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
-
-- **為什麼選這題：** top representative row by support/visibility for this category
-
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
-### 案例 3，Question ID 90
+### 案例 2，Question ID 90
 
 - **Statement:** The fossil record shows that a thriving and diversification of plant and animal life occurs every time the atmosphere had a very high carbon dioxide content .
 
@@ -660,50 +644,34 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** false causality
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
+
+---
+
+### 案例 3，Question ID 16
+
+- **Statement:** Over the past decades , our culture has gone apocalyptic with zombie movies and Mad Max dystopias , perhaps the collective result of displaced climate anxiety , and yet when it comes to contemplating real-world warming dangers , we suffer from an incredible failure of imagination .
+
+- **Model Prediction:** false causality
+
+- **Human Annotation:** ad populum
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** selected for representative category coverage
+
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
 
 ## Category 6，Correct Label but Uncompilable Reasoning
 
-### 案例 1，Question ID 92
-
-- **Statement:** Ocean acidification will fry fish populations directly , too , though scientists aren ’ t yet sure how to predict the effects on the stuff we haul out of the ocean to eat ; they do know that in acid waters , oysters and mussels will struggle to grow their shells , and that when the pH of human blood drops as much as the oceans ’ pH has over the past generation , it induces seizures , comas , and sudden death .
-
-- **Model Prediction:** false causality
-
-- **Human Annotation:** false causality
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
-
-- **為什麼選這題：** top representative row by support/visibility for this category
-
-- **代表性評估：** chosen for representative or interpretable category behavior
-
----
-
-### 案例 2，Question ID 94
-
-- **Statement:** Rebounding ground can accelerate the ice cracking and falling away , which may be what happened with this new island that potentially emerged off the coast of Antarctica around 2010 .
-
-- **Model Prediction:** false causality
-
-- **Human Annotation:** false causality
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
-
-- **為什麼選這題：** top representative row by support/visibility for this category
-
-- **代表性評估：** chosen for representative or interpretable category behavior
-
----
-
-### 案例 3，Question ID 89
+### 案例 1，Question ID 89
 
 - **Statement:** But like most claims regarding global warming , the real effect is small , probably temporary , and most likely due to natural weather patterns .
 
@@ -711,42 +679,58 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Human Annotation:** false causality
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen for representative or interpretable category behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** top representative row by support/visibility for this category
+- **為什麼選這題：** selected for representative category coverage
 
-- **代表性評估：** chosen for representative or interpretable category behavior
+- **代表性評估：** chosen to show what this category looks like
+
+---
+
+### 案例 2，Question ID 92
+
+- **Statement:** Ocean acidification will fry fish populations directly , too , though scientists aren ’ t yet sure how to predict the effects on the stuff we haul out of the ocean to eat ; they do know that in acid waters , oysters and mussels will struggle to grow their shells , and that when the pH of human blood drops as much as the oceans ’ pH has over the past generation , it induces seizures , comas , and sudden death .
+
+- **Model Prediction:** false causality
+
+- **Human Annotation:** false causality
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** selected for representative category coverage
+
+- **代表性評估：** chosen to show what this category looks like
+
+---
+
+### 案例 3，Question ID 94
+
+- **Statement:** Rebounding ground can accelerate the ice cracking and falling away , which may be what happened with this new island that potentially emerged off the coast of Antarctica around 2010 .
+
+- **Model Prediction:** false causality
+
+- **Human Annotation:** false causality
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** selected for representative category coverage
+
+- **代表性評估：** chosen to show what this category looks like
 
 ---
 
 
 ## Category 7 成功案例，Repair Recovered Verification
 
-### 案例 1，Question ID 3
+### 案例 1，Question ID 5
 
-- **Statement:** 
-
-- **Model Prediction:** faulty generalization
-
-- **Human Annotation:** ad hominem
-
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。This is a strong success case because it shows that repair can recover formal verifiability even when the semantic interpretation remains contestable.
-
-- **為什麼選這題：** included because option_is_correct=false but final_verification_status=pass
-
-- **代表性評估：** This is a strong success case because it shows that repair can recover formal verifiability even when the semantic interpretation remains contestable.
-
----
-
-### 案例 2，Question ID 2
-
-- **Statement:** 
+- **Statement:** You can say this for bleeding-heart liberals : They certainly have a flair for the ironic .
 
 - **Model Prediction:** ad hominem
 
 - **Human Annotation:** ad hominem
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to illustrate repair success behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
 - **為什麼選這題：** one example retained for this model
 
@@ -754,15 +738,31 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ---
 
-### 案例 3，Question ID 5
+### 案例 2，Question ID 21
 
-- **Statement:** 
+- **Statement:** Another study revealed that , by 2100 , there will be 2 billion climate refugees – and several million of them will be migrating from Florida to places further inland .
 
-- **Model Prediction:** ad hominem
+- **Model Prediction:** appeal to emotion
 
-- **Human Annotation:** ad hominem
+- **Human Annotation:** appeal to emotion
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to illustrate repair success behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
+
+- **為什麼選這題：** one example retained for this model
+
+- **代表性評估：** chosen to illustrate repair success behavior
+
+---
+
+### 案例 3，Question ID 22
+
+- **Statement:** And since the biggest risk to humanity is poverty , if we allow policymakers to have their way , the resulting energy poverty will indeed cause the deaths of some of our children and grandchildren .
+
+- **Model Prediction:** appeal to emotion
+
+- **Human Annotation:** appeal to emotion
+
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
 - **為什麼選這題：** one example retained for this model
 
@@ -775,13 +775,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ### 案例 1，Question ID 48
 
-- **Statement:** 
+- **Statement:** The liberal media might take issue with a U.S. think tank funding a study that says global warming does n't exist -- or at least has n't for 19 years -- but they 'll accept the findings from little ol ' Denmark , wo n't they ?
 
 - **Model Prediction:** fallacy of credibility
 
 - **Human Annotation:** fallacy of credibility
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to illustrate repair failure behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
 - **為什麼選這題：** preferred failure: option_is_correct=true and final_verification_status!=pass
 
@@ -791,13 +791,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ### 案例 2，Question ID 84
 
-- **Statement:** 
+- **Statement:** Next week he will be in Paris , a city terrorized yet again by mass murderers , for a summit with other world leaders on climate change , not terrorism .
 
 - **Model Prediction:** fallacy of relevance
 
 - **Human Annotation:** fallacy of relevance
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to illustrate repair failure behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
 - **為什麼選這題：** preferred failure: option_is_correct=true and final_verification_status!=pass
 
@@ -807,13 +807,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ### 案例 3，Question ID 98
 
-- **Statement:** 
+- **Statement:** Will they be held legally responsible when floods do occur ? A strict policy could force some people from their homes . Conversely , should public money be spent to do the work , even if it largely benefits private property ?
 
 - **Model Prediction:** false dilemma
 
 - **Human Annotation:** false dilemma
 
-- **Analysis:** 這題的 statement 本身就能讓該類別的特徵被直接看見，因此不只是用來補數量，而是能支撐 category-level 的討論。chosen to illustrate repair failure behavior
+- **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
 - **為什麼選這題：** preferred failure: option_is_correct=true and final_verification_status!=pass
 
