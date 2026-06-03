@@ -1,2 +1,0 @@
-scope,allowed_models_count,excluded_models_note,success_examples_selected,failure_examples_selected,preferred_failure_rows_option_correct_true_final_not_pass,other_failure_rows,contains_false_but_pass_success_example
-reviewer-facing category 7 subset aligned to user-provided model list and github-visible 107 questions,10,all rows mentioning gemini-2.5-flash removed; gemini-flash-non treated as Gemini 2.5 flash (NT); excluded gemini-pro-thinking and x-ai_grok-4-fast from reviewer set,9,97,22,123,True
