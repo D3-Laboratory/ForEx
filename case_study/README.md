@@ -1,329 +1,301 @@
-# Case Study CSV Reading Guide for Reviewers
+# Case Study CSV Guide
 
 ## English
 
-This folder contains the CSV files used to present the ForEx case-study analysis. The main purpose of this guide is not to restate the whole method, but to help reviewers quickly understand **how to read each CSV file** and **what kind of evidence each file is meant to provide**.
+This folder contains the CSV files used to organize the ForEx case-study analysis. The files are separated into categories so that label correctness, formal verifiability, and repair behavior can be inspected as distinct dimensions rather than collapsed into a single flat result table.
 
-## How reviewers should read this folder
+## Purpose of the categorization
 
-A practical reading order is:
+The case-study files are designed to make three questions easier to inspect:
 
-1. Start with **Category 1** to see the cleanest successful cases.
-2. Move to **Category 2** and **Category 5** to understand how ForEx treats plausible alternative labels and annotation augmentation.
-3. Read **Category 3** and **Category 4** to see where disagreement should be treated cautiously rather than promoted.
-4. Check **Category 6** to understand the gap between correct labels and formally executable reasoning.
-5. Finally, inspect **Category 7 success/failure examples** to see what the repair stage can and cannot do.
+- whether a predicted fallacy label matches the human annotation,
+- whether the corresponding reasoning survives Lean4 verification,
+- whether initially failing formalizations can be recovered through repair.
 
-This reading order helps separate three different questions:
+Taken together, the categories provide a structured view of where model outputs align with human labels, where they support plausible alternatives, and where formal reasoning remains fragile.
 
-- Did the model choose the correct label?
-- Did the reasoning survive Lean4 verification?
-- If verification failed initially, could the repair stage recover it?
-
-## File-by-file guide
+## File-by-file description
 
 ### `case_study_candidates.csv`
-**How to read it:**
-Use this file only if you want the broad candidate pool behind the final categories.
+This file contains the broad candidate pool before final case-study grouping.
 
-**What it shows:**
-It is the most complete candidate-level record, but not the most reviewer-friendly file. It is mainly useful for tracing where later examples came from.
+**Main use:**
+- tracing the full candidate space behind the later categories,
+- inspecting the source pool from which final category examples are drawn.
+
+**Main insight:**
+It provides completeness, but not the clearest high-level summary. It is most useful when detailed backtracking is needed.
 
 ---
 
 ### `category_1_compilable_correct.csv`
-**How to read it:**
-Treat this as the strongest positive evidence file.
+This file collects cases where the predicted fallacy label matches the human label and the corresponding Lean4 formalization verifies successfully.
 
-**What it shows:**
-These cases are both:
-- label-correct, and
-- Lean4-verifiable.
+**Main use:**
+- identifying the strongest alignment between annotation correctness and formal executability.
 
-For reviewers, this file answers: **Where do formal validity and human annotation agree most clearly?**
+**Main insight:**
+These are the clearest positive cases in the case study, since both the answer and the formal reasoning succeed.
 
 ---
 
 ### `category_2_compilable_alternative.csv`
-**How to read it:**
-Read this file as evidence of **plausible disagreement**, not simple error.
+This file contains cases where the Lean4 reasoning verifies successfully, but the model supports a plausible alternative fallacy label rather than the original human annotation.
 
-**What it shows:**
-These cases pass Lean4 verification, but support an alternative label instead of the original human label.
+**Main use:**
+- examining formally coherent disagreement,
+- studying ambiguity in fallacy interpretation.
 
-For reviewers, this file answers: **When the model disagrees, is the disagreement still formally coherent?**
+**Main insight:**
+Not every disagreement should be treated as noise. Some alternative labels remain formally well-supported and may reflect genuine interpretive flexibility.
 
 ---
 
 ### `category_3_no_fallacy_under_limited_context.csv`
-**How to read it:**
-Use this file to understand cases where short context may be insufficient for confident fallacy assignment.
+This file contains cases where the available local context appears too limited for a confident fallacy assignment, leading the model toward a no-fallacy judgment.
 
-**What it shows:**
-These examples suggest that some disagreements are driven by context limitation rather than obvious model failure.
+**Main use:**
+- understanding disagreement caused by short or underspecified context.
 
-For reviewers, this file answers: **Are some apparent errors really cases of underspecified evidence?**
+**Main insight:**
+Some apparent model errors are better interpreted as context limitations rather than straightforward failures of reasoning.
 
 ---
 
 ### `category_4_systematic_divergence_filtered_out.csv`
-**How to read it:**
-Read this file as a cautionary set.
+This file contains systematic disagreement patterns that were considered but filtered out rather than promoted into augmentation.
 
-**What it shows:**
-These are systematic disagreement patterns that were deliberately **not** promoted into augmentation.
+**Main use:**
+- identifying recurring alternative patterns that remain outside the intended annotation regime.
 
-For reviewers, this file answers: **Which recurring model patterns were considered, but rejected as too far from the intended annotation regime?**
+**Main insight:**
+Systematic disagreement alone is not sufficient for augmentation. Some recurring patterns are still too far from the human labeling standard.
 
 ---
 
 ### `category_5_consensus_guided_augmentation_success.csv`
-**How to read it:**
-Treat this as the main evidence for annotation augmentation.
+This file contains cases where alternative labels received sufficiently strong support to be retained as augmentation candidates.
 
-**What it shows:**
-These cases provide the strongest support for adding plausible alternative labels under the consensus-guided augmentation strategy.
+**Main use:**
+- examining where ForEx supports annotation extension rather than only evaluation.
 
-For reviewers, this file answers: **Where does ForEx move beyond evaluation and actually support annotation extension?**
+**Main insight:**
+These cases show how formally supported alternative labeling can be used constructively when multiple signals converge.
 
 ---
 
 ### `category_6_uncompilable_correct.csv`
-**How to read it:**
-Read this file when you want to see why label accuracy alone is not enough.
+This file contains cases where the predicted fallacy label is correct, but the generated formal reasoning does not verify successfully in Lean4.
 
-**What it shows:**
-These cases have the correct label, but their formal reasoning does not verify in Lean4.
+**Main use:**
+- separating answer correctness from proof executability.
 
-For reviewers, this file answers: **How often can a model be right in answer but weak in formal reasoning?**
+**Main insight:**
+Correct labels do not guarantee formally executable reasoning. This category makes that gap explicit.
 
 ---
 
 ### `category_7_success_examples.csv`
-**How to read it:**
-This is the reviewer-facing file for successful repair examples. It is intentionally curated and much lighter than the full repair log.
+This file contains curated examples in which verification initially failed but a subsequent repair step produced a final verifiable result.
 
-**What it shows:**
-These examples illustrate cases where:
-- verification initially failed, but
-- the repair stage produced a final verifiable Lean4 result.
+**Main use:**
+- illustrating successful repair behavior in a lightweight reviewer-facing format.
 
-For reviewers, this file answers: **What does successful recovery look like in practice?**
+**Main insight:**
+These examples show the practical value of the execution-feedback loop by demonstrating recoverable formalization failures.
 
 ---
 
 ### `category_7_failure_examples.csv`
-**How to read it:**
-Read this together with the success examples, not in isolation.
+This file contains curated examples where repair does not end in a clean final pass, including cases where the predicted label may still be correct.
 
-**What it shows:**
-These examples show where repair still fails, including cases where the predicted label may still be correct but formal verification does not end in a clean pass.
+**Main use:**
+- examining residual failure modes after repair.
 
-For reviewers, this file answers: **What are the remaining failure modes after the repair stage?**
+**Main insight:**
+Repair improves formalization quality, but does not eliminate all failure cases. This file captures the remaining boundary conditions.
 
 ---
 
 ### `category_7_repair_iteration.csv`
-**How to read it:**
-Use this only if you want the full low-level repair record.
+This file contains the full repair-iteration record behind the Category 7 analysis.
 
-**What it shows:**
-This file contains the dense repair-iteration trail behind the curated examples.
+**Main use:**
+- detailed audit and process-level inspection.
 
-For reviewers, this file answers: **What is the complete audit trail behind Category 7?**
+**Main insight:**
+It offers the most complete view of repair behavior, while the curated success and failure files provide a lighter entry point.
 
-Because it is much heavier than the curated files, most reviewers can safely read it only selectively.
+## Suggested interpretation path
 
-## Recommended reviewer focus
+A natural reading path through the files is:
 
-If time is limited, the most informative subset is:
+1. **Category 1** for the strongest successful cases.
+2. **Categories 2 and 5** for alternative labels and augmentation value.
+3. **Categories 3 and 4** for context-sensitive or filtered disagreement.
+4. **Category 6** for correct-but-unverifiable outputs.
+5. **Category 7** for repair success and repair failure examples.
 
-- `category_1_compilable_correct.csv`
-- `category_2_compilable_alternative.csv`
-- `category_5_consensus_guided_augmentation_success.csv`
-- `category_6_uncompilable_correct.csv`
-- `category_7_success_examples.csv`
-- `category_7_failure_examples.csv`
+This ordering makes it easier to move from clean alignment, to plausible disagreement, to formalization failure and repair.
 
-Together, these files provide a compact view of:
-- strongest successes,
-- plausible alternatives,
-- augmentation value,
-- correct-but-unverifiable cases,
-- repair successes, and
-- repair failures.
+## Overall takeaway
 
-## Short takeaway
+The main contribution of this case-study organization is that it turns model evaluation into a structured diagnosis. Instead of asking only whether a model predicted the correct fallacy label, the files make it possible to inspect:
 
-Reviewers should read these CSVs as a structured diagnostic set rather than as a single leaderboard. The key value of the case-study design is that it distinguishes:
+- answer correctness,
+- formal verifiability,
+- plausibility of alternative labels,
+- and recoverability through repair.
 
-- correctness of the predicted fallacy label,
-- formal executability of the reasoning, and
-- recoverability through repair.
-
-That separation is the main reason these files are organized into categories instead of being merged into one flat results table.
+That separation is the central reason the case study is presented as categorized CSV files rather than as a single aggregate spreadsheet.
 
 ---
 
 ## 中文
 
-本資料夾包含 ForEx case study 所使用的 CSV 檔案。這份說明的重點不是重講整個方法，而是幫 reviewer 快速理解：**每一個 CSV 應該怎麼看**，以及 **每個檔案想提供的是哪一種證據**。
+本資料夾包含 ForEx case study 分析所使用的 CSV 檔案。這些檔案被分成不同類別，目的在於將「標籤是否正確」、「形式推理是否可驗證」以及「repair 是否能補救失敗」拆開觀察，而不是全部壓縮成單一平面的結果表。
 
-## Reviewer 建議閱讀方式
+## 這樣分類的目的
 
-一個實用的閱讀順序如下：
+這些 case-study 檔案主要幫助檢視三個層面：
 
-1. 先看 **Category 1**，掌握最乾淨、最典型的成功案例。
-2. 再看 **Category 2** 和 **Category 5**，理解 ForEx 如何處理合理的替代標籤，以及如何支援 annotation augmentation。
-3. 接著看 **Category 3** 和 **Category 4**，理解哪些分歧應該保守看待，而不是直接接受。
-4. 再看 **Category 6**，理解「標籤判對」與「形式推理可執行」之間的差距。
-5. 最後看 **Category 7 的 success / failure examples**，理解 repair 階段到底能做什麼、又在哪裡失敗。
+- 預測的 fallacy 標籤是否與人工標註一致，
+- 對應的 reasoning 是否能通過 Lean4 驗證，
+- 若初始形式化失敗，是否能透過 repair 恢復。
 
-這樣的閱讀順序有助於把問題拆成三個層次：
+這些 category 合起來提供了一個更有結構的視角，用來觀察模型輸出何時與人工標註一致、何時支持合理替代標籤，以及何時形式推理仍然脆弱。
 
-- 模型有沒有選對標籤？
-- 其推理能不能通過 Lean4 驗證？
-- 如果一開始驗證失敗，repair 能不能把它救回來？
-
-## 各檔案閱讀指引
+## 各檔案說明
 
 ### `case_study_candidates.csv`
-**怎麼看：**
-只有在你想看最廣泛的候選池、追溯後續分類來源時再使用。
+此檔案包含最終 case-study 分類之前的完整候選池。
 
-**它提供的資訊：**
-這是最完整的 candidate-level 紀錄，但不是最 reviewer-friendly 的檔案，比較適合做追溯，而不是作為主要閱讀入口。
+**主要用途：**
+- 追溯後續各 category 的來源候選集合，
+- 檢查最初的 candidate space。
+
+**主要 insight：**
+它提供了最完整的底層資料，但不是最高層次的摘要。當需要回溯來源時最有用。
 
 ---
 
 ### `category_1_compilable_correct.csv`
-**怎麼看：**
-把它當成最強的正面證據檔案。
+此檔案收錄預測標籤與人工標註一致，且 Lean4 形式化驗證成功的案例。
 
-**它提供的資訊：**
-這些案例同時滿足：
-- 標籤正確
-- Lean4 驗證成功
+**主要用途：**
+- 找出人工標註正確性與形式可執行性最一致的案例。
 
-對 reviewer 來說，這份檔案回答的是：**哪些案例最清楚地同時符合人工標註與形式驗證？**
+**主要 insight：**
+這是 case study 中最清楚的正面案例，因為答案與形式推理同時成功。
 
 ---
 
 ### `category_2_compilable_alternative.csv`
-**怎麼看：**
-把它當成「合理分歧」的證據，而不是單純錯誤。
+此檔案包含 Lean4 reasoning 可以成功驗證，但模型支持的是一個合理替代標籤，而不是原始人工標註的案例。
 
-**它提供的資訊：**
-這些案例雖然沒有對上原本人工標籤，但其替代標籤可以通過 Lean4 驗證。
+**主要用途：**
+- 檢查在形式上自洽的分歧，
+- 觀察 fallacy interpretation 的模糊地帶。
 
-對 reviewer 來說，這份檔案回答的是：**當模型不同意人工標註時，這種分歧是否仍然在形式上自洽？**
+**主要 insight：**
+並不是所有分歧都應被視為噪音。有些替代標籤在形式上仍然有充分支撐，可能反映真實存在的詮釋彈性。
 
 ---
 
 ### `category_3_no_fallacy_under_limited_context.csv`
-**怎麼看：**
-這份檔案主要拿來理解：有些短文本其實不足以支撐明確 fallacy 判定。
+此檔案收錄在當前局部上下文不足的情況下，模型傾向判為 no fallacy 的案例。
 
-**它提供的資訊：**
-這些案例顯示，某些分歧的來源可能是上下文不足，而不是模型單純失敗。
+**主要用途：**
+- 理解由短文本或資訊不足所造成的分歧。
 
-對 reviewer 來說，這份檔案回答的是：**有些看似錯誤的案例，是否其實是因為證據本身不足？**
+**主要 insight：**
+某些看似錯誤的模型輸出，更適合被理解為上下文限制，而不只是單純推理失敗。
 
 ---
 
 ### `category_4_systematic_divergence_filtered_out.csv`
-**怎麼看：**
-把它當成一組保守處理的參考集合。
+此檔案收錄具有系統性分歧模式，但最終被排除、未納入 augmentation 的案例。
 
-**它提供的資訊：**
-這些是有系統性分歧模式，但最終**沒有**被提升為 augmentation 的案例。
+**主要用途：**
+- 檢視那些重複出現、但仍落在人工標註體系之外的替代模式。
 
-對 reviewer 來說，這份檔案回答的是：**哪些反覆出現的模型分歧，曾被考慮過，但最後仍被認為不適合納入？**
+**主要 insight：**
+系統性分歧本身並不足以支持 augmentation。有些模式即使穩定出現，仍然離人工標註標準太遠。
 
 ---
 
 ### `category_5_consensus_guided_augmentation_success.csv`
-**怎麼看：**
-把它視為 annotation augmentation 的核心證據檔。
+此檔案收錄那些獲得足夠支持、因此被保留為 augmentation 候選的案例。
 
-**它提供的資訊：**
-這些案例提供了最強的訊號，支持在 consensus-guided augmentation 策略下加入合理的替代標籤。
+**主要用途：**
+- 觀察 ForEx 如何從單純評估延伸到支援標註擴充。
 
-對 reviewer 來說，這份檔案回答的是：**ForEx 何時不只是評估工具，而是能夠真正支援標註擴充？**
+**主要 insight：**
+這些案例顯示，只要多重訊號足夠一致，形式上有支撐的替代標籤就可以被建設性地納入標註擴充。
 
 ---
 
 ### `category_6_uncompilable_correct.csv`
-**怎麼看：**
-如果你想理解為什麼只看 accuracy 不夠，這份檔案很重要。
+此檔案收錄標籤判斷正確，但生成的形式推理無法在 Lean4 中成功驗證的案例。
 
-**它提供的資訊：**
-這些案例的標籤是正確的，但形式化推理無法在 Lean4 中通過。
+**主要用途：**
+- 區分答案正確與證明可執行之間的差異。
 
-對 reviewer 來說，這份檔案回答的是：**模型在答案上判對，但在形式推理上失敗的情況有什麼特徵？**
+**主要 insight：**
+標籤正確不代表形式推理一定可執行。這一類明確展示了兩者之間的落差。
 
 ---
 
 ### `category_7_success_examples.csv`
-**怎麼看：**
-這是 reviewer 導向的成功 repair 精選案例，內容刻意比完整 repair log 輕量得多。
+此檔案收錄精選的成功 repair 案例，也就是初始驗證失敗，但經 repair 後最終可成功驗證的例子。
 
-**它提供的資訊：**
-這些案例展示的是：
-- 一開始 verification 失敗
-- 但 repair 階段最後把它修成可被 Lean4 驗證的結果
+**主要用途：**
+- 以較輕量的 reviewer-facing 形式展示 repair 成功行為。
 
-對 reviewer 來說，這份檔案回答的是：**repair 在實際上成功時，會長什麼樣子？**
+**主要 insight：**
+這些案例顯示 execution-feedback loop 的實際價值，也就是某些原本失敗的形式化推理是可以被修復的。
 
 ---
 
 ### `category_7_failure_examples.csv`
-**怎麼看：**
-這份檔案建議和 success examples 一起看，而不要單獨看。
+此檔案收錄精選的失敗案例，也就是 repair 後最終仍未得到乾淨 pass 的情況，其中包含某些標籤本身可能仍然正確的案例。
 
-**它提供的資訊：**
-這些案例顯示 repair 仍然會失敗，其中也包含某些標籤可能本身是對的，但形式驗證最終沒有得到乾淨 pass 的情況。
+**主要用途：**
+- 檢視 repair 結束後仍殘留的失敗型態。
 
-對 reviewer 來說，這份檔案回答的是：**repair 階段結束後，還剩下哪些失敗型態？**
+**主要 insight：**
+Repair 能提升形式化品質，但無法消除所有失敗案例。這份檔案保留了方法邊界的重要證據。
 
 ---
 
 ### `category_7_repair_iteration.csv`
-**怎麼看：**
-只有在你想看完整底層 repair 紀錄時再使用。
+此檔案包含 Category 7 背後完整的 repair-iteration 紀錄。
 
-**它提供的資訊：**
-這是 Category 7 背後最完整的 repair-iteration audit trail。
+**主要用途：**
+- 提供詳細 audit 與過程層級的檢查資料。
 
-對 reviewer 來說，這份檔案回答的是：**Category 7 精選案例背後的完整過程紀錄是什麼？**
+**主要 insight：**
+它提供 repair 行為最完整的全貌，而 curated 的 success / failure examples 則提供較輕量的入口。
 
-因為它比 curated 檔案重很多，所以多數 reviewer 可以只選擇性查閱。
+## 建議的理解順序
 
-## Reviewer 建議重點關注
+一個自然的閱讀順序可以是：
 
-如果時間有限，最值得優先看的檔案是：
+1. **Category 1**，先看最強成功案例。
+2. **Category 2 與 Category 5**，再看替代標籤與 augmentation 的價值。
+3. **Category 3 與 Category 4**，理解受限上下文與被排除的系統性分歧。
+4. **Category 6**，理解正確但不可驗證的輸出。
+5. **Category 7**，觀察 repair 成功與 repair 失敗案例。
 
-- `category_1_compilable_correct.csv`
-- `category_2_compilable_alternative.csv`
-- `category_5_consensus_guided_augmentation_success.csv`
-- `category_6_uncompilable_correct.csv`
-- `category_7_success_examples.csv`
-- `category_7_failure_examples.csv`
+這樣的順序有助於從最乾淨的成功對齊，逐步過渡到合理分歧、形式化失敗與 repair 行為。
 
-這幾份合起來，可以提供最精簡但足夠完整的視角，去理解：
-- 最強成功案例
-- 合理的替代標籤
-- augmentation 的價值
-- 正確但不可驗證的案例
-- repair 成功
-- repair 失敗
+## 整體結論
 
-## 簡短結論
+這套 case-study 分類最大的價值，在於它把模型評估轉化成更細緻的診斷框架。不再只問模型有沒有選對 fallacy label，而是可以進一步檢視：
 
-Reviewer 應該把這些 CSV 視為一組「結構化診斷材料」，而不是單一排行榜。這套 case-study 設計最核心的價值，在於它把以下幾件事拆開來看：
+- 答案是否正確，
+- 推理是否可形式驗證，
+- 替代標籤是否合理，
+- 以及失敗是否能透過 repair 被補救。
 
-- fallacy label 是否正確
-- 推理是否能形式化執行
-- 若初始失敗，是否能透過 repair 補救
-
-也正因如此，這些檔案才會被切成不同 category，而不是合併成單一平面結果表。
+也正因如此，這些 case study 才會以分類 CSV 的方式呈現，而不是被合併成單一彙總表。
