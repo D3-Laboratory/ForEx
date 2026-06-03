@@ -4,6 +4,21 @@
 
 This folder contains the CSV files used to organize the ForEx case-study analysis. The files are separated into categories so that label correctness, formal verifiability, and repair behavior can be inspected as distinct dimensions rather than collapsed into a single flat result table.
 
+## Category overview
+
+| File | Main focus | What it is mainly used to inspect |
+|---|---|---|
+| `category_1_compilable_correct.csv` | Compilable and correct | Cases where the predicted label matches the human label and the Lean4 reasoning verifies successfully |
+| `category_2_compilable_alternative.csv` | Compilable alternative labels | Cases where the reasoning verifies, but the model supports a plausible alternative label rather than the original annotation |
+| `category_3_no_fallacy_under_limited_context.csv` | No-fallacy judgments under limited context | Cases where the local excerpt appears too limited for confident fallacy assignment |
+| `category_4_systematic_divergence_filtered_out.csv` | Systematic but filtered divergence | Recurring disagreement patterns that were considered but not retained for augmentation |
+| `category_5_consensus_guided_augmentation_success.csv` | Successful augmentation candidates | Cases where alternative labels receive sufficiently strong support to justify annotation augmentation |
+| `category_6_uncompilable_correct.csv` | Correct labels with unverifiable reasoning | Cases where the final label is correct but the corresponding Lean4 reasoning does not verify |
+| `category_7_success_examples.csv` | Successful repair examples | Curated examples where initial verification fails but repair eventually produces a verifiable result |
+| `category_7_failure_examples.csv` | Failed repair examples | Curated examples where repair does not end in a clean final pass |
+| `category_7_repair_iteration.csv` | Full repair record | The complete repair-iteration trail behind Category 7 |
+| `case_study_candidates.csv` | Full candidate pool | The broader source pool behind the final case-study categorization |
+
 ## Purpose of the categorization
 
 The case-study files are designed to make three questions easier to inspect:
@@ -154,6 +169,21 @@ That separation is the central reason the case study is presented as categorized
 ## 中文
 
 本資料夾包含 ForEx case study 分析所使用的 CSV 檔案。這些檔案被分成不同類別，目的在於將「標籤是否正確」、「形式推理是否可驗證」以及「repair 是否能補救失敗」拆開觀察，而不是全部壓縮成單一平面的結果表。
+
+## 類別總覽表
+
+| 檔案 | 主要焦點 | 主要用來看什麼 |
+|---|---|---|
+| `category_1_compilable_correct.csv` | 可編譯且正確 | 預測標籤與人工標註一致，且 Lean4 reasoning 驗證成功的案例 |
+| `category_2_compilable_alternative.csv` | 可編譯的替代標籤 | reasoning 可驗證，但模型支持的是合理替代標籤而非原始標註 |
+| `category_3_no_fallacy_under_limited_context.csv` | 有限上下文下的 no-fallacy 判斷 | 局部文本資訊不足，因而難以做出明確 fallacy 指派的案例 |
+| `category_4_systematic_divergence_filtered_out.csv` | 被排除的系統性分歧 | 雖然反覆出現，但最終未納入 augmentation 的分歧模式 |
+| `category_5_consensus_guided_augmentation_success.csv` | 成功的 augmentation 候選 | 替代標籤支持度足夠強，可支援 annotation augmentation 的案例 |
+| `category_6_uncompilable_correct.csv` | 標籤正確但 reasoning 不可驗證 | 標籤判對，但 Lean4 reasoning 無法成功驗證的案例 |
+| `category_7_success_examples.csv` | repair 成功案例 | 初始驗證失敗，但經 repair 後最終成功驗證的精選案例 |
+| `category_7_failure_examples.csv` | repair 失敗案例 | 經 repair 後最終仍未得到乾淨 pass 的精選案例 |
+| `category_7_repair_iteration.csv` | 完整 repair 紀錄 | Category 7 背後完整的 repair-iteration 過程資料 |
+| `case_study_candidates.csv` | 完整候選池 | 最終 case-study 分類之前的完整候選來源池 |
 
 ## 這樣分類的目的
 
