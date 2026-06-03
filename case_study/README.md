@@ -17,7 +17,6 @@ This folder contains the CSV files used to organize the ForEx case-study analysi
 | `category_7_success_examples.csv` | Successful repair examples | Curated examples where initial verification fails but repair eventually produces a verifiable result |
 | `category_7_failure_examples.csv` | Failed repair examples | Curated examples where repair does not end in a clean final pass |
 | `category_7_repair_iteration.csv` | Full repair record | The complete repair-iteration trail behind Category 7 |
-| `case_study_candidates.csv` | Full candidate pool | The broader source pool behind the final case-study categorization |
 
 ## Purpose of the categorization
 
@@ -30,18 +29,6 @@ The case-study files are designed to make three questions easier to inspect:
 Taken together, the categories provide a structured view of where model outputs align with human labels, where they support plausible alternatives, and where formal reasoning remains fragile.
 
 ## File-by-file description
-
-### `case_study_candidates.csv`
-This file contains the broad candidate pool before final case-study grouping.
-
-**Main use:**
-- tracing the full candidate space behind the later categories,
-- inspecting the source pool from which final category examples are drawn.
-
-**Main insight:**
-It provides completeness, but not the clearest high-level summary. It is most useful when detailed backtracking is needed.
-
----
 
 ### `category_1_compilable_correct.csv`
 This file collects cases where the predicted fallacy label matches the human label and the corresponding Lean4 formalization verifies successfully.
@@ -140,6 +127,30 @@ This file contains the full repair-iteration record behind the Category 7 analys
 
 **Main insight:**
 It offers the most complete view of repair behavior, while the curated success and failure files provide a lighter entry point.
+
+---
+
+### `appendix_case_shortlist_3_per_category.csv`
+This file contains the appendix shortlist with three selected cases for each category.
+
+**Main use:**
+- tracking which examples were chosen for appendix drafting,
+- checking category-level coverage before full narrative writing.
+
+**Main insight:**
+It serves as a bridge between the final CSV categories and the prose appendix presentation.
+
+---
+
+### `APPENDIX_CASE_SELECTION_GUIDE_3_PER_CATEGORY.md`
+This file turns the shortlist into appendix-ready case blocks with selection rationale and representative-value notes.
+
+**Main use:**
+- drafting the prose appendix,
+- explaining why each selected case is worth discussing.
+
+**Main insight:**
+It connects the structured CSV outputs to a reviewer-readable narrative format.
 
 ## Suggested interpretation path
 
@@ -306,6 +317,30 @@ Repair 能提升形式化品質，但無法消除所有失敗案例。這份檔�
 
 **主要 insight：**
 它提供 repair 行為最完整的全貌，而 curated 的 success / failure examples 則提供較輕量的入口。
+
+---
+
+### `appendix_case_shortlist_3_per_category.csv`
+此檔案包含 appendix 的題目 shortlist，每個 category 各選三題。
+
+**主要用途：**
+- 追蹤 appendix 題目挑選結果，
+- 在正式撰寫前檢查各 category 的覆蓋情況。
+
+**主要 insight：**
+它是 final category CSV 與 prose appendix 之間的中介層。
+
+---
+
+### `APPENDIX_CASE_SELECTION_GUIDE_3_PER_CATEGORY.md`
+此檔案將 shortlist 擴寫成 appendix-ready 的 case blocks，並加入挑選理由與代表性說明。
+
+**主要用途：**
+- 支援 appendix 正文草稿撰寫，
+- 說明每一題為什麼值得放入討論。
+
+**主要 insight：**
+它將結構化 CSV 輸出轉成 reviewer 可閱讀的敘事型呈現方式。
 
 ## 建議的理解順序
 
