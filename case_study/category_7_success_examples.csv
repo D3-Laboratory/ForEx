@@ -1,10 +1,532 @@
-question_id,model_name,option_id,predicted_label,ground_truth,option_is_correct,initial_verification_status,final_verification_status,repair_iteration_count,repair_success,initial_error_messages,initial_lean_code,repaired_lean_code,final_verified_code,artifact_file,selected_for_appendix,example_group,selection_note
-6,gemini-flash-non,option_2,fallacy of credibility,ad hominem,False,fail,pass,4,yes,"unexpected identifier; expected command
-unexpected token '.'; expected ':'","Looking at this fallacy of credibility (ad hominem), I need to create a theorem that proves the fallacy based on the given facts.
+question_id,model_name,option_id,predicted_label,ground_truth,option_is_correct,initial_verification_status,final_verification_status,repair_iteration_count,repair_success,initial_error_messages,initial_lean_code,repaired_lean_code,final_verified_code,artifact_file,selected_for_appendix,selection_note,model_display,example_group
+3,anthropic/claude-sonnet-4.5,option_1,faulty generalization,ad hominem,False,fail,pass,1,yes,"temp_verify/tmp3t2bqjs5.lean:43:7: error(lean.unknownIdentifier): Unknown identifier `us_emissions_data`
+temp_verify/tmp3t2bqjs5.lean:43:25: error(lean.unknownIdentifier): Unknown identifier `world_pollution_claim`
+temp_verify/tmp3t2bqjs5.lean:43:47: error(lean.unknownIdentifier): Unknown identifier `specific_timeframe`
+temp_verify/tmp3t2bqjs5.lean:43:66: error(lean.unknownIdentifier): Unknown identifier `limited_evidence`","/-
+  General template for Faulty Generalization
+  Rule Concept: A conclusion is drawn about all or many instances of a phenomenon
+  on the basis of one or a few instances of that phenomenon. The text claims that
+  ""for much of the world"" the most dangerous environmental pollutants have been
+  cleaned up, but only provides evidence from the U.S. between 1970 and 2014.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (us_emissions_data : Entity)
+variable (world_pollution_claim : Entity)
+variable (specific_timeframe : Entity)
+variable (limited_evidence : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_evidence_for : Entity → Entity → Prop)
+variable (is_limited_to : Entity → Entity → Prop)
+variable (generalizes_to : Entity → Entity → Prop)
+variable (is_insufficient : Entity → Prop)
+
+-- Goal Proposition
+variable (is_faulty_generalization : Prop)
+
+-- Fact Mapping from Context
+axiom fact1 : is_limited_to us_emissions_data specific_timeframe
+axiom fact2 : generalizes_to us_emissions_data world_pollution_claim
+axiom fact3 : is_evidence_for us_emissions_data world_pollution_claim
+axiom fact4 : is_insufficient limited_evidence
+
+-- Rule: If evidence is limited to a specific scope, generalizes to a broader claim,
+-- serves as evidence for that broader claim, and is insufficient, then it's a faulty generalization
+theorem prove_faulty_generalization
+  (rule : ∀ evidence claim scope limited,
+    (is_limited_to evidence scope ∧ 
+     generalizes_to evidence claim ∧ 
+     is_evidence_for evidence claim ∧ 
+     is_insufficient limited) → 
+    is_faulty_generalization)
+  : is_faulty_generalization :=
+  rule us_emissions_data world_pollution_claim specific_timeframe limited_evidence 
+    ⟨fact1, fact2, fact3, fact4⟩","/-
+  General template for Faulty Generalization
+  Rule Concept: A conclusion is drawn about all or many instances of a phenomenon
+  on the basis of one or a few instances of that phenomenon. The text claims that
+  ""for much of the world"" the most dangerous environmental pollutants have been
+  cleaned up, but only provides evidence from the U.S. between 1970 and 2014.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (us_emissions_data : Entity)
+variable (world_pollution_claim : Entity)
+variable (specific_timeframe : Entity)
+variable (limited_evidence : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_evidence_for : Entity → Entity → Prop)
+variable (is_limited_to : Entity → Entity → Prop)
+variable (generalizes_to : Entity → Entity → Prop)
+variable (is_insufficient : Entity → Prop)
+
+-- Goal Proposition
+variable (is_faulty_generalization : Prop)
+
+-- Rule: If evidence is limited to a specific scope, generalizes to a broader claim,
+-- serves as evidence for that broader claim, and is insufficient, then it's a faulty generalization
+theorem prove_faulty_generalization
+  (rule : ∀ evidence claim scope limited,
+    (is_limited_to evidence scope ∧ 
+     generalizes_to evidence claim ∧ 
+     is_evidence_for evidence claim ∧ 
+     is_insufficient limited) → 
+    is_faulty_generalization)
+  (fact1 : is_limited_to us_emissions_data specific_timeframe)
+  (fact2 : generalizes_to us_emissions_data world_pollution_claim)
+  (fact3 : is_evidence_for us_emissions_data world_pollution_claim)
+  (fact4 : is_insufficient limited_evidence)
+  : is_faulty_generalization :=
+  rule us_emissions_data world_pollution_claim specific_timeframe limited_evidence 
+    ⟨fact1, fact2, fact3, fact4⟩","/-
+  General template for Faulty Generalization
+  Rule Concept: A conclusion is drawn about all or many instances of a phenomenon
+  on the basis of one or a few instances of that phenomenon. The text claims that
+  ""for much of the world"" the most dangerous environmental pollutants have been
+  cleaned up, but only provides evidence from the U.S. between 1970 and 2014.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (us_emissions_data : Entity)
+variable (world_pollution_claim : Entity)
+variable (specific_timeframe : Entity)
+variable (limited_evidence : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_evidence_for : Entity → Entity → Prop)
+variable (is_limited_to : Entity → Entity → Prop)
+variable (generalizes_to : Entity → Entity → Prop)
+variable (is_insufficient : Entity → Prop)
+
+-- Goal Proposition
+variable (is_faulty_generalization : Prop)
+
+-- Rule: If evidence is limited to a specific scope, generalizes to a broader claim,
+-- serves as evidence for that broader claim, and is insufficient, then it's a faulty generalization
+theorem prove_faulty_generalization
+  (rule : ∀ evidence claim scope limited,
+    (is_limited_to evidence scope ∧ 
+     generalizes_to evidence claim ∧ 
+     is_evidence_for evidence claim ∧ 
+     is_insufficient limited) → 
+    is_faulty_generalization)
+  (fact1 : is_limited_to us_emissions_data specific_timeframe)
+  (fact2 : generalizes_to us_emissions_data world_pollution_claim)
+  (fact3 : is_evidence_for us_emissions_data world_pollution_claim)
+  (fact4 : is_insufficient limited_evidence)
+  : is_faulty_generalization :=
+  rule us_emissions_data world_pollution_claim specific_timeframe limited_evidence 
+    ⟨fact1, fact2, fact3, fact4⟩",,no,included because option_is_correct=false but final_verification_status=pass,Claude-sonnet-4.5 (T),success_example
+2,deepseek/deepseek-chat-v3.1,option_2,ad hominem,ad hominem,True,fail,pass,1,yes,"temp_verify/tmp8qxo44dg.lean:28:7: error(lean.unknownIdentifier): Unknown identifier `doom_mongers`
+temp_verify/tmp8qxo44dg.lean:28:20: error(lean.unknownIdentifier): Unknown identifier `sceptics`
+temp_verify/tmp8qxo44dg.lean:28:30: error(lean.unknownIdentifier): Unknown identifier `fact1`
+temp_verify/tmp8qxo44dg.lean:28:37: error(lean.unknownIdentifier): Unknown identifier `fact2`","/-
+  Rule Concept: instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (doom_mongers : Entity)
+variable (sceptics : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_character : Entity → Entity → Prop)
+variable (avoids_argument : Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Fact Mapping from Context
+variable (fact1 : attacks_character doom_mongers sceptics)
+variable (fact2 : avoids_argument doom_mongers)
+
+-- Rule: If someone attacks the character/person instead of addressing the argument ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ attacker target,
+    (attacks_character attacker target ∧ avoids_argument attacker) → is_ad_hominem)
+  : is_ad_hominem :=
+  rule doom_mongers sceptics ⟨fact1, fact2⟩","/-
+  Rule Concept: instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (doom_mongers : Entity)
+variable (sceptics : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_character : Entity → Entity → Prop)
+variable (avoids_argument : Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If someone attacks the character/person instead of addressing the argument ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ attacker target,
+    (attacks_character attacker target ∧ avoids_argument attacker) → is_ad_hominem)
+  (fact1 : attacks_character doom_mongers sceptics)
+  (fact2 : avoids_argument doom_mongers)
+  : is_ad_hominem :=
+  rule doom_mongers sceptics ⟨fact1, fact2⟩","/-
+  Rule Concept: instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (doom_mongers : Entity)
+variable (sceptics : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_character : Entity → Entity → Prop)
+variable (avoids_argument : Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If someone attacks the character/person instead of addressing the argument ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ attacker target,
+    (attacks_character attacker target ∧ avoids_argument attacker) → is_ad_hominem)
+  (fact1 : attacks_character doom_mongers sceptics)
+  (fact2 : avoids_argument doom_mongers)
+  : is_ad_hominem :=
+  rule doom_mongers sceptics ⟨fact1, fact2⟩",,no,one example retained for this model,Deepseek-chat-v3.1 (T),success_example
+5,deepseek/deepseek-r1,option_1,ad hominem,ad hominem,True,fail,pass,1,yes,"unexpected identifier; expected command
+unexpected token ','; expected ':'","Looking at this task, I need to:
+
+1. Identify what predicates are needed for ad hominem fallacy
+2. Map the facts that would establish ad hominem
+3. Create the theorem that proves the fallacy
+
+For ad hominem, the key characteristics are:
+- Attacking the person rather than their claim
+- Not addressing the actual argument/topic
+- Using personal characteristics to discredit
+
+Here's the complete Lean4 code:
 
 
 /-
-  Rule Concept: Attempts to disprove an argument by attacking the character of the speaker.
+  Rule Concept: Ad hominem occurs when an argument attacks the person making a claim rather than addressing the claim itself.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (person : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_person : Entity → Entity → Prop) -- argument attacks a person
+variable (addresses_claim : Entity → Entity → Prop) -- argument addresses the actual claim/topic
+variable (makes_claim : Entity → Entity → Prop) -- person makes a claim about topic
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Fact Mapping from Context
+variable (fact1 : makes_claim person topic)
+variable (fact2 : attacks_person argument person)
+variable (fact3 : ¬addresses_claim argument topic)
+
+-- Rule: If an argument attacks the person making a claim AND does not address the claim itself ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg t p,
+    (makes_claim p t ∧ attacks_person arg p ∧ ¬addresses_claim arg t) → is_ad_hominem)
+  : is_ad_hominem :=
+  rule argument topic person ⟨fact1, fact2, fact3⟩","/-
+  Rule Concept: Ad hominem occurs when an argument attacks the person making a claim rather than addressing the claim itself.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (person : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_person : Entity → Entity → Prop) -- argument attacks a person
+variable (addresses_claim : Entity → Entity → Prop) -- argument addresses the actual claim/topic
+variable (makes_claim : Entity → Entity → Prop) -- person makes a claim about topic
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If an argument attacks the person making a claim AND does not address the claim itself ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg t p,
+    (makes_claim p t ∧ attacks_person arg p ∧ ¬addresses_claim arg t) → is_ad_hominem)
+  (fact1 : makes_claim person topic)
+  (fact2 : attacks_person argument person)
+  (fact3 : ¬addresses_claim argument topic)
+  : is_ad_hominem :=
+  rule argument topic person ⟨fact1, fact2, fact3⟩","/-
+  Rule Concept: Ad hominem occurs when an argument attacks the person making a claim rather than addressing the claim itself.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (person : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_person : Entity → Entity → Prop) -- argument attacks a person
+variable (addresses_claim : Entity → Entity → Prop) -- argument addresses the actual claim/topic
+variable (makes_claim : Entity → Entity → Prop) -- person makes a claim about topic
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If an argument attacks the person making a claim AND does not address the claim itself ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg t p,
+    (makes_claim p t ∧ attacks_person arg p ∧ ¬addresses_claim arg t) → is_ad_hominem)
+  (fact1 : makes_claim person topic)
+  (fact2 : attacks_person argument person)
+  (fact3 : ¬addresses_claim argument topic)
+  : is_ad_hominem :=
+  rule argument topic person ⟨fact1, fact2, fact3⟩",,no,one example retained for this model,Deepseek-r1 (T),success_example
+6,gemini-2.5-pro,option_3,ad hominem,ad hominem,True,fail,pass,1,yes,"unexpected identifier; expected command
+unexpected token; expected ':'
+unexpected identifier; expected '(', '[', '{' or '⦃'
+unexpected identifier; expected '(', '[', '{' or '⦃'
+Function expected at
+Function expected at
+Function expected at
+Function expected at
+Invalid `⟨...⟩` notation: The expected type `Prop` is not an inductive type","Looking at the provided setup, I need to create a theorem that proves `is_ad_hominem` using the given facts and the rule `h`.
+
+
+/-
+  Rule Concept: An ad hominem fallacy occurs when an argument attacks the person making a claim, or some irrelevant attribute of the person, rather than addressing the substance of the claim itself.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity) -- Obama's warning about climate change
+variable (speaker : Entity) -- President Obama
+variable (speaker_style : Entity) -- The manner or tone of the speaker
+
+-- Semantic Relations (Predicates)
+variable AttacksAttribute : Entity → Entity → Prop -- The text attacks an attribute of the speaker.
+variable IsIrrelevantToArgumentSubstance : Entity → Entity → Prop -- The attribute being attacked has no bearing on the validity of the argument.
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Fact Mapping from Context
+axiom fact1 : AttacksAttribute speaker_style speaker -- The text attacks the speaker's style by stating he sounds ""more like an Old Testament doomsayer than a president"".
+axiom fact2 : IsIrrelevantToArgumentSubstance speaker_style argument -- The tone or style in which a warning is delivered is irrelevant to the factual basis or logical validity of the warning itself.
+axiom h : (AttacksAttribute speaker_style speaker ∧ IsIrrelevantToArgumentSubstance speaker_style argument) → is_ad_hominem -- Attacking an irrelevant personal attribute instead of the argument is an ad hominem fallacy.
+
+-- Theorem: Prove that this is an ad hominem fallacy
+theorem prove_ad_hominem : is_ad_hominem :=
+  h ⟨fact1, fact2⟩","/-
+  Rule Concept: An ad hominem fallacy occurs when an argument attacks the person making a claim, or some irrelevant attribute of the person, rather than addressing the substance of the claim itself.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity) -- Obama's warning about climate change
+variable (speaker : Entity) -- President Obama
+variable (speaker_style : Entity) -- The manner or tone of the speaker
+
+-- Semantic Relations (Predicates)
+variable (attacks_attribute : Entity → Entity → Prop) -- The text attacks an attribute of the speaker.
+variable (is_irrelevant_to_argument_substance : Entity → Entity → Prop) -- The attribute being attacked has no bearing on the validity of the argument.
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Theorem: Prove that this is an ad hominem fallacy
+theorem prove_ad_hominem
+  (h : ∀ style spkr arg,
+    (attacks_attribute style spkr ∧ is_irrelevant_to_argument_substance style arg) → is_ad_hominem)
+  (fact1 : attacks_attribute speaker_style speaker)
+  (fact2 : is_irrelevant_to_argument_substance speaker_style argument)
+  : is_ad_hominem :=
+  h speaker_style speaker argument ⟨fact1, fact2⟩","/-
+  Rule Concept: An ad hominem fallacy occurs when an argument attacks the person making a claim, or some irrelevant attribute of the person, rather than addressing the substance of the claim itself.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity) -- Obama's warning about climate change
+variable (speaker : Entity) -- President Obama
+variable (speaker_style : Entity) -- The manner or tone of the speaker
+
+-- Semantic Relations (Predicates)
+variable (attacks_attribute : Entity → Entity → Prop) -- The text attacks an attribute of the speaker.
+variable (is_irrelevant_to_argument_substance : Entity → Entity → Prop) -- The attribute being attacked has no bearing on the validity of the argument.
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Theorem: Prove that this is an ad hominem fallacy
+theorem prove_ad_hominem
+  (h : ∀ style spkr arg,
+    (attacks_attribute style spkr ∧ is_irrelevant_to_argument_substance style arg) → is_ad_hominem)
+  (fact1 : attacks_attribute speaker_style speaker)
+  (fact2 : is_irrelevant_to_argument_substance speaker_style argument)
+  : is_ad_hominem :=
+  h speaker_style speaker argument ⟨fact1, fact2⟩",,no,one example retained for this model,Gemini 2.5 pro (T),success_example
+2,gemini-flash-non,option_1,ad hominem,ad hominem,True,fail,pass,1,yes,unexpected identifier; expected command,"/-
+  General template for Ad Hominem
+  Rule Concept: Instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (opponent_position : Entity)
+variable (opponent_person : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_argument : Entity → Prop)
+variable (is_opponent_position : Entity → Prop)
+variable (is_opponent_person : Entity → Prop)
+variable (attacks_person_instead_of_position : Entity → Entity → Prop)
+variable (addresses_position : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Fact Mapping from Context
+-- The term ""doom-mongers"" attacks the proponents of a certain viewpoint.
+-- There is an implicit argument or position (that the future is bleak or negative).
+
+lemma fact_opponent_position_exists : is_opponent_position opponent_position := sorry
+lemma fact_opponent_person_exists : is_opponent_person opponent_person := sorry
+lemma fact_term_attacks_person : attacks_person_instead_of_position argument opponent_person := sorry
+lemma fact_no_position_addressed : ¬addresses_position argument opponent_position := sorry
+
+-- Rule: If an argument attacks a person instead of their position and does not address the position ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg pos per,
+    (is_opponent_position pos ∧ 
+     is_opponent_person per ∧
+     attacks_person_instead_of_position arg per ∧
+     ¬addresses_position arg pos) →
+    is_ad_hominem)
+  (fact1 : is_opponent_position opponent_position)
+  (fact2 : is_opponent_person opponent_person)
+  (fact3 : attacks_person_instead_of_position argument opponent_person)
+  (fact4 : ¬addresses_position argument opponent_position)
+  : is_ad_hominem :=
+  rule argument opponent_position opponent_person ⟨fact1, fact2, fact3, fact4⟩","/-
+  General template for Ad Hominem
+  Rule Concept: Instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (opponent_position : Entity)
+variable (opponent_person : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_argument : Entity → Prop)
+variable (is_opponent_position : Entity → Prop)
+variable (is_opponent_person : Entity → Prop)
+variable (attacks_person_instead_of_position : Entity → Entity → Prop)
+variable (addresses_position : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If an argument attacks a person instead of their position and does not address the position ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg pos per,
+    (is_opponent_position pos ∧ 
+     is_opponent_person per ∧
+     attacks_person_instead_of_position arg per ∧
+     ¬addresses_position arg pos) →
+    is_ad_hominem)
+  (fact1 : is_opponent_position opponent_position)
+  (fact2 : is_opponent_person opponent_person)
+  (fact3 : attacks_person_instead_of_position argument opponent_person)
+  (fact4 : ¬addresses_position argument opponent_position)
+  : is_ad_hominem :=
+  rule argument opponent_position opponent_person ⟨fact1, fact2, fact3, fact4⟩","/-
+  General template for Ad Hominem
+  Rule Concept: Instead of addressing someone's argument or position, you irrelevantly attack the person or some aspect of the person who is making the argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (opponent_position : Entity)
+variable (opponent_person : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_argument : Entity → Prop)
+variable (is_opponent_position : Entity → Prop)
+variable (is_opponent_person : Entity → Prop)
+variable (attacks_person_instead_of_position : Entity → Entity → Prop)
+variable (addresses_position : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If an argument attacks a person instead of their position and does not address the position ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg pos per,
+    (is_opponent_position pos ∧ 
+     is_opponent_person per ∧
+     attacks_person_instead_of_position arg per ∧
+     ¬addresses_position arg pos) →
+    is_ad_hominem)
+  (fact1 : is_opponent_position opponent_position)
+  (fact2 : is_opponent_person opponent_person)
+  (fact3 : attacks_person_instead_of_position argument opponent_person)
+  (fact4 : ¬addresses_position argument opponent_position)
+  : is_ad_hominem :=
+  rule argument opponent_position opponent_person ⟨fact1, fact2, fact3, fact4⟩",,no,one example retained for this model,Gemini 2.5 flash (NT),success_example
+5,gemini-flash-thinking,option_1,ad hominem,ad hominem,True,fail,pass,1,yes,"Invalid projection: Projections cannot be used on functions
+Invalid projection: Projections cannot be used on functions
+Invalid projection: Projections cannot be used on functions
+Invalid projection: Projections cannot be used on functions","/-
+  Rule Concept: An ad hominem fallacy occurs when an argument is rejected or discredited based on an irrelevant attack on the person making the argument, rather than addressing the substance of the argument itself. This can involve attacking their character, motives, or other personal attributes.
 -/
 
 -- Entity Domain
@@ -12,46 +534,50 @@ variable {Entity : Type}
 
 -- Key Entities from the text
 variable (speaker : Entity)
-variable (argument_made : Entity)
-variable (attack_on_speaker_character : Entity)
+variable (target_group : Entity)
+variable (derogatory_label : Entity)
+variable (sarcastic_remark : Entity)
+variable (potential_argument_or_position : Entity) -- Represents any potential argument from the group
 
 -- Semantic Relations (Predicates)
-variable (is_speaker : Entity → Prop)
-variable (makes_argument : Entity → Prop)
-variable (describes_speaker_negatively : Entity → Prop)
-variable (undermines_argument_via_character : Entity → Prop)
-variable (is_relevant_to_argument_validity : Entity → Prop)
+variable (applies_derogatory_label : Entity → Entity → Prop)
+variable (makes_sarcastic_comment : Entity → Entity → Prop)
+variable (attacks_aspect_of_target : Entity → Entity → Prop)
+variable (is_irrelevant_to_substance : Entity → Entity → Prop)
 
 -- Goal Proposition
-variable (is_fallacy_of_credibility : Prop)
+variable (is_ad_hominem : Prop)
 
 -- Fact Mapping from Context
-variable (obama : Entity)
-variable (obama_speech_argument : Entity)
-variable (doomsayer_comparison : Entity)
+-- The speaker applies the derogatory label ""bleeding-heart liberals"" to the target group.
+axiom fact_applies_derogatory_label : applies_derogatory_label speaker target_group
+-- The speaker makes a sarcastic comment ""They certainly have a flair for the ironic"" about the target group.
+axiom fact_makes_sarcastic_comment : makes_sarcastic_comment speaker target_group
+-- Both the label and the comment attack an aspect of the target group (their perceived character/nature) rather than a specific argument.
+axiom fact_attacks_aspect_of_target : attacks_aspect_of_target derogatory_label target_group ∧ attacks_aspect_of_target sarcastic_remark target_group
+-- These attacks are irrelevant to the substance of any potential argument or position the target group might hold.
+axiom fact_irrelevant_to_substance : is_irrelevant_to_substance (derogatory_label) potential_argument_or_position ∧ is_irrelevant_to_substance (sarcastic_remark) potential_argument_or_position
 
-axiom obama_is_speaker : is_speaker obama
-axiom obama_makes_argument : makes_argument obama_speech_argument
-axiom doomsayer_describes_negatively : describes_speaker_negatively doomsayer_comparison
-axiom doomsayer_undermines_argument : undermines_argument_via_character doomsayer_comparison
-axiom doomsayer_not_relevant_to_validity : ¬ is_relevant_to_argument_validity doomsayer_comparison
-
--- Rule: If a speaker makes an argument AND there is a negative characterization of the speaker 
--- AND this characterization is used to undermine the argument AND the characterization is not 
--- relevant to the argument's validity ⇒ fallacy of credibility
-theorem prove_fallacy_of_credibility
-  (rule : ∀ spkr arg attack,
-    (is_speaker spkr ∧ 
-     makes_argument arg ∧ 
-     describes_speaker_negatively attack ∧
-     undermines_argument_via_character attack ∧
-     ¬ is_relevant_to_argument_validity attack) → 
-    is_fallacy_of_credibility)
-  : is_fallacy_of_credibility :=
-  rule obama obama_speech_argument doomsayer_comparison 
-    ⟨obama_is_speaker, obama_makes_argument, doomsayer_describes_negatively, 
-     doomsayer_undermines_argument, doomsayer_not_relevant_to_validity⟩","/-
-  Rule Concept: Attempts to disprove an argument by attacking the character of the speaker.
+-- Rule: If a speaker applies derogatory labels and makes sarcastic comments that attack the target
+-- rather than addressing substance, and these attacks are irrelevant to any argument, then it is ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ s tg dl sr arg,
+    (applies_derogatory_label s tg ∧ 
+     makes_sarcastic_comment s tg ∧
+     attacks_aspect_of_target dl tg ∧ 
+     attacks_aspect_of_target sr tg ∧
+     is_irrelevant_to_substance dl arg ∧ 
+     is_irrelevant_to_substance sr arg) → 
+    is_ad_hominem)
+  : is_ad_hominem :=
+  rule speaker target_group derogatory_label sarcastic_remark potential_argument_or_position
+    ⟨fact_applies_derogatory_label, 
+     fact_makes_sarcastic_comment, 
+     fact_attacks_aspect_of_target.1, 
+     fact_attacks_aspect_of_target.2,
+     fact_irrelevant_to_substance.1, 
+     fact_irrelevant_to_substance.2⟩","/-
+  Rule Concept: An ad hominem fallacy occurs when an argument is rejected or discredited based on an irrelevant attack on the person making the argument, rather than addressing the substance of the argument itself. This can involve attacking their character, motives, or other personal attributes.
 -/
 
 -- Entity Domain
@@ -59,667 +585,92 @@ variable {Entity : Type}
 
 -- Key Entities from the text
 variable (speaker : Entity)
-variable (argument_made : Entity)
-variable (attack_on_speaker_character : Entity)
+variable (target_group : Entity)
+variable (derogatory_label : Entity)
+variable (sarcastic_remark : Entity)
+variable (potential_argument_or_position : Entity)
 
 -- Semantic Relations (Predicates)
-variable (is_speaker : Entity → Prop)
-variable (makes_argument : Entity → Prop)
-variable (describes_speaker_negatively : Entity → Prop)
-variable (undermines_argument_via_character : Entity → Prop)
-variable (is_relevant_to_argument_validity : Entity → Prop)
+variable (applies_derogatory_label : Entity → Entity → Prop)
+variable (makes_sarcastic_comment : Entity → Entity → Prop)
+variable (attacks_aspect_of_target : Entity → Entity → Prop)
+variable (is_irrelevant_to_substance : Entity → Entity → Prop)
 
 -- Goal Proposition
-variable (is_fallacy_of_credibility : Prop)
+variable (is_ad_hominem : Prop)
 
--- Fact Mapping from Context
-variable (obama : Entity)
-variable (obama_speech_argument : Entity)
-variable (doomsayer_comparison : Entity)
-
-variable (obama_is_speaker : is_speaker obama)
-variable (obama_makes_argument : makes_argument obama_speech_argument)
-variable (doomsayer_describes_negatively : describes_speaker_negatively doomsayer_comparison)
-variable (doomsayer_undermines_argument : undermines_argument_via_character doomsayer_comparison)
-variable (doomsayer_not_relevant_to_validity : ¬ is_relevant_to_argument_validity doomsayer_comparison)
-
--- Rule: If a speaker makes an argument AND there is a negative characterization of the speaker 
--- AND this characterization is used to undermine the argument AND the characterization is not 
--- relevant to the argument's validity ⇒ fallacy of credibility
-theorem prove_fallacy_of_credibility
-  (rule : ∀ spkr arg attack,
-    (is_speaker spkr ∧ 
-     makes_argument arg ∧ 
-     describes_speaker_negatively attack ∧
-     undermines_argument_via_character attack ∧
-     ¬ is_relevant_to_argument_validity attack) → 
-    is_fallacy_of_credibility)
-  : is_fallacy_of_credibility :=
-  rule obama obama_speech_argument doomsayer_comparison 
-    ⟨obama_is_speaker, obama_makes_argument, doomsayer_describes_negatively, 
-     doomsayer_undermines_argument, doomsayer_not_relevant_to_validity⟩","/-
-  Rule Concept: Attempts to disprove an argument by attacking the character of the speaker.
+-- Rule: If a speaker applies derogatory labels and makes sarcastic comments that attack the target
+-- rather than addressing substance, and these attacks are irrelevant to any argument, then it is ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ s tg dl sr arg,
+    (applies_derogatory_label s tg ∧ 
+     makes_sarcastic_comment s tg ∧
+     attacks_aspect_of_target dl tg ∧ 
+     attacks_aspect_of_target sr tg ∧
+     is_irrelevant_to_substance dl arg ∧ 
+     is_irrelevant_to_substance sr arg) → 
+    is_ad_hominem)
+  (fact1 : applies_derogatory_label speaker target_group)
+  (fact2 : makes_sarcastic_comment speaker target_group)
+  (fact3 : attacks_aspect_of_target derogatory_label target_group)
+  (fact4 : attacks_aspect_of_target sarcastic_remark target_group)
+  (fact5 : is_irrelevant_to_substance derogatory_label potential_argument_or_position)
+  (fact6 : is_irrelevant_to_substance sarcastic_remark potential_argument_or_position)
+  : is_ad_hominem :=
+  rule speaker target_group derogatory_label sarcastic_remark potential_argument_or_position
+    ⟨fact1, fact2, fact3, fact4, fact5, fact6⟩","/-
+  Rule Concept: An ad hominem fallacy occurs when an argument is rejected or discredited based on an irrelevant attack on the person making the argument, rather than addressing the substance of the argument itself. This can involve attacking their character, motives, or other personal attributes.
 -/
 
 -- Entity Domain
 variable {Entity : Type}
 
 -- Key Entities from the text
-variable (obama : Entity)
-variable (obama_speech_argument : Entity)
-variable (doomsayer_comparison : Entity)
+variable (speaker : Entity)
+variable (target_group : Entity)
+variable (derogatory_label : Entity)
+variable (sarcastic_remark : Entity)
+variable (potential_argument_or_position : Entity)
 
 -- Semantic Relations (Predicates)
-variable (is_speaker : Entity → Prop)
-variable (makes_argument : Entity → Prop)
-variable (describes_speaker_negatively : Entity → Prop)
-variable (undermines_argument_via_character : Entity → Prop)
-variable (is_relevant_to_argument_validity : Entity → Prop)
+variable (applies_derogatory_label : Entity → Entity → Prop)
+variable (makes_sarcastic_comment : Entity → Entity → Prop)
+variable (attacks_aspect_of_target : Entity → Entity → Prop)
+variable (is_irrelevant_to_substance : Entity → Entity → Prop)
 
 -- Goal Proposition
-variable (is_fallacy_of_credibility : Prop)
+variable (is_ad_hominem : Prop)
 
--- Rule: If a speaker makes an argument AND there is a negative characterization of the speaker 
--- AND this characterization is used to undermine the argument AND the characterization is not 
--- relevant to the argument's validity ⇒ fallacy of credibility
-theorem prove_fallacy_of_credibility
-  (rule : ∀ spkr arg attack,
-    (is_speaker spkr ∧ 
-     makes_argument arg ∧ 
-     describes_speaker_negatively attack ∧
-     undermines_argument_via_character attack ∧
-     ¬ is_relevant_to_argument_validity attack) → 
-    is_fallacy_of_credibility)
-  (obama_is_speaker : is_speaker obama)
-  (obama_makes_argument : makes_argument obama_speech_argument)
-  (doomsayer_describes_negatively : describes_speaker_negatively doomsayer_comparison)
-  (doomsayer_undermines_argument : undermines_argument_via_character doomsayer_comparison)
-  (doomsayer_not_relevant_to_validity : ¬ is_relevant_to_argument_validity doomsayer_comparison)
-  : is_fallacy_of_credibility :=
-  rule obama obama_speech_argument doomsayer_comparison 
-    ⟨obama_is_speaker, obama_makes_argument, doomsayer_describes_negatively, 
-     doomsayer_undermines_argument, doomsayer_not_relevant_to_validity⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-14,gemini-2.5-flash,option_3,false dilemma,ad populum,False,fail,pass,4,yes,"temp_verify/tmpvwr406lb.lean:52:7: error(lean.unknownIdentifier): Unknown identifier `argument`
-temp_verify/tmpvwr406lb.lean:52:16: error(lean.unknownIdentifier): Unknown identifier `option1`
-temp_verify/tmpvwr406lb.lean:52:24: error(lean.unknownIdentifier): Unknown identifier `alternative_options`","/-
-  Rule Concept: Presenting only two options or sides as exhaustive and mutually exclusive, when in fact more alternatives exist, or there is a spectrum of possibilities.
--/
+-- Rule: If a speaker applies derogatory labels and makes sarcastic comments that attack the target
+-- rather than addressing substance, and these attacks are irrelevant to any argument, then it is ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ s tg dl sr arg,
+    (applies_derogatory_label s tg ∧ 
+     makes_sarcastic_comment s tg ∧
+     attacks_aspect_of_target dl tg ∧ 
+     attacks_aspect_of_target sr tg ∧
+     is_irrelevant_to_substance dl arg ∧ 
+     is_irrelevant_to_substance sr arg) → 
+    is_ad_hominem)
+  (fact1 : applies_derogatory_label speaker target_group)
+  (fact2 : makes_sarcastic_comment speaker target_group)
+  (fact3 : attacks_aspect_of_target derogatory_label target_group)
+  (fact4 : attacks_aspect_of_target sarcastic_remark target_group)
+  (fact5 : is_irrelevant_to_substance derogatory_label potential_argument_or_position)
+  (fact6 : is_irrelevant_to_substance sarcastic_remark potential_argument_or_position)
+  : is_ad_hominem :=
+  rule speaker target_group derogatory_label sarcastic_remark potential_argument_or_position
+    ⟨fact1, fact2, fact3, fact4, fact5, fact6⟩",,no,one example retained for this model,Gemini 2.5 flash (T),success_example
+21,moonshotai/kimi-k2-thinking,option_1,appeal to emotion,appeal to emotion,True,fail,pass,1,yes,"unexpected identifier; expected command
+Function expected at
+unexpected token ':'; expected command","Looking at this problem, I need to create a Lean4 formalization for the ""appeal to emotion"" fallacy. This fallacy occurs when an argument manipulates emotions rather than using logical reasoning.
 
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (argument : Entity)
-variable (option1 : Entity) -- ""It"" requiring 40-50% land, leading to catastrophe
-variable (option2 : Entity) -- Implied alternative: ""It"" doesn't happen, or fails, avoiding catastrophe but losing ""it"".
-variable (alternative_options : Entity) -- The unmentioned spectrum of possibilities.
-variable (stated_consequence : Entity)
-
--- Semantic Relations (Predicates)
-variable (presents_as_only_option : Entity → Entity → Prop)
-variable (leads_to : Entity → Entity → Prop)
-variable (are_mutually_exclusive : Entity → Entity → Prop)
-variable (exist : Entity → Prop)
-variable (is_valid_alternative : Entity → Entity → Prop)
-
--- Goal Proposition
-variable (is_false_dilemma : Prop)
-
--- Fact Mapping from Context
--- The argument presents Option 1: ""It"" requires 40-50% arable land, leading to catastrophe.
-axiom fact_argument_presents_option1_as_primary : presents_as_only_option argument option1
-axiom fact_option1_is_massive_land_use_scenario : True -- Representing ""40-50% of arable land""
-axiom fact_option1_leads_to_stated_consequence : leads_to option1 stated_consequence
-axiom fact_stated_consequence_is_global_hunger_and_ecological_damage : True
-
--- The argument implies that if Option 1 leads to catastrophe, then it cannot be chosen, leaving an implicit Option 2 (e.g., ""it"" doesn't happen).
--- The structure sets up a forced choice between this catastrophic scenario and presumably abandoning 'it'.
--- The crucial part is that there exist valid alternative options that are not presented.
-axiom fact_alternative_options_exist : exist alternative_options
-axiom fact_alternative_options_are_valid : is_valid_alternative alternative_options option1
-
--- These alternative options are not presented or acknowledged by the argument.
-axiom fact_argument_does_not_present_alternatives : ¬ (presents_as_only_option argument alternative_options)
-
--- Rule: If an argument presents limited options as the only choices, 
--- but valid alternatives exist that are not presented, then it's a false dilemma
-theorem prove_false_dilemma
-  (rule : ∀ arg opt1 alt_opts,
-    (presents_as_only_option arg opt1 ∧
-     exist alt_opts ∧
-     is_valid_alternative alt_opts opt1 ∧
-     ¬presents_as_only_option arg alt_opts) →
-    is_false_dilemma)
-  : is_false_dilemma :=
-  rule argument option1 alternative_options 
-    ⟨fact_argument_presents_option1_as_primary,
-     fact_alternative_options_exist,
-     fact_alternative_options_are_valid,
-     fact_argument_does_not_present_alternatives⟩","/-
-  Rule Concept: Presenting only two options or sides as exhaustive and mutually exclusive, when in fact more alternatives exist, or there is a spectrum of possibilities.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (argument : Entity)
-variable (option1 : Entity) -- ""It"" requiring 40-50% land, leading to catastrophe
-variable (option2 : Entity) -- Implied alternative: ""It"" doesn't happen, or fails, avoiding catastrophe but losing ""it"".
-variable (alternative_options : Entity) -- The unmentioned spectrum of possibilities.
-variable (stated_consequence : Entity)
-
--- Semantic Relations (Predicates)
-variable (presents_as_only_option : Entity → Entity → Prop)
-variable (leads_to : Entity → Entity → Prop)
-variable (are_mutually_exclusive : Entity → Entity → Prop)
-variable (exist : Entity → Prop)
-variable (is_valid_alternative : Entity → Entity → Prop)
-
--- Goal Proposition
-variable (is_false_dilemma : Prop)
-
--- Fact Mapping from Context
--- The argument presents Option 1: ""It"" requires 40-50% arable land, leading to catastrophe.
-variable (fact_argument_presents_option1_as_primary : presents_as_only_option argument option1)
-variable (fact_option1_is_massive_land_use_scenario : True) -- Representing ""40-50% of arable land""
-variable (fact_option1_leads_to_stated_consequence : leads_to option1 stated_consequence)
-variable (fact_stated_consequence_is_global_hunger_and_ecological_damage : True)
-
--- The argument implies that if Option 1 leads to catastrophe, then it cannot be chosen, leaving an implicit Option 2 (e.g., ""it"" doesn't happen).
--- The structure sets up a forced choice between this catastrophic scenario and presumably abandoning 'it'.
--- The crucial part is that there exist valid alternative options that are not presented.
-variable (fact_alternative_options_exist : exist alternative_options)
-variable (fact_alternative_options_are_valid : is_valid_alternative alternative_options option1)
-
--- These alternative options are not presented or acknowledged by the argument.
-variable (fact_argument_does_not_present_alternatives : ¬ (presents_as_only_option argument alternative_options))
-
--- Rule: If an argument presents limited options as the only choices, 
--- but valid alternatives exist that are not presented, then it's a false dilemma
-theorem prove_false_dilemma
-  (rule : ∀ arg opt1 alt_opts,
-    (presents_as_only_option arg opt1 ∧
-     exist alt_opts ∧
-     is_valid_alternative alt_opts opt1 ∧
-     ¬presents_as_only_option arg alt_opts) →
-    is_false_dilemma)
-  : is_false_dilemma :=
-  rule argument option1 alternative_options 
-    ⟨fact_argument_presents_option1_as_primary,
-     fact_alternative_options_exist,
-     fact_alternative_options_are_valid,
-     fact_argument_does_not_present_alternatives⟩","/-
-  Rule Concept: Presenting only two options or sides as exhaustive and mutually exclusive, when in fact more alternatives exist, or there is a spectrum of possibilities.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (argument : Entity)
-variable (option1 : Entity) -- ""It"" requiring 40-50% land, leading to catastrophe
-variable (option2 : Entity) -- Implied alternative: ""It"" doesn't happen, or fails, avoiding catastrophe but losing ""it"".
-variable (alternative_options : Entity) -- The unmentioned spectrum of possibilities.
-variable (stated_consequence : Entity)
-
--- Semantic Relations (Predicates)
-variable (presents_as_only_option : Entity → Entity → Prop)
-variable (leads_to : Entity → Entity → Prop)
-variable (are_mutually_exclusive : Entity → Entity → Prop)
-variable (exist : Entity → Prop)
-variable (is_valid_alternative : Entity → Entity → Prop)
-
--- Goal Proposition
-variable (is_false_dilemma : Prop)
-
--- Rule: If an argument presents limited options as the only choices, 
--- but valid alternatives exist that are not presented, then it's a false dilemma
-theorem prove_false_dilemma
-  (rule : ∀ arg opt1 alt_opts,
-    (presents_as_only_option arg opt1 ∧
-     exist alt_opts ∧
-     is_valid_alternative alt_opts opt1 ∧
-     ¬presents_as_only_option arg alt_opts) →
-    is_false_dilemma)
-  (fact_argument_presents_option1_as_primary : presents_as_only_option argument option1)
-  (fact_alternative_options_exist : exist alternative_options)
-  (fact_alternative_options_are_valid : is_valid_alternative alternative_options option1)
-  (fact_argument_does_not_present_alternatives : ¬presents_as_only_option argument alternative_options)
-  : is_false_dilemma :=
-  rule argument option1 alternative_options 
-    ⟨fact_argument_presents_option1_as_primary,
-     fact_alternative_options_exist,
-     fact_alternative_options_are_valid,
-     fact_argument_does_not_present_alternatives⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-64,gemini-flash-thinking,option_3,false causality,fallacy of extension,False,fail,pass,4,yes,"Application type mismatch: The argument
-Application type mismatch: The argument
-Application type mismatch: The argument
-Application type mismatch: The argument
-Invalid `⟨...⟩` notation: The expected type `?m.1 → ?m.1 → Prop` is not an inductive type","/-
-  Rule Concept: Statement that jumps to a conclusion implying a causal relationship without supporting evidence, or asserting an unsupported intention as the cause of an action.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (government_action : Entity)
-variable (fear_effect : Entity)
-variable (meaningless_records : Entity)
-variable (non_existent_parameter : Entity)
-
--- Semantic Relations (Predicates)
-variable (causes : Entity → Entity → Prop)
-variable (is_intended_outcome : Entity → Entity → Prop)
-variable (has_evidence_for_causation : Entity → Entity → Prop)
-variable (is_fact : Entity → Prop)
-
--- Goal Proposition
-variable (is_false_causality : Prop)
-
--- Fact Mapping from Context
-def hyping_action := government_action
-
--- The text implies a causal link: hyping_action leads to fear_effect.
-axiom alleged_causal_link : causes hyping_action fear_effect
-
--- The text also states this is the *intended* outcome: 'in order to frighten us'.
-axiom alleged_intended_outcome : is_intended_outcome fear_effect hyping_action
-
--- The specific nature of the hyping action relies on unsubstantiated premises: 'meaningless records' and 'parameter that does not exist'.
-axiom description_of_hyping_action : hyping_action = (meaningless_records ∧ non_existent_parameter)
-axiom meaningless_records_not_proven : ¬ is_fact meaningless_records
-axiom non_existent_parameter_not_proven : ¬ is_fact non_existent_parameter
-
--- Crucially, no evidence is given for this causal link or the alleged intent.
-axiom no_evidence_for_causation : ¬ has_evidence_for_causation hyping_action fear_effect
-
--- A fallacy of false causality occurs when a causal relationship is asserted without sufficient evidence.
-axiom definition_of_false_causality : (∃ (A B : Entity), causes A B ∧ ¬ has_evidence_for_causation A B) → is_false_causality
-
--- Theorem: Prove that this is a false causality fallacy
-theorem prove_false_causality
-  : is_false_causality :=
-  definition_of_false_causality ⟨hyping_action, fear_effect, ⟨alleged_causal_link, no_evidence_for_causation⟩⟩","/-
-  Rule Concept: Statement that jumps to a conclusion implying a causal relationship without supporting evidence, or asserting an unsupported intention as the cause of an action.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (government_action : Entity)
-variable (fear_effect : Entity)
-variable (meaningless_records : Entity)
-variable (non_existent_parameter : Entity)
-
--- Semantic Relations (Predicates)
-variable (causes : Entity → Entity → Prop)
-variable (is_intended_outcome : Entity → Entity → Prop)
-variable (has_evidence_for_causation : Entity → Entity → Prop)
-variable (is_fact : Entity → Prop)
-
--- Goal Proposition
-variable (is_false_causality : Prop)
-
--- Fact Mapping from Context
-def hyping_action := government_action
-
--- The text implies a causal link: hyping_action leads to fear_effect.
-axiom alleged_causal_link : causes hyping_action fear_effect
-
--- The text also states this is the *intended* outcome: 'in order to frighten us'.
-axiom alleged_intended_outcome : is_intended_outcome fear_effect hyping_action
-
--- Crucially, no evidence is given for this causal link or the alleged intent.
-axiom no_evidence_for_causation : ¬ has_evidence_for_causation hyping_action fear_effect
-
--- A fallacy of false causality occurs when a causal relationship is asserted without sufficient evidence.
-axiom definition_of_false_causality : (∃ (A B : Entity), causes A B ∧ ¬ has_evidence_for_causation A B) → is_false_causality
-
--- Theorem: Prove that this is a false causality fallacy
-theorem prove_false_causality
-  : is_false_causality :=
-  definition_of_false_causality ⟨hyping_action, fear_effect, And.intro alleged_causal_link no_evidence_for_causation⟩","/-
-  Rule Concept: Statement that jumps to a conclusion implying a causal relationship without supporting evidence, or asserting an unsupported intention as the cause of an action.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (government_action : Entity)
-variable (fear_effect : Entity)
-variable (meaningless_records : Entity)
-variable (non_existent_parameter : Entity)
-
--- Semantic Relations (Predicates)
-variable (causes : Entity → Entity → Prop)
-variable (is_intended_outcome : Entity → Entity → Prop)
-variable (has_evidence_for_causation : Entity → Entity → Prop)
-variable (is_fact : Entity → Prop)
-
--- Goal Proposition
-variable (is_false_causality : Prop)
-
--- Theorem: Prove that this is a false causality fallacy
-theorem prove_false_causality
-  (rule : ∀ (A B : Entity), 
-    (causes A B ∧ ¬ has_evidence_for_causation A B) → is_false_causality)
-  (fact1 : causes government_action fear_effect)
-  (fact2 : is_intended_outcome fear_effect government_action)
-  (fact3 : ¬ has_evidence_for_causation government_action fear_effect)
-  : is_false_causality :=
-  rule government_action fear_effect ⟨fact1, fact3⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-77,moonshotai/kimi-k2-thinking,option_3,fallacy of logic,fallacy of logic,True,fail,pass,4,yes,"unexpected identifier; expected command
-unexpected token '.'; expected command","Looking at this fallacy, I need to identify the logical structure error. The argument moves from ""the 2007 model failed"" to ""polar bears are not on the way to extinction"" - this is a logical leap that doesn't follow proper inference rules.
+Let me construct the complete Lean4 code following the pattern from the examples:
 
 
 /-
-  Rule Concept: An error in the logical structure of an argument.
-  This represents a case where the conclusion does not logically follow from the premise.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (premise : Entity) -- failure of the 2007 model
-variable (conclusion : Entity) -- polar bears are not on the way to extinction
-
--- Semantic Relations (Predicates)
-variable (stated_as_premise : Entity → Prop) -- Something is used as a premise
-variable (stated_as_conclusion : Entity → Prop) -- Something is stated as conclusion
-variable (logically_follows : Entity → Entity → Prop) -- Conclusion follows from premise
-
--- Goal Proposition
-variable (is_fallacy_of_logic : Prop)
-
--- Fact Mapping from Context
--- The failure of one model is used as a premise
-variable (fact1 : stated_as_premise premise)
--- The extinction claim is stated as conclusion
-variable (fact2 : stated_as_conclusion conclusion)
--- But the conclusion does not logically follow from the premise
-variable (fact3 : ¬logically_follows premise conclusion)
-
--- Rule: If a premise is stated, a conclusion is drawn, but the conclusion 
--- does not logically follow from the premise, then it's a fallacy of logic
-theorem prove_fallacy_of_logic_0
-  (rule : ∀ p c,
-    (stated_as_premise p ∧ stated_as_conclusion c ∧ ¬logically_follows p c) → 
-    is_fallacy_of_logic)
-  : is_fallacy_of_logic :=
-  rule premise conclusion ⟨fact1, fact2, fact3⟩","/-
-  Rule Concept: An error in the logical structure of an argument.
-  This represents a case where the conclusion does not logically follow from the premise.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (premise : Entity) -- failure of the 2007 model
-variable (conclusion : Entity) -- polar bears are not on the way to extinction
-
--- Semantic Relations (Predicates)
-variable (stated_as_premise : Entity → Prop) -- Something is used as a premise
-variable (stated_as_conclusion : Entity → Prop) -- Something is stated as conclusion
-variable (logically_follows : Entity → Entity → Prop) -- Conclusion follows from premise
-
--- Goal Proposition
-variable (is_fallacy_of_logic : Prop)
-
--- Fact Mapping from Context
--- The failure of one model is used as a premise
-variable (fact1 : stated_as_premise premise)
--- The extinction claim is stated as conclusion
-variable (fact2 : stated_as_conclusion conclusion)
--- But the conclusion does not logically follow from the premise
-variable (fact3 : ¬logically_follows premise conclusion)
-
--- Rule: If a premise is stated, a conclusion is drawn, but the conclusion 
--- does not logically follow from the premise, then it's a fallacy of logic
-theorem prove_fallacy_of_logic_0
-  (rule : ∀ p c,
-    (stated_as_premise p ∧ stated_as_conclusion c ∧ ¬logically_follows p c) → 
-    is_fallacy_of_logic)
-  : is_fallacy_of_logic :=
-  rule premise conclusion ⟨fact1, fact2, fact3⟩","/-
-  Rule Concept: An error in the logical structure of an argument.
-  This represents a case where the conclusion does not logically follow from the premise.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (premise : Entity) -- failure of the 2007 model
-variable (conclusion : Entity) -- polar bears are not on the way to extinction
-
--- Semantic Relations (Predicates)
-variable (stated_as_premise : Entity → Prop) -- Something is used as a premise
-variable (stated_as_conclusion : Entity → Prop) -- Something is stated as conclusion
-variable (logically_follows : Entity → Entity → Prop) -- Conclusion follows from premise
-
--- Goal Proposition
-variable (is_fallacy_of_logic : Prop)
-
--- Fact Mapping from Context
--- The failure of one model is used as a premise
-variable (fact1 : stated_as_premise premise)
--- The extinction claim is stated as conclusion
-variable (fact2 : stated_as_conclusion conclusion)
--- But the conclusion does not logically follow from the premise
-variable (fact3 : ¬logically_follows premise conclusion)
-
--- Rule: If a premise is stated, a conclusion is drawn, but the conclusion 
--- does not logically follow from the premise, then it's a fallacy of logic
-theorem prove_fallacy_of_logic_0
-  (rule : ∀ p c,
-    (stated_as_premise p ∧ stated_as_conclusion c ∧ ¬logically_follows p c) → 
-    is_fallacy_of_logic)
-  (h1 : stated_as_premise premise)
-  (h2 : stated_as_conclusion conclusion)
-  (h3 : ¬logically_follows premise conclusion)
-  : is_fallacy_of_logic :=
-  rule premise conclusion ⟨h1, h2, h3⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-127,qwen/qwen3-235b-a22b-thinking-2507,option_3,appeal to emotion,intentional,False,fail,pass,4,yes,"temp_verify/tmp4ubo_0os.lean:26:17: error(lean.inferBinderTypeFailed): Failed to infer type of binder `discussion`
-
-Note: All parameter types and holes (e.g., `_`) in the header of a theorem are resolved before the proof is processed; information from the proof cannot be used to infer what these values should be
-temp_verify/tmp4ubo_0os.lean:35:23: error(lean.unknownIdentifier): Unknown identifier `climate_change_discussion`","/-
-  Rule Concept: Manipulating the recipient's emotions to win an argument rather than using logical reasoning.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (term_repurposed : Entity)
-variable (climate_change_discussion : Entity)
-
--- Semantic Relations (Predicates)
-variable (carries_negative_connotation : Entity → Prop)
-variable (provokes_emotional_response : Entity → Prop)
-variable (substitutes_logical_analysis : Entity → Prop)
-
--- Goal Proposition
-variable (is_appeal_to_emotion : Prop)
-
--- Fact Mapping from Context
--- The term 'repurposed' is used with manipulative intent to evoke distrust, as in 'weather disasters... have been repurposed to support the climate change narrative,' implying deceptive intent without evidentiary justification.
-
--- Theorem: Prove that the argument commits appeal to emotion fallacy
-theorem prove_appeal_to_emotion
-  (rule : ∀ term discussion,
-    (carries_negative_connotation term ∧ 
-     provokes_emotional_response term ∧
-     substitutes_logical_analysis term) →
-    is_appeal_to_emotion)
-  (fact1 : carries_negative_connotation term_repurposed)
-  (fact2 : provokes_emotional_response term_repurposed)
-  (fact3 : substitutes_logical_analysis term_repurposed)
-  : is_appeal_to_emotion :=
-  rule term_repurposed climate_change_discussion ⟨fact1, fact2, fact3⟩","/-
-  Rule Concept: Manipulating the recipient's emotions to win an argument rather than using logical reasoning.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (term_repurposed : Entity)
-variable (climate_change_discussion : Entity)
-
--- Semantic Relations (Predicates)
-variable (carries_negative_connotation : Entity → Prop)
-variable (provokes_emotional_response : Entity → Prop)
-variable (substitutes_logical_analysis : Entity → Prop)
-
--- Goal Proposition
-variable (is_appeal_to_emotion : Prop)
-
--- Fact Mapping from Context
--- The term 'repurposed' is used with manipulative intent to evoke distrust, as in 'weather disasters... have been repurposed to support the climate change narrative,' implying deceptive intent without evidentiary justification.
-
--- Theorem: Prove that the argument commits appeal to emotion fallacy
-theorem prove_appeal_to_emotion
-  (rule : ∀ (term : Entity) (discussion : Entity),
-    (carries_negative_connotation term ∧ 
-     provokes_emotional_response term ∧
-     substitutes_logical_analysis term) →
-    is_appeal_to_emotion)
-  (fact1 : carries_negative_connotation term_repurposed)
-  (fact2 : provokes_emotional_response term_repurposed)
-  (fact3 : substitutes_logical_analysis term_repurposed)
-  : is_appeal_to_emotion :=
-  rule term_repurposed climate_change_discussion ⟨fact1, fact2, fact3⟩","/-
-  Rule Concept: Manipulating the recipient's emotions to win an argument rather than using logical reasoning.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (term_repurposed : Entity)
-variable (climate_change_discussion : Entity)
-
--- Semantic Relations (Predicates)
-variable (carries_negative_connotation : Entity → Prop)
-variable (provokes_emotional_response : Entity → Prop)
-variable (substitutes_logical_analysis : Entity → Prop)
-
--- Goal Proposition
-variable (is_appeal_to_emotion : Prop)
-
--- Fact Mapping from Context
--- The term 'repurposed' is used with manipulative intent to evoke distrust, as in 'weather disasters... have been repurposed to support the climate change narrative,' implying deceptive intent without evidentiary justification.
-
--- Theorem: Prove that the argument commits appeal to emotion fallacy
-theorem prove_appeal_to_emotion
-  (rule : ∀ (term : Entity),
-    (carries_negative_connotation term ∧ 
-     provokes_emotional_response term ∧
-     substitutes_logical_analysis term) →
-    is_appeal_to_emotion)
-  (fact1 : carries_negative_connotation term_repurposed)
-  (fact2 : provokes_emotional_response term_repurposed)
-  (fact3 : substitutes_logical_analysis term_repurposed)
-  : is_appeal_to_emotion :=
-  rule term_repurposed ⟨fact1, fact2, fact3⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-41,gemini-2.5-pro,option_2,fallacy of extension,equivocation,False,fail,pass,3,yes,temp_verify/tmpduhvydjk.lean:30:2: error(lean.unknownIdentifier): Unknown identifier `rule`,"/-
-  Rule Concept: A fallacy of extension occurs when an argument misrepresents or caricatures an opponent's position to make it easier to attack.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (text_argument : Entity)
-variable (actual_opposing_position : Entity) -- The nuanced scientific position on polar ice and climate systems.
-variable (caricatured_position : Entity) -- The simplified position that only total ""cumulative"" ice volume matters.
-
--- Semantic Relations (Predicates)
-variable (attacks : Entity → Entity → Prop) -- arg1 attacks arg2.
-variable (is_caricature_of : Entity → Entity → Prop) -- arg1 is a caricature of arg2.
-
--- Goal Proposition
-variable (is_fallacy_of_extension : Prop)
-
--- Fact Mapping from Context
-variable (h1 : attacks text_argument caricatured_position) -- The text refutes the simplified view that total ice is the only concern.
-variable (h2 : is_caricature_of caricatured_position actual_opposing_position) -- The simplified view is a caricature of the real scientific concern about different ice types and their effects.
-
--- Implication from rule
-variable (rule : (attacks text_argument caricatured_position ∧ is_caricature_of caricatured_position actual_opposing_position) → is_fallacy_of_extension)
-
--- Theorem: Prove the argument commits a fallacy of extension
-theorem prove_fallacy_of_extension
-  : is_fallacy_of_extension :=
-  rule ⟨h1, h2⟩","/-
-  Rule Concept: A fallacy of extension occurs when an argument misrepresents or caricatures an opponent's position to make it easier to attack.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (text_argument : Entity)
-variable (actual_opposing_position : Entity) -- The nuanced scientific position on polar ice and climate systems.
-variable (caricatured_position : Entity) -- The simplified position that only total ""cumulative"" ice volume matters.
-
--- Semantic Relations (Predicates)
-variable (attacks : Entity → Entity → Prop) -- arg1 attacks arg2.
-variable (is_caricature_of : Entity → Entity → Prop) -- arg1 is a caricature of arg2.
-
--- Goal Proposition
-variable (is_fallacy_of_extension : Prop)
-
--- Implication from rule
-variable (rule : (attacks text_argument caricatured_position ∧ is_caricature_of caricatured_position actual_opposing_position) → is_fallacy_of_extension)
-
--- Fact Mapping from Context
-variable (h1 : attacks text_argument caricatured_position) -- The text refutes the simplified view that total ice is the only concern.
-variable (h2 : is_caricature_of caricatured_position actual_opposing_position) -- The simplified view is a caricature of the real scientific concern about different ice types and their effects.
-
--- Theorem: Prove the argument commits a fallacy of extension
-theorem prove_fallacy_of_extension
-  : is_fallacy_of_extension :=
-  rule ⟨h1, h2⟩","/-
-  Rule Concept: A fallacy of extension occurs when an argument misrepresents or caricatures an opponent's position to make it easier to attack.
--/
-
--- Entity Domain
-variable {Entity : Type}
-
--- Key Entities from the text
-variable (text_argument : Entity)
-variable (actual_opposing_position : Entity) -- The nuanced scientific position on polar ice and climate systems.
-variable (caricatured_position : Entity) -- The simplified position that only total ""cumulative"" ice volume matters.
-
--- Semantic Relations (Predicates)
-variable (attacks : Entity → Entity → Prop) -- arg1 attacks arg2.
-variable (is_caricature_of : Entity → Entity → Prop) -- arg1 is a caricature of arg2.
-
--- Goal Proposition
-variable (is_fallacy_of_extension : Prop)
-
--- Theorem: Prove the argument commits a fallacy of extension
-theorem prove_fallacy_of_extension
-  (rule : (attacks text_argument caricatured_position ∧ is_caricature_of caricatured_position actual_opposing_position) → is_fallacy_of_extension)
-  (h1 : attacks text_argument caricatured_position)
-  (h2 : is_caricature_of caricatured_position actual_opposing_position)
-  : is_fallacy_of_extension :=
-  rule ⟨h1, h2⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-46,openai/gpt-oss-120b,option_3,fallacy of relevance,equivocation,False,fail,pass,3,yes,"temp_verify/tmpzezimzd9.lean:43:7: error(lean.unknownIdentifier): Unknown identifier `argument`
-temp_verify/tmpzezimzd9.lean:43:16: error(lean.unknownIdentifier): Unknown identifier `premise`
-temp_verify/tmpzezimzd9.lean:43:24: error(lean.unknownIdentifier): Unknown identifier `conclusion`
-temp_verify/tmpzezimzd9.lean:43:36: error(lean.unknownIdentifier): Unknown identifier `fact1`
-temp_verify/tmpzezimzd9.lean:43:43: error(lean.unknownIdentifier): Unknown identifier `fact2`
-temp_verify/tmpzezimzd9.lean:43:50: error(lean.unknownIdentifier): Unknown identifier `fact3`","/-
-  General template for Fallacy of Relevance
-  Rule Concept: Introducing a premise that is unrelated to the conclusion being argued.
+  General template for Appeal to Emotion
+  Rule Concept: If an argument primarily relies on emotional manipulation rather than logical reasoning ⇒ Appeal to Emotion fallacy
 -/
 
 -- Entity Domain
@@ -728,39 +679,29 @@ variable {Entity : Type}
 -- Key Entities from the text
 variable (argument : Entity)
 variable (topic : Entity)
-variable (premise : Entity)
-variable (conclusion : Entity)
 
 -- Semantic Relations (Predicates)
-variable (contains_premise : Entity → Entity → Prop) -- Argument contains a premise
-variable (draws_conclusion : Entity → Entity → Prop) -- Argument draws a conclusion
-variable (is_relevant_to : Entity → Entity → Prop) -- Premise is relevant to conclusion
-variable (about : Entity → Entity → Prop) -- Argument is about topic
+-- uses_emotional_manipulation a t: Argument a uses emotional manipulation regarding topic t
+variable (uses_emotional_manipulation : Entity → Entity → Prop)
+-- provides_logical_reasoning a t: Argument a provides logical reasoning for topic t
+variable (provides_logical_reasoning : Entity → Entity → Prop)
 
 -- Goal Proposition
-variable (is_fallacy_of_relevance : Prop)
+variable (is_appeal_to_emotion : Prop)
 
--- Fact Mapping from Context
--- The argument contains a premise
-variable (fact1 : contains_premise argument premise)
--- The argument draws a conclusion
-variable (fact2 : draws_conclusion argument conclusion)
--- The premise is not relevant to the conclusion
-variable (fact3 : ¬is_relevant_to premise conclusion)
--- The argument is about the topic
-variable (fact4 : about argument topic)
+-- Rule: If an argument uses emotional manipulation and lacks logical reasoning ⇒ appeal to emotion
+theorem prove_appeal_to_emotion
+  (rule : ∀ arg t,
+    (uses_emotional_manipulation arg t ∧ ¬provides_logical_reasoning arg t) → is_appeal_to_emotion)
+  (fact1 : uses_emotional_manipulation argument topic)
+  (fact2 : ¬provides_logical_reasoning argument topic)
+  : is_appeal_to_emotion :=
+  rule argument topic ⟨fact1, fact2⟩
 
--- Rule: If an argument contains a premise that is not relevant to its conclusion, it commits the fallacy of relevance
-theorem prove_fallacy_of_relevance
-  (rule : ∀ arg p c,
-    (contains_premise arg p ∧ 
-     draws_conclusion arg c ∧ 
-     ¬is_relevant_to p c) → 
-    is_fallacy_of_relevance)
-  : is_fallacy_of_relevance :=
-  rule argument premise conclusion ⟨fact1, fact2, fact3⟩","/-
-  General template for Fallacy of Relevance
-  Rule Concept: Introducing a premise that is unrelated to the conclusion being argued.
+
+This formalization captures the essence of the appeal to emotion fallacy: an argument that manipulates emotions while lacking logical reasoning to support its claims.","/-
+  General template for Appeal to Emotion
+  Rule Concept: If an argument primarily relies on emotional manipulation rather than logical reasoning ⇒ Appeal to Emotion fallacy
 -/
 
 -- Entity Domain
@@ -769,39 +710,26 @@ variable {Entity : Type}
 -- Key Entities from the text
 variable (argument : Entity)
 variable (topic : Entity)
-variable (premise : Entity)
-variable (conclusion : Entity)
 
 -- Semantic Relations (Predicates)
-variable (contains_premise : Entity → Entity → Prop) -- Argument contains a premise
-variable (draws_conclusion : Entity → Entity → Prop) -- Argument draws a conclusion
-variable (is_relevant_to : Entity → Entity → Prop) -- Premise is relevant to conclusion
-variable (about : Entity → Entity → Prop) -- Argument is about topic
+-- uses_emotional_manipulation a t: Argument a uses emotional manipulation regarding topic t
+variable (uses_emotional_manipulation : Entity → Entity → Prop)
+-- provides_logical_reasoning a t: Argument a provides logical reasoning for topic t
+variable (provides_logical_reasoning : Entity → Entity → Prop)
 
 -- Goal Proposition
-variable (is_fallacy_of_relevance : Prop)
+variable (is_appeal_to_emotion : Prop)
 
--- Fact Mapping from Context
--- The argument contains a premise
-variable (fact1 : contains_premise argument premise)
--- The argument draws a conclusion
-variable (fact2 : draws_conclusion argument conclusion)
--- The premise is not relevant to the conclusion
-variable (fact3 : ¬is_relevant_to premise conclusion)
--- The argument is about the topic
-variable (fact4 : about argument topic)
-
--- Rule: If an argument contains a premise that is not relevant to its conclusion, it commits the fallacy of relevance
-theorem prove_fallacy_of_relevance
-  (rule : ∀ arg p c,
-    (contains_premise arg p ∧ 
-     draws_conclusion arg c ∧ 
-     ¬is_relevant_to p c) → 
-    is_fallacy_of_relevance)
-  : is_fallacy_of_relevance :=
-  rule argument premise conclusion ⟨fact1, fact2, fact3⟩","/-
-  General template for Fallacy of Relevance
-  Rule Concept: Introducing a premise that is unrelated to the conclusion being argued.
+-- Rule: If an argument uses emotional manipulation and lacks logical reasoning ⇒ appeal to emotion
+theorem prove_appeal_to_emotion
+  (rule : ∀ arg t,
+    (uses_emotional_manipulation arg t ∧ ¬provides_logical_reasoning arg t) → is_appeal_to_emotion)
+  (fact1 : uses_emotional_manipulation argument topic)
+  (fact2 : ¬provides_logical_reasoning argument topic)
+  : is_appeal_to_emotion :=
+  rule argument topic ⟨fact1, fact2⟩","/-
+  General template for Appeal to Emotion
+  Rule Concept: If an argument primarily relies on emotional manipulation rather than logical reasoning ⇒ Appeal to Emotion fallacy
 -/
 
 -- Entity Domain
@@ -810,41 +738,124 @@ variable {Entity : Type}
 -- Key Entities from the text
 variable (argument : Entity)
 variable (topic : Entity)
-variable (premise : Entity)
-variable (conclusion : Entity)
 
 -- Semantic Relations (Predicates)
-variable (contains_premise : Entity → Entity → Prop) -- Argument contains a premise
-variable (draws_conclusion : Entity → Entity → Prop) -- Argument draws a conclusion
-variable (is_relevant_to : Entity → Entity → Prop) -- Premise is relevant to conclusion
-variable (about : Entity → Entity → Prop) -- Argument is about topic
+-- uses_emotional_manipulation a t: Argument a uses emotional manipulation regarding topic t
+variable (uses_emotional_manipulation : Entity → Entity → Prop)
+-- provides_logical_reasoning a t: Argument a provides logical reasoning for topic t
+variable (provides_logical_reasoning : Entity → Entity → Prop)
 
 -- Goal Proposition
-variable (is_fallacy_of_relevance : Prop)
+variable (is_appeal_to_emotion : Prop)
 
--- Rule: If an argument contains a premise that is not relevant to its conclusion, it commits the fallacy of relevance
-theorem prove_fallacy_of_relevance
-  (rule : ∀ arg p c,
-    (contains_premise arg p ∧ 
-     draws_conclusion arg c ∧ 
-     ¬is_relevant_to p c) → 
-    is_fallacy_of_relevance)
-  (fact1 : contains_premise argument premise)
-  (fact2 : draws_conclusion argument conclusion)
-  (fact3 : ¬is_relevant_to premise conclusion)
-  : is_fallacy_of_relevance :=
-  rule argument premise conclusion ⟨fact1, fact2, fact3⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
-3,deepseek/deepseek-r1,option_1,faulty generalization,ad hominem,False,fail,pass,2,yes,unexpected identifier; expected command,"Looking at this problem, I need to identify the key components for a faulty generalization fallacy:
+-- Rule: If an argument uses emotional manipulation and lacks logical reasoning ⇒ appeal to emotion
+theorem prove_appeal_to_emotion
+  (rule : ∀ arg t,
+    (uses_emotional_manipulation arg t ∧ ¬provides_logical_reasoning arg t) → is_appeal_to_emotion)
+  (fact1 : uses_emotional_manipulation argument topic)
+  (fact2 : ¬provides_logical_reasoning argument topic)
+  : is_appeal_to_emotion :=
+  rule argument topic ⟨fact1, fact2⟩",,no,one example retained for this model,Kimi-k2 (T),success_example
+2,openai/gpt-oss-120b,option_2,ad hominem,ad hominem,True,fail,pass,1,yes,"temp_verify/tmppy2b9jix.lean:32:7: error(lean.unknownIdentifier): Unknown identifier `argument`
+temp_verify/tmppy2b9jix.lean:32:16: error(lean.unknownIdentifier): Unknown identifier `person_or_group`
+temp_verify/tmppy2b9jix.lean:32:32: error(lean.unknownIdentifier): Unknown identifier `topic`
+temp_verify/tmppy2b9jix.lean:32:39: error(lean.unknownIdentifier): Unknown identifier `fact1`
+temp_verify/tmppy2b9jix.lean:32:46: error(lean.unknownIdentifier): Unknown identifier `fact2`
+temp_verify/tmppy2b9jix.lean:32:53: error(lean.unknownIdentifier): Unknown identifier `fact3`","/-
+  General template for Ad Hominem
+  Rule Concept: Attacking a person or group instead of addressing the substance of their argument.
+-/
 
-1. **What is being generalized?** - A conclusion about many/all instances
-2. **What is the evidence?** - Limited sample or evidence
-3. **Is the generalization warranted?** - No, because evidence is insufficient
+-- Entity Domain
+variable {Entity : Type}
 
-Let me construct the complete Lean4 code:
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (person_or_group : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_person : Entity → Entity → Prop) -- argument attacks a person/group
+variable (addresses_substance : Entity → Entity → Prop) -- argument addresses the actual topic/claim
+variable (made_by : Entity → Entity → Prop) -- topic/claim is made by person/group
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Fact Mapping from Context
+variable (fact1 : attacks_person argument person_or_group)
+variable (fact2 : made_by topic person_or_group)
+variable (fact3 : ¬addresses_substance argument topic)
+
+-- Rule: If an argument attacks the person/group instead of addressing the substance of their claim ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg per top,
+    (attacks_person arg per ∧ made_by top per ∧ ¬addresses_substance arg top) → is_ad_hominem)
+  : is_ad_hominem :=
+  rule argument person_or_group topic ⟨fact1, fact2, fact3⟩","/-
+  General template for Ad Hominem
+  Rule Concept: Attacking a person or group instead of addressing the substance of their argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (person_or_group : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_person : Entity → Entity → Prop) -- argument attacks a person/group
+variable (addresses_substance : Entity → Entity → Prop) -- argument addresses the actual topic/claim
+variable (made_by : Entity → Entity → Prop) -- topic/claim is made by person/group
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If an argument attacks the person/group instead of addressing the substance of their claim ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg per top,
+    (attacks_person arg per ∧ made_by top per ∧ ¬addresses_substance arg top) → is_ad_hominem)
+  (fact1 : attacks_person argument person_or_group)
+  (fact2 : made_by topic person_or_group)
+  (fact3 : ¬addresses_substance argument topic)
+  : is_ad_hominem :=
+  rule argument person_or_group topic ⟨fact1, fact2, fact3⟩","/-
+  General template for Ad Hominem
+  Rule Concept: Attacking a person or group instead of addressing the substance of their argument.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (person_or_group : Entity)
+
+-- Semantic Relations (Predicates)
+variable (attacks_person : Entity → Entity → Prop) -- argument attacks a person/group
+variable (addresses_substance : Entity → Entity → Prop) -- argument addresses the actual topic/claim
+variable (made_by : Entity → Entity → Prop) -- topic/claim is made by person/group
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Rule: If an argument attacks the person/group instead of addressing the substance of their claim ⇒ ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ arg per top,
+    (attacks_person arg per ∧ made_by top per ∧ ¬addresses_substance arg top) → is_ad_hominem)
+  (fact1 : attacks_person argument person_or_group)
+  (fact2 : made_by topic person_or_group)
+  (fact3 : ¬addresses_substance argument topic)
+  : is_ad_hominem :=
+  rule argument person_or_group topic ⟨fact1, fact2, fact3⟩",,no,one example retained for this model,GPT-oss-120b (T),success_example
+22,qwen/qwen3-235b-a22b-thinking-2507,option_3,appeal to emotion,appeal to emotion,True,fail,pass,1,yes,unexpected identifier; expected command,"Looking at this Appeal to Emotion fallacy, I need to formalize how emotional manipulation substitutes for logical evidence.
 
 
 /-
-  Rule Concept: Faulty generalization occurs when a conclusion is drawn about all or many instances of a phenomenon based on limited evidence.
+  Rule Concept: Appeal to emotion manipulates the recipient's feelings to accept a conclusion without logical justification, substituting emotional response for evidence.
 -/
 
 -- Entity Domain
@@ -853,35 +864,31 @@ variable {Entity : Type}
 -- Key Entities from the text
 variable (argument : Entity)
 variable (topic : Entity)
-variable (sample : Entity)
-variable (population : Entity)
 
 -- Semantic Relations (Predicates)
-variable (draws_conclusion_about : Entity → Entity → Prop) -- argument draws conclusion about population
-variable (based_on_sample : Entity → Entity → Prop) -- argument is based on sample
-variable (is_limited_evidence : Entity → Prop) -- sample constitutes limited evidence
-variable (generalizes_to : Entity → Entity → Prop) -- conclusion generalizes from sample to population
-variable (sample_represents : Entity → Entity → Prop) -- sample adequately represents population
+variable (emotional_trigger : Entity -> Prop)
+variable (factual_claim : Entity -> Prop)
+variable (manipulation_effect : Entity -> Prop)
 
 -- Goal Proposition
-variable (is_faulty_generalization : Prop)
+variable (is_appeal_to_emotion : Prop)
 
 -- Fact Mapping from Context
--- Rule: If an argument generalizes to a population based on limited/unrepresentative sample ⇒ faulty generalization
-theorem prove_faulty_generalization
-  (rule : ∀ arg smp pop t,
-    (draws_conclusion_about arg pop ∧ 
-     based_on_sample arg smp ∧ 
-     is_limited_evidence smp ∧ 
-     ¬sample_represents smp pop) → 
-    is_faulty_generalization)
-  (fact1 : draws_conclusion_about argument population)
-  (fact2 : based_on_sample argument sample)
-  (fact3 : is_limited_evidence sample)
-  (fact4 : ¬sample_represents sample population)
-  : is_faulty_generalization :=
-  rule argument sample population topic ⟨fact1, fact2, fact3, fact4⟩","/-
-  Rule Concept: Faulty generalization occurs when a conclusion is drawn about all or many instances of a phenomenon based on limited evidence.
+-- The phrase ""the deaths of some of our children and grandchildren"" evokes fear and familial distress.
+-- This emotional language appears in place of evidence for the causal claim about energy poverty.
+-- The argument relies on visceral reaction rather than logical support for the policy-deaths connection.
+
+-- Rule: If an argument uses emotional triggers, makes factual claims without evidence, 
+-- and achieves its effect through manipulation rather than logic ⇒ Appeal to Emotion
+theorem prove_appeal_to_emotion
+  (rule : ∀ arg t,
+    (emotional_trigger arg ∧ factual_claim t ∧ manipulation_effect arg) → is_appeal_to_emotion)
+  (fact1 : emotional_trigger argument)
+  (fact2 : factual_claim topic)
+  (fact3 : manipulation_effect argument)
+  : is_appeal_to_emotion :=
+  rule argument topic ⟨fact1, fact2, fact3⟩","/-
+  Rule Concept: Appeal to emotion manipulates the recipient's feelings to accept a conclusion without logical justification, substituting emotional response for evidence.
 -/
 
 -- Entity Domain
@@ -890,34 +897,31 @@ variable {Entity : Type}
 -- Key Entities from the text
 variable (argument : Entity)
 variable (topic : Entity)
-variable (sample : Entity)
-variable (population : Entity)
 
 -- Semantic Relations (Predicates)
-variable (draws_conclusion_about : Entity → Entity → Prop)
-variable (based_on_sample : Entity → Entity → Prop)
-variable (is_limited_evidence : Entity → Prop)
-variable (generalizes_to : Entity → Entity → Prop)
-variable (sample_represents : Entity → Entity → Prop)
+variable (emotional_trigger : Entity → Prop)
+variable (factual_claim : Entity → Prop)
+variable (manipulation_effect : Entity → Prop)
 
 -- Goal Proposition
-variable (is_faulty_generalization : Prop)
+variable (is_appeal_to_emotion : Prop)
 
--- Rule: If an argument generalizes to a population based on limited/unrepresentive sample ⇒ faulty generalization
-theorem prove_faulty_generalization
-  (rule : ∀ arg smp pop t,
-    (draws_conclusion_about arg pop ∧ 
-     based_on_sample arg smp ∧ 
-     is_limited_evidence smp ∧ 
-     ¬sample_represents smp pop) → 
-    is_faulty_generalization)
-  (fact1 : draws_conclusion_about argument population)
-  (fact2 : based_on_sample argument sample)
-  (fact3 : is_limited_evidence sample)
-  (fact4 : ¬sample_represents sample population)
-  : is_faulty_generalization :=
-  rule argument sample population topic ⟨fact1, fact2, fact3, fact4⟩","/-
-  Rule Concept: Faulty generalization occurs when a conclusion is drawn about all or many instances of a phenomenon based on limited evidence.
+-- Fact Mapping from Context
+-- The phrase ""the deaths of some of our children and grandchildren"" evokes fear and familial distress.
+-- This emotional language appears in place of evidence for the causal claim about energy poverty.
+-- The argument relies on visceral reaction rather than logical support for the policy-deaths connection.
+
+-- Rule: If an argument uses emotional triggers, makes factual claims without evidence, 
+-- and achieves its effect through manipulation rather than logic ⇒ Appeal to Emotion
+theorem prove_appeal_to_emotion
+  (rule : ∀ arg t,
+    (emotional_trigger arg ∧ factual_claim t ∧ manipulation_effect arg) → is_appeal_to_emotion)
+  (fact1 : emotional_trigger argument)
+  (fact2 : factual_claim topic)
+  (fact3 : manipulation_effect argument)
+  : is_appeal_to_emotion :=
+  rule argument topic ⟨fact1, fact2, fact3⟩","/-
+  Rule Concept: Appeal to emotion manipulates the recipient's feelings to accept a conclusion without logical justification, substituting emotional response for evidence.
 -/
 
 -- Entity Domain
@@ -926,30 +930,27 @@ variable {Entity : Type}
 -- Key Entities from the text
 variable (argument : Entity)
 variable (topic : Entity)
-variable (sample : Entity)
-variable (population : Entity)
 
 -- Semantic Relations (Predicates)
-variable (draws_conclusion_about : Entity → Entity → Prop)
-variable (based_on_sample : Entity → Entity → Prop)
-variable (is_limited_evidence : Entity → Prop)
-variable (generalizes_to : Entity → Entity → Prop)
-variable (sample_represents : Entity → Entity → Prop)
+variable (emotional_trigger : Entity → Prop)
+variable (factual_claim : Entity → Prop)
+variable (manipulation_effect : Entity → Prop)
 
 -- Goal Proposition
-variable (is_faulty_generalization : Prop)
+variable (is_appeal_to_emotion : Prop)
 
--- Rule: If an argument generalizes to a population based on limited/unrepresentive sample ⇒ faulty generalization
-theorem prove_faulty_generalization
-  (rule : ∀ arg smp pop,
-    (draws_conclusion_about arg pop ∧ 
-     based_on_sample arg smp ∧ 
-     is_limited_evidence smp ∧ 
-     ¬sample_represents smp pop) → 
-    is_faulty_generalization)
-  (fact1 : draws_conclusion_about argument population)
-  (fact2 : based_on_sample argument sample)
-  (fact3 : is_limited_evidence sample)
-  (fact4 : ¬sample_represents sample population)
-  : is_faulty_generalization :=
-  rule argument sample population ⟨fact1, fact2, fact3, fact4⟩",,no,success_example,selected for concise reviewer-facing category 7 examples
+-- Fact Mapping from Context
+-- The phrase ""the deaths of some of our children and grandchildren"" evokes fear and familial distress.
+-- This emotional language appears in place of evidence for the causal claim about energy poverty.
+-- The argument relies on visceral reaction rather than logical support for the policy-deaths connection.
+
+-- Rule: If an argument uses emotional triggers, makes factual claims without evidence, 
+-- and achieves its effect through manipulation rather than logic ⇒ Appeal to Emotion
+theorem prove_appeal_to_emotion
+  (rule : ∀ arg t,
+    (emotional_trigger arg ∧ factual_claim t ∧ manipulation_effect arg) → is_appeal_to_emotion)
+  (fact1 : emotional_trigger argument)
+  (fact2 : factual_claim topic)
+  (fact3 : manipulation_effect argument)
+  : is_appeal_to_emotion :=
+  rule argument topic ⟨fact1, fact2, fact3⟩",,no,one example retained for this model,Qwen3 235B (T),success_example
