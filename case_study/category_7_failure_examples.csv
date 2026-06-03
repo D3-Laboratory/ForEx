@@ -1,0 +1,294 @@
+question_id,model_name,option_id,predicted_label,ground_truth,option_is_correct,final_verification_status,initial_lean_code,repaired_lean_code,final_verified_code,diagnostics,source_file,example_group,selection_note
+5,gemini-2.5-flash,option_1,ad hominem,ad hominem,True,lean_pass_with_type_error,"```lean
+/-
+  Rule Concept: An ad hominem fallacy occurs when, instead of addressing someone's argument or position, an attack is made on the person or some irrelevant aspect of the person who is making the argument. This distracts from the actual substance of any potential argument or discussion.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (argument : Entity)
+variable (topic : Entity)
+variable (speaker : Entity)
+variable (target_group : Entity)
+variable (personal_attribute : Entity)
+
+-- Semantic Relations (Predicates)
+variable (asserts_about : Entity → Entity → Prop)
+variable (is_derogatory_label : Entity → Prop)
+variable (attacks_person_instead_of_argument : Entity → Prop)
+variable (is_group : Entity → Prop)
+variable (is_personal_attribute : Entity → Prop)
+variable (refers_to_group : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_ad_hominem : Prop)
+
+-- Fact Mapping from Context
+axiom text_statement : Entity
+axiom liberal_label : Entity
+axiom liberal_group : Entity
+axiom flair_for_ironic_statement : Entity
+
+axiom fact1 : asserts_about text_statement liberal_label
+axiom fact2 : asserts_about text_statement flair_for_ironic_statement
+axiom fact3 : is_derogatory_label liberal_label
+axiom fact4 : is_group liberal_group
+axiom fact5 : refers_to_group liberal_label liberal_group
+axiom fact6 : attacks_person_instead_of_argument text_statement
+
+-- Rule: If a statement attacks a person/group with derogatory labels instead of addressing arguments, it's ad hominem
+theorem prove_ad_hominem
+  (rule : ∀ stmt label grp,
+    (asserts_about stmt label ∧
+     is_derogatory_label label ∧
+     is_group grp ∧
+     refers_to_group label grp ∧
+     attacks_person_instead_of_argument stmt) →
+    is_ad_hominem)
+  : is_ad_hominem :=
+  rule text_statement liberal_label liberal_group ⟨fact1, fact3, fact4, fact5, fact6⟩
+```",,,Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-2.5-flash_climate_20251113_204700---32e3a889-02af-4da2-bd66-8fff1c010e77.json,failure_example,selected from raw result json because github-visible category 7 export retained only final pass rows
+7,gemini-pro-thinking,option_2,faulty generalization,ad hominem,False,no_pass,"```lean
+/-
+  Rule Concept: A faulty generalization draws a broad conclusion about all instances of a phenomenon based on an insufficient or unrepresentative sample or reason.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (P : Entity → Prop) -- The property of being a person who tries to predict > 5-10 years
+variable (Q : Entity → Prop) -- The property of being ""a bit of an idiot""
+variable (reason : Prop) -- ""so many things can change unexpectedly""
+
+-- Semantic Relations (Predicates)
+-- No additional predicates needed as we use properties directly
+
+-- Goal Proposition
+variable (is_faulty_generalization : Prop)
+
+-- Fact Mapping from Context
+axiom fact1 : reason -- It is true that the future is uncertain.
+axiom conclusion : reason → (∀ (x : Entity), P x → Q x) -- The argument uses this uncertainty to conclude that ALL people who make long-term predictions are idiots.
+
+-- The fallacy lies in the universal quantification (∀). While 'reason' may apply to many or even most cases, concluding it applies to all without exception is a generalization.
+
+-- Rule: If a single reason/observation is used to make a universal claim about all instances
+-- without adequate evidence for the universality, then it's a faulty generalization
+theorem prove_faulty_generalization
+  (rule : ∀ (R : Prop) (P Q : Entity → Prop),
+    (R ∧ (R → (∀ x, P x → Q x))) → is_faulty_generalization)
+  : is_faulty_generalization :=
+  rule reason P Q ⟨fact1, conclusion⟩
+```","
+/-
+  Rule Concept: A faulty generalization draws a broad conclusion about all instances of a phenomenon based on an insufficient or unrepresentative sample or reason.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (P : Entity → Prop) -- The property of being a person who tries to predict > 5-10 years
+variable (Q : Entity → Prop) -- The property of being ""a bit of an idiot""
+variable (reason : Prop) -- ""so many things can change unexpectedly""
+
+-- Semantic Relations (Predicates)
+-- No additional predicates needed as we use properties directly
+
+-- Goal Proposition
+variable (is_faulty_generalization : Prop)
+
+-- Fact Mapping from Context
+variable (fact1 : reason) -- It is true that the future is uncertain.
+variable (conclusion : reason → (∀ (x : Entity), P x → Q x)) -- The argument uses this uncertainty to conclude that ALL people who make long-term predictions are idiots.
+
+-- The fallacy lies in the universal quantification (∀). While 'reason' may apply to many or even most cases, concluding it applies to all without exception is a generalization.
+
+-- Rule: If a single reason/observation is used to make a universal claim about all instances
+-- without adequate evidence for the universality, then it's a faulty generalization
+theorem prove_faulty_generalization
+  (rule : ∀ (R : Prop) (P Q : Entity → Prop),
+    (R ∧ (R → (∀ x, P x → Q x))) → is_faulty_generalization)
+  : is_faulty_generalization :=
+  rule reason P Q ⟨fact1, conclusion⟩
+",,"temp_verify/tmpyv2hr6o2.lean:32:7: error(lean.unknownIdentifier): Unknown identifier `future_is_uncertain`
+temp_verify/tmpyv2hr6o2.lean:32:27: error(lean.unknownIdentifier): Unknown identifier `tries_long_term_prediction`
+temp_verify/tmpyv2hr6o2.lean:32:54: error(lean.unknownIdentifier): Unknown identifier `is_idiot`
+temp_verify/tmpyv2hr6o2.lean:32:64: error(lean.unknownIdentifier): Unknown identifier `fact1`
+temp_verify/tmpyv2hr6o2.lean:32:71: error(lean.unknownIdentifier): Unknown identifier `fact2`",results_gemini-pro-thinking_climate_20251114_122923---69db5c45-6f52-4958-8aa1-1761502a7875.json,failure_example,selected from raw result json because github-visible category 7 export retained only final pass rows
+8,gemini-flash-thinking,option_2,fallacy of relevance,ad hominem,False,lean_pass_with_type_error,"```lean
+/-
+  General template for Fallacy of Relevance
+  Rule Concept: Introducing premises or conclusions that have nothing to do with the subject matter of the main argument. The information presented, while potentially true, does not logically support or relate to the point being argued.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (specific_detail : Entity)
+variable (overall_argument : Entity)
+variable (overall_topic : Entity)
+
+-- Semantic Relations (Predicates)
+variable (is_premise_for : Entity → Entity → Prop)
+variable (is_about : Entity → Entity → Prop)
+variable (is_relevant_to : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_fallacy_of_relevance : Prop)
+
+-- Fact Mapping from Context
+axiom expedition_detail : Entity
+axiom main_argument_context : Entity -- Represents the larger argument implied by ""he continued""
+axiom specific_topic_of_detail : Entity
+axiom main_topic_of_argument : Entity
+
+axiom fact1 : is_about expedition_detail specific_topic_of_detail
+axiom fact2 : is_premise_for expedition_detail main_argument_context
+axiom fact3 : is_about main_argument_context main_topic_of_argument
+axiom fact4 : ¬(is_relevant_to specific_topic_of_detail main_topic_of_argument)
+
+-- Rule: If a detail is used as a premise for an argument, but the topic of that detail is not relevant to the main topic of the argument, then it is a fallacy of relevance
+theorem prove_fallacy_of_relevance
+  (rule : ∀ (detail arg topic_detail topic_arg : Entity),
+    (is_premise_for detail arg ∧ 
+     is_about detail topic_detail ∧ 
+     is_about arg topic_arg ∧ 
+     ¬is_relevant_to topic_detail topic_arg) → 
+    is_fallacy_of_relevance)
+  : is_fallacy_of_relevance :=
+  rule expedition_detail main_argument_context specific_topic_of_detail main_topic_of_argument 
+    ⟨fact2, fact1, fact3, fact4⟩
+```",,,Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,selected from raw result json because github-visible category 7 export retained only final pass rows
+11,gemini-2.5-pro,option_1,ad populum,ad populum,True,lean_pass_with_type_error,"/-
+  Rule Concept: An argument is an ad populum fallacy if it claims a proposition is true because many or most people believe it. The popularity of a belief is not evidence of its truth. Let P be a proposition. The argument ""Many people believe P, therefore P is true"" is an ad populum fallacy.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (Lovelock : Entity)
+variable (is_scientific_genius : Entity → Prop) -- The proposition that Lovelock is a scientific genius
+variable (many_people : Entity) -- Representing the group ""many""
+
+-- Semantic Relations (Predicates)
+variable (regards_as : Entity → Entity → (Entity → Prop) → Prop) -- group regards person as having quality
+variable (argues_from_popularity : Entity → Prop → Prop) -- argument relies on popularity to support proposition
+variable (provides_independent_evidence : Prop → Prop) -- whether independent evidence is provided for the proposition
+
+-- Goal Proposition
+variable (is_ad_populum : Prop)
+
+-- Fact Mapping from Context
+-- The text states that many people regard Lovelock as a scientific genius.
+-- This is used as the sole premise to support the conclusion.
+axiom fact1 : regards_as many_people Lovelock is_scientific_genius
+axiom fact2 : argues_from_popularity (is_scientific_genius Lovelock)
+axiom fact3 : ¬provides_independent_evidence (is_scientific_genius Lovelock)
+
+-- Rule: If many believe P, argument relies on this popularity, and no independent evidence is provided, then ad populum
+theorem prove_ad_populum
+  (rule : ∀ (group : Entity) (person : Entity) (quality : Entity → Prop),
+    (regards_as group person quality ∧ 
+     argues_from_popularity (quality person) ∧ 
+     ¬provides_independent_evidence (quality person)) → 
+    is_ad_populum)
+  : is_ad_populum :=
+  rule many_people Lovelock is_scientific_genius ⟨fact1, fact2, fact3⟩",,,Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,selected from raw result json because github-visible category 7 export retained only final pass rows
+13,gemini-pro-non,option_3,fallacy of extension,ad populum,False,no_pass,"```lean
+/-
+  Rule Concept: A Fallacy of Extension (or Straw Man) occurs when an argument misrepresents or caricatures an opponent's position to make it easier to attack.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (opposing_argument_actual : Entity) -- The nuanced scientific consensus on climate change.
+variable (opposing_argument_caricature : Entity) -- The simplified version presented in the text.
+variable (speaker_argument : Entity) -- The claim that warming is dominated by natural factors.
+
+-- Semantic Relations (Predicates)
+variable (states : Entity → Prop → Prop)
+variable (is_caused_by_human_activity : Prop)
+variable (is_caused_by_natural_factors : Prop)
+variable (refutes : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_fallacy_of_extension : Prop)
+
+-- Fact Mapping from Context
+-- The actual opposing argument often acknowledges both human and natural factors.
+axiom fact_actual_position : states opposing_argument_actual (is_caused_by_human_activity ∧ is_caused_by_natural_factors)
+-- The text presents the opposing argument as a simple, absolute claim, likely that warming is solely or primarily human-caused, ignoring natural factors.
+axiom fact_caricatured_position : states opposing_argument_caricature (is_caused_by_human_activity ∧ ¬is_caused_by_natural_factors)
+-- The speaker's argument is positioned to refute this simplified, caricatured version, not the actual one.
+axiom fact_refutation_target : refutes speaker_argument opposing_argument_caricature
+
+-- Rule: If an argument refutes a caricatured position that differs from the actual position, it commits a fallacy of extension
+theorem prove_fallacy_of_extension_0
+  (rule : ∀ (actual caricature speaker : Entity),
+    (∃ (P Q : Prop), 
+      states actual (P ∧ Q) ∧ 
+      states caricature (P ∧ ¬Q) ∧ 
+      refutes speaker caricature) → 
+    is_fallacy_of_extension)
+  : is_fallacy_of_extension :=
+  rule opposing_argument_actual opposing_argument_caricature speaker_argument
+    ⟨is_caused_by_human_activity, is_caused_by_natural_factors, 
+     fact_actual_position, fact_caricatured_position, fact_refutation_target⟩
+```","
+/-
+  Rule Concept: A Fallacy of Extension (or Straw Man) occurs when an argument misrepresents or caricatures an opponent's position to make it easier to attack.
+-/
+
+-- Entity Domain
+variable {Entity : Type}
+
+-- Key Entities from the text
+variable (opposing_argument_actual : Entity) -- The nuanced scientific consensus on climate change.
+variable (opposing_argument_caricature : Entity) -- The simplified version presented in the text.
+variable (speaker_argument : Entity) -- The claim that warming is dominated by natural factors.
+
+-- Semantic Relations (Predicates)
+variable (states : Entity → Prop → Prop)
+variable (is_caused_by_human_activity : Prop)
+variable (is_caused_by_natural_factors : Prop)
+variable (refutes : Entity → Entity → Prop)
+
+-- Goal Proposition
+variable (is_fallacy_of_extension : Prop)
+
+-- Fact Mapping from Context
+-- The actual opposing argument often acknowledges both human and natural factors.
+variable (fact_actual_position : states opposing_argument_actual (is_caused_by_human_activity ∧ is_caused_by_natural_factors))
+-- The text presents the opposing argument as a simple, absolute claim, likely that warming is solely or primarily human-caused, ignoring natural factors.
+variable (fact_caricatured_position : states opposing_argument_caricature (is_caused_by_human_activity ∧ ¬is_caused_by_natural_factors))
+-- The speaker's argument is positioned to refute this simplified, caricatured version, not the actual one.
+variable (fact_refutation_target : refutes speaker_argument opposing_argument_caricature)
+
+-- Rule: If an argument refutes a caricatured position that differs from the actual position, it commits a fallacy of extension
+theorem prove_fallacy_of_extension_0
+  (rule : ∀ (actual caricature speaker : Entity),
+    (∃ (P Q : Prop), 
+      states actual (P ∧ Q) ∧ 
+      states caricature (P ∧ ¬Q) ∧ 
+      refutes speaker caricature) → 
+    is_fallacy_of_extension)
+  : is_fallacy_of_extension :=
+  rule opposing_argument_actual opposing_argument_caricature speaker_argument
+    ⟨is_caused_by_human_activity, is_caused_by_natural_factors, 
+     fact_actual_position, fact_caricatured_position, fact_refutation_target⟩
+",,"temp_verify/tmpucekk14u.lean:40:7: error(lean.unknownIdentifier): Unknown identifier `opposing_argument_actual`
+temp_verify/tmpucekk14u.lean:40:32: error(lean.unknownIdentifier): Unknown identifier `opposing_argument_caricature`
+temp_verify/tmpucekk14u.lean:40:61: error(lean.unknownIdentifier): Unknown identifier `speaker_argument`
+temp_verify/tmpucekk14u.lean:41:5: error(lean.unknownIdentifier): Unknown identifier `is_caused_by_human_activity`
+temp_verify/tmpucekk14u.lean:41:34: error(lean.unknownIdentifier): Unknown identifier `is_caused_by_natural_factors`
+temp_verify/tmpucekk14u.lean:42:5: error(lean.unknownIdentifier): Unknown identifier `fact_actual_position`
+temp_verify/tmpucekk14u.lean:42:27: error(lean.unknownIdentifier): Unknown identifier `fact_caricatured_position`
+temp_verify/tmpucekk14u.lean:42:54: error(lean.unknownIdentifier): Unknown identifier `fact_refutation_target`",results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,selected from raw result json because github-visible category 7 export retained only final pass rows
