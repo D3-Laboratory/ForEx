@@ -1,4 +1,4 @@
-question_id,model_name,model_display,option_id,predicted_label,ground_truth,option_is_correct,final_verification_status,initial_lean_code,repaired_lean_code,final_verified_code,diagnostics,source_file,example_group,selection_note
+question_id,model_name,model_display,option_id,predicted_label,ground_truth,option_is_correct,final_verification_status,initial_lean_code,repaired_lean_code,final_verified_code,diagnostics,example_group,selection_note
 75,anthropic/claude-sonnet-4.5,Claude-sonnet-4.5 (T),option_2,fallacy of logic,fallacy of logic,True,lean_pass_with_type_error,"Looking at this fallacy of logic case, I need to create a theorem that proves `is_fallacy_of_logic` based on the provided facts. The key issue is that the conclusion doesn't logically follow from the premises.
 
 ```lean
@@ -101,7 +101,7 @@ theorem prove_fallacy_of_logic
     (¬logically_follows c p1) → is_fallacy_of_logic)
   : is_fallacy_of_logic :=
   rule (has_property carbon_color carbon_color) (entity_exists carbon_emissions → ¬entity_exists visibility) conclusion fact_invalid
-",Application type mismatch: The argument,results_anthropic_claude-sonnet-4.5_climate_20251113_204700---225fda0d-172b-4504-9079-f81dd4dc91f3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 90,anthropic/claude-sonnet-4.5,Claude-sonnet-4.5 (T),option_1,false causality,false causality,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A statement that jumps to a conclusion implying a causal relationship without supporting evidence. The argument suggests that high carbon dioxide content causes thriving and diversification of life based solely on temporal correlation.
@@ -178,7 +178,7 @@ theorem prove_false_causality
   : is_false_causality :=
   rule high_CO2_atmosphere thriving_diversification fossil_record_correlation claim 
     ⟨fact1, fact2, claim, lack_evidence⟩
-",Application type mismatch: The argument,results_anthropic_claude-sonnet-4.5_climate_20251113_204700---225fda0d-172b-4504-9079-f81dd4dc91f3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 11,gemini-2.5-pro,Gemini 2.5 pro (T),option_1,ad populum,ad populum,True,lean_pass_with_type_error,"/-
   Rule Concept: An argument is an ad populum fallacy if it claims a proposition is true because many or most people believe it. The popularity of a belief is not evidence of its truth. Let P be a proposition. The argument ""Many people believe P, therefore P is true"" is an ad populum fallacy.
 -/
@@ -249,7 +249,7 @@ theorem prove_ad_populum
      ¬provides_independent_evidence (quality person)) → 
     is_ad_populum)
   : is_ad_populum :=
-  rule many_people Lovelock is_scientific_genius ⟨fact1, fact2, fact3⟩",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+  rule many_people Lovelock is_scientific_genius ⟨fact1, fact2, fact3⟩",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 84,gemini-flash-non,Gemini 2.5 flash (NT),option_1,fallacy of relevance,fallacy of relevance,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Introducing premises or conclusions that have nothing to do with the subject matter.
@@ -328,7 +328,7 @@ theorem prove_fallacy_of_relevance
   (fact3 : ¬is_relevant_to city_condition summit_topic)
   : is_fallacy_of_relevance :=
   rule argument summit_topic city_condition ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument | Type mismatch | Type mismatch | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument | Type mismatch | Type mismatch | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 92,gemini-flash-non,Gemini 2.5 flash (NT),option_1,false causality,false causality,True,lean_pass_with_type_error,"Looking at this fallacy, I need to identify the false causality pattern. The argument appears to be drawing a causal conclusion about ocean acidification harming fish populations by analogy to human blood pH drops, despite acknowledged uncertainty. Let me construct the theorem:
 
 ```lean
@@ -457,7 +457,7 @@ theorem prove_false_causality
   : is_false_causality :=
   rule ocean_acidification fish_populations human_blood_pH_drop seizures_comas_death 
     ⟨fact_direct_effect_on_fish, fact_uncertainty_on_edible_effects, fact_pH_drop_similarity, fact_human_consequences⟩
-",Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 46,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,equivocation,equivocation,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: The fallacy of equivocation occurs when a key term or phrase in an argument is used in an ambiguous way, with one meaning in one portion of the argument and then another meaning in another portion of the argument.
@@ -568,7 +568,7 @@ theorem prove_equivocation
      fact_meaning2_experience_directly, 
      fact_premise, 
      fact_conclusion⟩
-",Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 48,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,fallacy of credibility,fallacy of credibility,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: This fallacy occurs when one attempts to invalidate or dismiss an argument by attacking the character, motive, or other irrelevant aspects of the person or group presenting the argument (or who might present it), rather than addressing the substance of the argument itself. 
@@ -697,7 +697,7 @@ theorem prove_fallacy_of_credibility
      text_attacks_liberal_media_character,
      attack_is_irrelevant_to_study_merit,
      attack_attempts_to_disprove_criticism⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 70,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,fallacy of logic,fallacy of logic,True,lean_pass_with_type_error,"/-
   Rule Concept: An error in the logical structure of an argument, particularly an argument from ignorance, which claims that a proposition is false because it has not been proven true (or proven to the arguer's satisfaction), often overlooking existing evidence or shifting the burden of proof inappropriately.
 -/
@@ -788,7 +788,7 @@ theorem prove_fallacy_of_logic_0
   (fact2 : implies_falsity argument (causal_link = ""false""))
   (fact3 : has_sufficient_evidence proof_of_causal_link)
   : is_fallacy_of_logic :=
-  rule argument causal_link proof_of_causal_link ⟨fact1, fact2, fact3⟩",Type mismatch | Type mismatch | Type mismatch | Type mismatch,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+  rule argument causal_link proof_of_causal_link ⟨fact1, fact2, fact3⟩",Type mismatch | Type mismatch | Type mismatch | Type mismatch,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 94,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,false causality,false causality,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: This informal fallacy occurs when a conclusion implies a causal relationship without sufficient supporting evidence, often jumping from correlation to causation, or from a general possibility to a specific, unverified instance of causation.
@@ -941,7 +941,7 @@ theorem prove_false_causality
      by rw [h_rb, h_nie]; exact claims_causality_rebounding_island,
      by rw [h_nie]; exact is_event_island_emergence,
      no_evidence_for_specific_causality⟩
-",Type mismatch | Type mismatch | Type mismatch,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Type mismatch | Type mismatch | Type mismatch,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 95,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,false causality,false causality,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: This fallacy asserts or implies a causal relationship without sufficient evidence. It often mistakenly assumes that because two things are correlated, or because one thing happened before another, one caused the other. In this case, it attempts to dismiss a current causal link (human activity causing high CO2) by pointing to a historical instance where the effect (high CO2) existed without the proposed cause, implying the cause is not valid *now*.
@@ -1036,7 +1036,7 @@ theorem prove_false_causality_0
   : is_false_causality :=
   rule argument_text co2_levels_ancient co2_levels_modern human_activity_ancient human_activity_modern 
     ⟨fact1, fact2, fact3, fact4, fact5⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 98,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,false dilemma,false dilemma,True,lean_pass_with_type_error,"/-
   Rule Concept: Presenting only two options or sides when there are many options or sides, forcing a choice between perceived extremes.
 -/
@@ -1117,7 +1117,7 @@ theorem prove_false_dilemma
     is_false_dilemma)
   : is_false_dilemma :=
   rule speaker strict_policy_option public_money_option argument 
-    ⟨fact_presents_options, fact_implies_only_two_options, fact_exists_other_options⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+    ⟨fact_presents_options, fact_implies_only_two_options, fact_exists_other_options⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 11,gemini-pro-non,Gemini 2.5 pro (NT),option_1,ad populum,ad populum,True,lean_pass_with_type_error,"Looking at this Ad Populum fallacy case, I need to create a theorem that proves the argument commits this fallacy by relying on popular belief as the primary justification.
 
 ```lean
@@ -1232,7 +1232,7 @@ theorem prove_ad_populum
   (fact4 : ¬provides_evidence argument status_as_scientific_genius)
   : is_ad_populum :=
   rule argument status_as_scientific_genius many_people ⟨fact1, fact3, fact4⟩
-",Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 23,gemini-pro-non,Gemini 2.5 pro (NT),option_1,appeal to emotion,appeal to emotion,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: An appeal to emotion fallacy occurs when an argument attempts to persuade by manipulating emotions (like fear, pity, or anger) rather than by using logical reasoning or evidence.
@@ -1315,7 +1315,7 @@ theorem prove_appeal_to_emotion
   : is_appeal_to_emotion :=
   goal_def.mpr ⟨claim, britains_most_high_profile_environmental_group, h3, 
     (CausesHarmTo climate_change children), h6, h5⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 89,gemini-pro-non,Gemini 2.5 pro (NT),option_3,false causality,false causality,True,lean_pass_with_type_error,"/-
   General template for False Causality
   Rule Concept: A causal relationship is asserted ('due to natural weather patterns') without providing any evidence to support it, jumping to a conclusion about the cause of an observed effect.
@@ -1388,7 +1388,7 @@ theorem prove_false_causality_0
   (rule : ∀ (causal_claim : Prop),
     (is_asserted_in_argument causal_claim ∧ ¬ has_supporting_evidence causal_claim) → is_false_causality)
   : is_false_causality :=
-  rule h_asserted_cause ⟨fact1, fact2⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+  rule h_asserted_cause ⟨fact1, fact2⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 111,gemini-pro-non,Gemini 2.5 pro (NT),option_2,faulty generalization,faulty generalization,True,lean_pass_with_type_error,"```lean
 /-
   Fallacy: Faulty Generalization
@@ -1473,7 +1473,7 @@ theorem prove_faulty_generalization
   : is_faulty_generalization :=
   rule nuclear_fallout species_extinction (is_unparalleled human_impact) 
     ⟨fact1, fact2, fact4, fact5, fact3⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 89,moonshotai/kimi-k2-thinking,Kimi-k2 (T),option_2,false causality,false causality,True,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A statement that jumps to a conclusion implying a causal relationship without supporting evidence.
@@ -1546,7 +1546,7 @@ theorem prove_false_causality
   (fact3 : ¬causes natural_weather_pattern topic)
   : is_false_causality :=
   rule argument topic ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_moonshotai_kimi-k2-thinking_climate_20251113_204700---6cdf01b2-5329-4d56-9d6a-5d5a27e4073c.json,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,preferred failure: option_is_correct=true and final_verification_status!=pass
 19,anthropic/claude-sonnet-4.5,Claude-sonnet-4.5 (T),option_3,false causality,ad populum,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A statement that jumps to a conclusion implying a causal relationship without
@@ -1633,7 +1633,7 @@ theorem prove_false_causality
   (fact3 : ¬(has_evidence_for causal_claim (causes flawed_survey invalid_consensus)))
   : is_false_causality :=
   rule flawed_survey invalid_consensus causal_claim ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_anthropic_claude-sonnet-4.5_climate_20251113_204700---225fda0d-172b-4504-9079-f81dd4dc91f3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 25,anthropic/claude-sonnet-4.5,Claude-sonnet-4.5 (T),option_2,faulty generalization,appeal to emotion,False,lean_pass_with_type_error,"Looking at this faulty generalization case, I need to create a theorem that proves the argument commits a faulty generalization fallacy based on the given facts.
 
 The structure should follow the pattern: if we generalize from specific instances (specific glaciers) to a universal claim (all coastal cities affected) without sufficient evidence, then it's a faulty generalization.
@@ -1763,7 +1763,7 @@ theorem prove_faulty_generalization
   : is_faulty_generalization :=
   rule pine_island_glaciers all_coastal_cities global_consequence 
     ⟨fact1, fact2, fact3, fact4⟩
-",Application type mismatch: The argument,results_anthropic_claude-sonnet-4.5_climate_20251113_204700---225fda0d-172b-4504-9079-f81dd4dc91f3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 100,anthropic/claude-sonnet-4.5,Claude-sonnet-4.5 (T),option_2,fallacy of relevance,false dilemma,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A fallacy of relevance occurs when premises or conclusions are introduced that have nothing to do with the subject matter. The severity or immediacy of other environmental problems is not directly relevant to whether global warming is a significant environmental threat.
@@ -1834,7 +1834,7 @@ theorem prove_fallacy_of_relevance
   (fact2 : ¬(is_relevant_to (is_more_immediate other_environmental_problems global_warming_threat) (addresses_validity_of argument_about_global_warming global_warming_threat)))
   : is_fallacy_of_relevance :=
   rule argument_about_global_warming global_warming_threat other_environmental_problems ⟨fact1, fact2⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_anthropic_claude-sonnet-4.5_climate_20251113_204700---225fda0d-172b-4504-9079-f81dd4dc91f3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 14,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_1,faulty generalization,ad populum,False,no_pass,"/-
   Rule Concept: Drawing a conclusion about all instances based on insufficient evidence.
 -/
@@ -1935,7 +1935,7 @@ theorem prove_faulty_generalization
   (fact3 : based_on_calculations)
   : is_faulty_generalization :=
   rule biofuel_production global_land_use 45 ⟨fact1, ⟨fact2, fact3⟩⟩
-",failed to synthesize | failed to synthesize,results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+",failed to synthesize | failed to synthesize,failure_example,other failure from allowed models and github-visible subset
 30,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_1,faulty generalization,appeal to emotion,False,no_pass,"Looking at this input, I need to:
 
 1. Identify the facts that support a hasty generalization
@@ -2030,7 +2030,7 @@ theorem prove_hasty_generalization_0
   (fact2 : affects_resources fire_seasons)
   : is_faulty_generalization :=
   rule fire_seasons world ⟨fact1, fact2⟩
-",temp_verify/tmp44pz28rp.lean:28:20: error(lean.unknownIdentifier): Unknown identifier `world`,results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmp44pz28rp.lean:28:20: error(lean.unknownIdentifier): Unknown identifier `world`,failure_example,other failure from allowed models and github-visible subset
 56,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_1,false causality,fallacy of credibility,False,lean_pass_with_type_error,"```lean
 /-
   General template for False Causality
@@ -2107,7 +2107,7 @@ theorem prove_false_causality
     is_false_causality)
   : is_false_causality :=
   rule process erosion land_area_gain ⟨h1, h2, h3⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 64,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_2,faulty generalization,fallacy of extension,False,no_pass,"```lean
 /-
   Rule Concept: An informal fallacy wherein a conclusion is drawn about all or many instances of a phenomenon on the basis of one or a few instances of that phenomenon.
@@ -2182,7 +2182,7 @@ theorem prove_faulty_generalization
   (fact2 : is_frightening parameter)
   : is_faulty_generalization :=
   rule government_action parameter ⟨fact1, fact2⟩
-","unexpected identifier; expected command | unexpected token '.'; expected ':' | unexpected identifier; expected '(', '[', '{' or '⦃' | unexpected token '.'; expected identifier | unexpected token 'structure'; expected ':' | unexpected token ','; expected command",results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+","unexpected identifier; expected command | unexpected token '.'; expected ':' | unexpected identifier; expected '(', '[', '{' or '⦃' | unexpected token '.'; expected identifier | unexpected token 'structure'; expected ':' | unexpected token ','; expected command",failure_example,other failure from allowed models and github-visible subset
 74,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_2,fallacy of extension,fallacy of logic,False,lean_pass_with_type_error,"/-
   Rule Concept: Attacking an exaggerated or caricatured version of your opponent's position.
 -/
@@ -2243,7 +2243,7 @@ theorem prove_fallacy_of_extension_0
   (fact1 : cripples agreement economy)
   (fact2 : exaggerated (cripples agreement economy))
   : is_fallacy_of_extension :=
-  rule agreement economy ⟨fact1, fact2⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+  rule agreement economy ⟨fact1, fact2⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 86,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_1,faulty generalization,fallacy of relevance,False,lean_pass_with_type_error,"/-
   Rule Concept: faulty generalization: an informal fallacy wherein a conclusion is drawn about all or many instances of a phenomenon on the basis of one or a few instances of that phenomenon. is an example of jumping to conclusions.
 -/
@@ -2314,7 +2314,7 @@ theorem prove_faulty_generalization
      generalizes (is_different_from future_state current_state) (is_different_from Entity Entity)) →
     is_faulty_generalization)
   : is_faulty_generalization :=
-  rule climate_change future_comfort current_comfort ⟨h1, h2, h3⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+  rule climate_change future_comfort current_comfort ⟨h1, h2, h3⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 99,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_1,false dilemma,false dilemma,False,no_pass,"```lean
 /-
   Rule Concept: Presenting only two options or sides when there are many options or sides.
@@ -2435,7 +2435,7 @@ theorem prove_false_dilemma_0
   (fact4 : cripples_growth energy_export_status)
   : is_false_dilemma :=
   rule energy_policy energy_export_status ⟨fact1, ⟨fact2, ⟨fact3, fact4⟩⟩⟩
-",temp_verify/tmpu7vf7a7w.lean:40:7: error(lean.unknownIdentifier): Unknown identifier `energy_policy`,results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpu7vf7a7w.lean:40:7: error(lean.unknownIdentifier): Unknown identifier `energy_policy`,failure_example,other failure from allowed models and github-visible subset
 106,deepseek/deepseek-chat-v3.1,Deepseek-chat-v3.1 (T),option_2,false causality,false dilemma,False,no_pass,"/-
   Rule Concept: Implying a causal relationship without supporting evidence.
 -/
@@ -2553,7 +2553,7 @@ temp_verify/tmpssn9gwze.lean:38:16: error(lean.unknownIdentifier): Unknown ident
 temp_verify/tmpssn9gwze.lean:38:24: error(lean.unknownIdentifier): Unknown identifier `event_B`
 temp_verify/tmpssn9gwze.lean:38:33: error(lean.unknownIdentifier): Unknown identifier `fact1`
 temp_verify/tmpssn9gwze.lean:38:40: error(lean.unknownIdentifier): Unknown identifier `fact2`
-temp_verify/tmpssn9gwze.lean:38:47: error(lean.unknownIdentifier): Unknown identifier `fact3`",results_deepseek_deepseek-chat-v3.1_climate_20251113_204700---17ca0880-cc15-478c-ac36-296289580735.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpssn9gwze.lean:38:47: error(lean.unknownIdentifier): Unknown identifier `fact3`",failure_example,other failure from allowed models and github-visible subset
 64,deepseek/deepseek-r1,Deepseek-r1 (T),option_2,fallacy of extension,fallacy of extension,False,no_pass,"```lean
 /-
   Rule Concept: Fallacy of extension attacks an exaggerated or caricatured version of an opponent's position.
@@ -2678,7 +2678,7 @@ theorem prove_fallacy_of_extension
 temp_verify/tmpzclwzeap.lean:40:16: error(lean.unknownIdentifier): Unknown identifier `topic`
 temp_verify/tmpzclwzeap.lean:40:23: error(lean.unknownIdentifier): Unknown identifier `fact2`
 temp_verify/tmpzclwzeap.lean:40:30: error(lean.unknownIdentifier): Unknown identifier `fact3`
-temp_verify/tmpzclwzeap.lean:40:37: error(lean.unknownIdentifier): Unknown identifier `fact4`",results_deepseek_deepseek-r1_climate_20251113_204700---0b186918-d78b-4394-9190-f9cfe3536006.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpzclwzeap.lean:40:37: error(lean.unknownIdentifier): Unknown identifier `fact4`",failure_example,other failure from allowed models and github-visible subset
 74,deepseek/deepseek-r1,Deepseek-r1 (T),option_1,false dilemma,fallacy of logic,False,no_pass,"```lean
 /-
   Rule Concept: Presenting only two options or sides when there are many options or sides.
@@ -2764,7 +2764,7 @@ theorem prove_false_dilemma
   (fact2 : ∃ n : ℕ, n > 2 ∧ actual_options_exist topic n)
   : is_false_dilemma :=
   rule argument topic ⟨fact1, fact2⟩
-",failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize,results_deepseek_deepseek-r1_climate_20251113_204700---0b186918-d78b-4394-9190-f9cfe3536006.json,failure_example,other failure from allowed models and github-visible subset
+",failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize,failure_example,other failure from allowed models and github-visible subset
 95,deepseek/deepseek-r1,Deepseek-r1 (T),option_2,fallacy of extension,false causality,False,no_pass,"```lean
 /-
   Rule Concept: A fallacy of extension occurs when an opponent's position is misrepresented as more extreme or broad than it actually is, then attacked.
@@ -2870,7 +2870,7 @@ theorem prove_fallacy_of_extension
 temp_verify/tmpljsgytje.lean:34:16: error(lean.unknownIdentifier): Unknown identifier `topic`
 temp_verify/tmpljsgytje.lean:34:23: error(lean.unknownIdentifier): Unknown identifier `fact1`
 temp_verify/tmpljsgytje.lean:34:30: error(lean.unknownIdentifier): Unknown identifier `fact2`
-temp_verify/tmpljsgytje.lean:34:37: error(lean.unknownIdentifier): Unknown identifier `fact3`",results_deepseek_deepseek-r1_climate_20251113_204700---0b186918-d78b-4394-9190-f9cfe3536006.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpljsgytje.lean:34:37: error(lean.unknownIdentifier): Unknown identifier `fact3`",failure_example,other failure from allowed models and github-visible subset
 22,gemini-2.5-pro,Gemini 2.5 pro (T),option_2,false causality,appeal to emotion,False,lean_pass_with_type_error,"Looking at this False Causality fallacy, I need to create a theorem that proves the argument commits this fallacy based on the given facts.
 
 The structure should follow the pattern:
@@ -2982,7 +2982,7 @@ theorem prove_false_causality
   (fact2 : LacksSufficientEvidence (causal_chain_part1 ∧ causal_chain_part2))
   : is_false_causality :=
   rule argument (causal_chain_part1 ∧ causal_chain_part2) ⟨fact1, fact2⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 23,gemini-2.5-pro,Gemini 2.5 pro (T),option_3,false causality,appeal to emotion,False,lean_pass_with_type_error,"/-
   Rule Concept: False causality (or questionable cause) is a fallacy that occurs when it is assumed that one thing caused another without sufficient evidence. It often oversimplifies a complex chain of events or mistakes correlation for causation.
 -/
@@ -3059,7 +3059,7 @@ theorem prove_false_causality
   (fact2 : is_actually_related_via climate_change child_death complex_causal_chain)
   (fact3 : is_oversimplification_of (presents_as_direct_cause argument climate_change child_death) complex_causal_chain)
   : is_false_causality :=
-  rule argument climate_change child_death complex_causal_chain ⟨fact1, fact2, fact3⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+  rule argument climate_change child_death complex_causal_chain ⟨fact1, fact2, fact3⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 31,gemini-2.5-pro,Gemini 2.5 pro (T),option_1,false dilemma,circular reasoning,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A false dilemma fallacy occurs when an argument presents two options as the only possibilities, when in fact more possibilities exist. It forces a choice between two extremes while ignoring the middle ground or other alternatives. The logical form is often an 'if-then' statement that implies if one condition isn't met (P), an extreme alternative (Q) must be true, ignoring the possibility of a state that is neither P nor Q.
@@ -3152,7 +3152,7 @@ theorem prove_false_dilemma
   (fact2 : unstated_alternative_exists)
   : is_false_dilemma :=
   defines_false_dilemma fact2
-",Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 41,gemini-2.5-pro,Gemini 2.5 pro (T),option_3,equivocation,equivocation,False,no_pass,"```lean
 /-
   Rule Concept: Equivocation occurs when a key term is used with two or more different meanings or implications in the same argument, and the argument depends on this ambiguity to reach its conclusion.
@@ -3249,7 +3249,7 @@ variable (h2 : are_not_equivalent_in_effect arctic_ice_system antarctic_ice_syst
 theorem prove_equivocation
   : is_equivocation :=
   rule argument arctic_ice_system antarctic_ice_system ⟨h1, h2⟩
-",temp_verify/tmpkdkcazkp.lean:33:2: error(lean.unknownIdentifier): Unknown identifier `rule`,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpkdkcazkp.lean:33:2: error(lean.unknownIdentifier): Unknown identifier `rule`,failure_example,other failure from allowed models and github-visible subset
 66,gemini-2.5-pro,Gemini 2.5 pro (T),option_3,appeal to emotion,fallacy of extension,False,lean_pass_with_type_error,"/-
   Rule Concept: An appeal to emotion is a fallacy where the arguer attempts to win an argument by manipulating the recipient's emotions, rather than by using valid logic and evidence.
 -/
@@ -3342,7 +3342,7 @@ theorem prove_appeal_to_emotion
      SubstitutesFor (Evokes arg aud emo) (LogicalReasoning arg)) →
     is_appeal_to_emotion)
   : is_appeal_to_emotion :=
-  rule argument audience emotion_distrust ⟨H1, H2, H4⟩",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+  rule argument audience emotion_distrust ⟨H1, H2, H4⟩",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 73,gemini-2.5-pro,Gemini 2.5 pro (T),option_3,intentional,fallacy of logic,False,lean_pass_with_type_error,"/-
   General template for Intentional Fallacy (Vagueness)
   Rule Concept: An intentional fallacy can occur when a speaker deliberately uses vague language to make a claim that is difficult to refute, thereby avoiding the burden of proof.
@@ -3415,7 +3415,7 @@ theorem prove_intentional_fallacy
     have h1 : IsDifficultToRefute claim := hypothesis1 fact1
     have h2 : AvoidsBurdenOfProof claim := hypothesis2 h1
     have h3 : IsDeliberateChoice speaker claim := hypothesis3 ⟨fact1, h2⟩
-    exact definition h3",Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+    exact definition h3",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 90,gemini-2.5-pro,Gemini 2.5 pro (T),option_2,faulty generalization,false causality,False,no_pass,"```lean
 /-
   Rule Concept: [A faulty generalization draws a conclusion about all instances of a phenomenon based on evidence from a small, potentially unrepresentative sample.]
@@ -3519,7 +3519,7 @@ theorem prove_faulty_generalization
   (conclusion : ∀ (p : GeologicalPeriod), LifeThrivedDuring p)
   : is_faulty_generalization :=
   rule fossil_record_sample ⟨h1, h2, conclusion⟩
-",Function expected at | Function expected at | Function expected at | Function expected at,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+",Function expected at | Function expected at | Function expected at | Function expected at,failure_example,other failure from allowed models and github-visible subset
 118,gemini-2.5-pro,Gemini 2.5 pro (T),option_1,equivocation,intentional,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: An argument is fallacious if a key term is used with different meanings in the premise and the conclusion, creating a misleading link between them.
@@ -3630,7 +3630,7 @@ theorem prove_equivocation
   : is_equivocation :=
   rule argument economic_costs_term costs_from_specific_weather total_asserted_costs_of_warming
     ⟨⟨h_premise_use, h_conclusion_use⟩, h_distinct⟩
-",Application type mismatch: The argument,results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 125,gemini-2.5-pro,Gemini 2.5 pro (T),option_2,false causality,intentional,False,no_pass,"/-
   Rule Concept: A false causality fallacy occurs when an argument asserts a causal relationship between two events without sufficient evidence to support the link, mistaking correlation or sequence for direct causation.
 -/
@@ -3746,7 +3746,7 @@ temp_verify/tmp10r1d3gh.lean:36:45: error(lean.unknownIdentifier): Unknown ident
 temp_verify/tmp10r1d3gh.lean:36:74: error(lean.unknownIdentifier): Unknown identifier `breakdown_of_nations`
 temp_verify/tmp10r1d3gh.lean:37:5: error(lean.unknownIdentifier): Unknown identifier `fact1`
 temp_verify/tmp10r1d3gh.lean:37:12: error(lean.unknownIdentifier): Unknown identifier `fact2`
-temp_verify/tmp10r1d3gh.lean:37:19: error(lean.unknownIdentifier): Unknown identifier `fact3`",results_gemini-2.5-pro_climate_20251113_204700---316cbe4f-ceac-4fb9-81a2-2ecd70399b92.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmp10r1d3gh.lean:37:19: error(lean.unknownIdentifier): Unknown identifier `fact3`",failure_example,other failure from allowed models and github-visible subset
 16,gemini-flash-non,Gemini 2.5 flash (NT),option_1,false causality,ad populum,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A statement that jumps to a conclusion implying a causal relationship without supporting evidence.
@@ -3819,7 +3819,7 @@ theorem prove_false_causality
   (fact2 : lacks_sufficient_evidence (is_result_of apocalyptic_media climate_anxiety))
   : is_false_causality :=
   rule apocalyptic_media climate_anxiety ⟨fact1, fact2⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 33,gemini-flash-non,Gemini 2.5 flash (NT),option_1,false causality,circular reasoning,False,no_pass,"/-
   Rule Concept: A false causality fallacy occurs when a causal relationship is asserted between events without sufficient evidence, often implying that because one event follows another, the first must have caused the second, or establishing a feedback loop without proper justification.
 -/
@@ -3935,7 +3935,7 @@ theorem prove_false_causality
 ","temp_verify/tmpg1gqb0up.lean:38:7: error(lean.unknownIdentifier): Unknown identifier `more_burning`
 temp_verify/tmpg1gqb0up.lean:38:20: error(lean.unknownIdentifier): Unknown identifier `more_warming`
 temp_verify/tmpg1gqb0up.lean:38:34: error(lean.unknownIdentifier): Unknown identifier `fact_causal_chain_asserted`
-temp_verify/tmpg1gqb0up.lean:38:62: error(lean.unknownIdentifier): Unknown identifier `fact_lack_justification_causal_chain`",results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpg1gqb0up.lean:38:62: error(lean.unknownIdentifier): Unknown identifier `fact_lack_justification_causal_chain`",failure_example,other failure from allowed models and github-visible subset
 46,gemini-flash-non,Gemini 2.5 flash (NT),option_2,fallacy of logic,equivocation,False,lean_pass_with_type_error,"Looking at this fallacy of logic, I need to identify the logical error in the argument structure. The argument seems to make a flawed implication from premises about location to a conclusion about experience.
 
 ```lean
@@ -4036,7 +4036,7 @@ theorem prove_fallacy_of_logic
   (fact2 : has_flawed_implication argument)
   : is_fallacy_of_logic :=
   rule argument (living_in_regions ∧ ¬ living_on_globe) (¬ direct_experience) ⟨fact1, fact2⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 66,gemini-flash-non,Gemini 2.5 flash (NT),option_3,faulty generalization,fallacy of extension,False,lean_pass_with_type_error,"/-
   Rule Concept: A conclusion is drawn about all or many instances of a phenomenon on the basis of one or a few instances of that phenomenon; an example of jumping to conclusions.
 -/
@@ -4137,7 +4137,7 @@ theorem prove_faulty_generalization
   rule ⟨text_claims_all_politicians_are_motivated_by_money_and_power,
         text_claims_all_environmentalists_are_motivated_by_money_and_devotion,
         text_claims_all_media_are_motivated_by_ideology_money_headlines,
-        no_evidence_for_universal_claim⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+        no_evidence_for_universal_claim⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 70,gemini-flash-non,Gemini 2.5 flash (NT),option_1,false causality,fallacy of logic,False,no_pass,"```lean
 /-
   Rule Concept: An informal fallacy where a causal relationship is asserted without sufficient evidence to support it, often implying one event caused another merely because they are correlated or one preceded the other.
@@ -4243,7 +4243,7 @@ theorem prove_false_causality
   : is_false_causality :=
   by
     have combined : is_low_percentage human_emissions_level ∧ has_not_been_shown := ⟨fact1, fact2⟩
-    exact rule human_emissions_level global_warming combined",temp_verify/tmp891immpw.lean:36:37: error(lean.unknownIdentifier): Unknown identifier `global_warming`,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+    exact rule human_emissions_level global_warming combined",temp_verify/tmp891immpw.lean:36:37: error(lean.unknownIdentifier): Unknown identifier `global_warming`,failure_example,other failure from allowed models and github-visible subset
 75,gemini-flash-non,Gemini 2.5 flash (NT),option_2,fallacy of relevance,fallacy of logic,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Introducing premises or conclusions that have nothing to do with the subject matter, thus failing to provide proper support for the main claim.
@@ -4360,7 +4360,7 @@ theorem prove_fallacy_of_relevance
   : is_fallacy_of_relevance :=
   rule argument claim_no_emissions premise_carbon_is_black premise_visibility 
     ⟨fact1, fact2, fact3, fact4, fact5, fact6, fact7, fact8⟩
-",Type mismatch | Type mismatch | Type mismatch,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+",Type mismatch | Type mismatch | Type mismatch,failure_example,other failure from allowed models and github-visible subset
 109,gemini-flash-non,Gemini 2.5 flash (NT),option_1,false causality,faulty generalization,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A statement that jumps to a conclusion implying a causal relationship without supporting evidence.
@@ -4431,7 +4431,7 @@ theorem prove_false_causality
     (is_result_of effect cause ∧ lacks_supporting_evidence (is_result_of effect cause)) → is_false_causality)
   : is_false_causality :=
   rule recent_global_warming fabrication_by_scientists ⟨fact_warming_fabricated, fact_no_evidence_for_causality⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 118,gemini-flash-non,Gemini 2.5 flash (NT),option_2,equivocation,intentional,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A key term or phrase in an argument is used in an ambiguous way, with one meaning in one portion of the argument and then another meaning in another portion of the argument.
@@ -4530,7 +4530,7 @@ theorem prove_equivocation
   (fact6 : represents_gain benefits)
   : is_equivocation :=
   rule costs EDF_asserted_costs ⟨fact1, fact2, fact3, fact4, fact5, fact6⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-non_climate_20251114_122923---98f3500a-d902-4982-9561-58ecee833676.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 8,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,faulty generalization,ad hominem,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Drawing a broad conclusion about all or many instances of a phenomenon based on one or a few isolated instances that are not representative or sufficient to support the general claim.
@@ -4611,7 +4611,7 @@ theorem prove_faulty_generalization
     is_faulty_generalization)
   : is_faulty_generalization :=
   rule caitlin_expedition_anecdote implied_general_conclusion ⟨fact1, fact2, fact3, fact4⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 8,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,fallacy of relevance,ad hominem,False,lean_pass_with_type_error,"```lean
 /-
   General template for Fallacy of Relevance
@@ -4700,7 +4700,7 @@ theorem prove_fallacy_of_relevance
   : is_fallacy_of_relevance :=
   rule expedition_detail main_argument_context specific_topic_of_detail main_topic_of_argument 
     ⟨fact2, fact1, fact3, fact4⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 8,gemini-flash-thinking,Gemini 2.5 flash (T),option_3,false dilemma,ad hominem,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Presenting only two options or sides when there are many options or sides, forcing a choice between them as if they are exhaustive and mutually exclusive.
@@ -4785,7 +4785,7 @@ theorem prove_false_dilemma
   : is_false_dilemma :=
   rule unexpected_cold_report implied_option_one implied_option_two actual_complexities 
     ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 15,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,fallacy of extension,ad populum,False,lean_pass_with_type_error,"/-
   Rule Concept: Attacking an exaggerated or caricatured version of your opponent's position, rather than their actual, more nuanced argument.
 -/
@@ -4876,7 +4876,7 @@ theorem prove_fallacy_of_extension_0
   (fact2 : asserts_failure_to_materialize argument caricatured_version)
   (fact3 : refutes_opponent_based_on_caricature argument opponent_position)
   : is_fallacy_of_extension :=
-  rule argument opponent_position caricatured_version ⟨fact1, fact2, fact3⟩",Type mismatch | Type mismatch | Type mismatch,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+  rule argument opponent_position caricatured_version ⟨fact1, fact2, fact3⟩",Type mismatch | Type mismatch | Type mismatch,failure_example,other failure from allowed models and github-visible subset
 33,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,false causality,circular reasoning,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Assuming a direct, exclusive, or oversimplified causal relationship between phenomena without sufficient evidence or by ignoring other contributing factors. Often characterized by 'A only means B' when B has multiple causes or A has multiple effects.
@@ -4987,7 +4987,7 @@ theorem prove_false_causality
        warming_causes_burning_claim burning_causes_warming_claim 
        human_ignition sea_level_rise
        ⟨fact1, fact2, fact3, fact4, fact5, fact6, fact7, fact8⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 34,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,fallacy of extension,circular reasoning,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Attacking an exaggerated or caricatured version of your opponent's position.
@@ -5070,7 +5070,7 @@ theorem prove_fallacy_of_extension
   (fact2 : IsExaggeratedVersionOf exaggerated_description actual_actions)
   : is_fallacy_of_extension :=
   rule author_claim conservatives_actions exaggerated_description actual_actions ⟨fact1, fact2⟩
-",Type mismatch,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Type mismatch,failure_example,other failure from allowed models and github-visible subset
 42,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,appeal to emotion,equivocation,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Manipulation of the recipient's emotions (such as fear, pity, or guilt) in order to win an argument or persuade them to accept a conclusion, rather than relying on logical reasoning or evidence.
@@ -5149,7 +5149,7 @@ axiom fallacy_occurs : relies_on_emotion_over_logic argument → is_appeal_to_em
 theorem prove_appeal_to_emotion
   : is_appeal_to_emotion :=
   fallacy_occurs (emotional_appeal_replaces_logic (dire_consequence_evokes_emotion prediction_describes_dire))
-",Type mismatch | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Type mismatch | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 45,gemini-flash-thinking,Gemini 2.5 flash (T),option_3,ad populum,equivocation,False,lean_pass_with_type_error,"/-
   Rule Concept: A fallacious argument based on affirming that something is real or true because the majority (or a large, respected group) thinks so, rather than providing substantive evidence.
 -/
@@ -5258,7 +5258,7 @@ theorem prove_ad_populum_climate
      lacks_independent_evidence conc) → 
     is_ad_populum)
   : is_ad_populum :=
-  rule argument conclusion group_of_experts ⟨F3, F5, F6, F7, F8⟩",Type mismatch | Type mismatch,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+  rule argument conclusion group_of_experts ⟨F3, F5, F6, F7, F8⟩",Type mismatch | Type mismatch,failure_example,other failure from allowed models and github-visible subset
 57,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,equivocation,fallacy of credibility,False,no_pass,"Looking at this equivocation fallacy structure, I need to create a theorem that proves `is_equivocation` based on the facts that show a term has multiple meanings and the argument exploits a different meaning than what the original speaker intended.
 
 ```lean
@@ -5438,7 +5438,7 @@ temp_verify/tmpid5mmdue.lean:50:5: error(lean.unknownIdentifier): Unknown identi
 temp_verify/tmpid5mmdue.lean:51:5: error(lean.unknownIdentifier): Unknown identifier `fact_term_has_meaning_A`
 temp_verify/tmpid5mmdue.lean:52:5: error(lean.unknownIdentifier): Unknown identifier `fact_term_has_meaning_B`
 temp_verify/tmpid5mmdue.lean:53:5: error(lean.unknownIdentifier): Unknown identifier `fact_hansen_spoke_term`
-temp_verify/tmpid5mmdue.lean:54:5: error(lean.unknownIdentifier): Unknown identifier `fact_argument_exploits_meaning_B`",results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpid5mmdue.lean:54:5: error(lean.unknownIdentifier): Unknown identifier `fact_argument_exploits_meaning_B`",failure_example,other failure from allowed models and github-visible subset
 63,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,equivocation,fallacy of extension,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: This fallacy occurs when a key term or phrase in an argument is used with two or more different meanings within the same argument, leading to a misleading or invalid conclusion.
@@ -5549,7 +5549,7 @@ theorem prove_equivocation
      meanings_are_different, 
      premise_natural_change_is_good, 
      implicit_conclusion_dismisses_anthropogenic⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 64,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,appeal to emotion,fallacy of extension,False,no_pass,"```lean
 /-
   General template for Appeal to Emotion
@@ -5676,7 +5676,7 @@ axiom government_is_manipulative : is_manipulative_tactic government_hyping
 theorem prove_appeal_to_emotion
   : is_appeal_to_emotion :=
   definition_of_appeal_to_emotion ⟨government_hyping, fear_emotion, And.intro government_intends_fear government_is_manipulative⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Invalid `⟨...⟩` notation: The expected type `?m.1 → ?m.1 → Prop` is not an inductive type,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Invalid `⟨...⟩` notation: The expected type `?m.1 → ?m.1 → Prop` is not an inductive type,failure_example,other failure from allowed models and github-visible subset
 86,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,false causality,fallacy of relevance,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A statement that jumps to a conclusion implying a causal relationship between two events or phenomena without sufficient supporting evidence, or by declaring the causal link and its implications as self-evident or ""obvious"" without demonstrating why.
@@ -5775,7 +5775,7 @@ theorem prove_false_causality_0
   (fact4 : is_premise_for_further_argument context_statement)
   : is_false_causality :=
   rule context_statement concept_climate_change concept_implications ⟨fact1, fact2, fact3, fact4⟩
-",Type mismatch | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Type mismatch | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 98,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,appeal to emotion,false dilemma,False,lean_pass_with_type_error,"/-
   General template for Appeal to Emotion
   Rule Concept: Manipulation of the recipient's emotions in order to win an argument, often by using emotionally charged language to distract from logical reasoning.
@@ -5864,7 +5864,7 @@ theorem prove_appeal_to_emotion
     ⟨fact_P_force_homes_is_part_of_argument, 
      fact_describes_negative_consequence, 
      fact_evokes_emotion, 
-     fact_distracts_from_logic⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+     fact_distracts_from_logic⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 102,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,false causality,false dilemma,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A conclusion is drawn implying a causal relationship between two events or phenomena without sufficient evidence to support that link. The mere temporal or correlational relationship is mistaken for causation, or a cause is asserted without demonstrating the mechanism within the provided context.
@@ -5937,7 +5937,7 @@ theorem prove_false_causality
   (fact2 : evidence_for_causation_is_absent_in_snippet)
   : is_false_causality :=
   rule unstated_cause stated_effect ⟨fact1, fact2⟩
-",Type mismatch | Type mismatch,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Type mismatch | Type mismatch,failure_example,other failure from allowed models and github-visible subset
 103,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,equivocation,false dilemma,False,no_pass,"Looking at this equivocation fallacy, I need to complete the theorem that proves `is_equivocation` based on the pattern where a term is used with different meanings to create a misleading contradiction.
 
 ```lean
@@ -6136,7 +6136,7 @@ temp_verify/tmpujyatwhh.lean:60:55: error(lean.unknownIdentifier): Unknown ident
 temp_verify/tmpujyatwhh.lean:61:5: error(lean.unknownIdentifier): Unknown identifier `argument_uses_m1_science`
 temp_verify/tmpujyatwhh.lean:61:31: error(lean.unknownIdentifier): Unknown identifier `argument_uses_m1_consensus`
 temp_verify/tmpujyatwhh.lean:62:5: error(lean.unknownIdentifier): Unknown identifier `argument_implies_contradiction_with_m1`
-temp_verify/tmpujyatwhh.lean:62:45: error(lean.unknownIdentifier): Unknown identifier `meanings_m2_are_compatible`",results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpujyatwhh.lean:62:45: error(lean.unknownIdentifier): Unknown identifier `meanings_m2_are_compatible`",failure_example,other failure from allowed models and github-visible subset
 113,gemini-flash-thinking,Gemini 2.5 flash (T),option_1,appeal to emotion,faulty generalization,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Manipulation of the recipient's emotions (e.g., fear, pity, anger) in order to win an argument or sway opinion, instead of relying purely on logical reasoning or presenting comprehensive evidence within the given context.
@@ -6225,7 +6225,7 @@ variable (h5 : aims_to_persuade_by_emotion overall_analysis_argument → is_appe
 theorem prove_appeal_to_emotion :
   is_appeal_to_emotion :=
   h5 (h4 ⟨h1, h2, h3⟩)
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 113,gemini-flash-thinking,Gemini 2.5 flash (T),option_2,false causality,faulty generalization,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Asserting a causal relationship between events or states without sufficient evidence or a clear explanation of the causal mechanism within the provided context.
@@ -6310,7 +6310,7 @@ theorem prove_false_causality
   : is_false_causality :=
   rule scenario_description business_as_usual existential_threat current_text_snippet 
     ⟨fact1, fact2⟩
-",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-flash-thinking_climate_20251114_122923---00ffb317-2144-49bf-8709-974765f4e3c3.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 13,gemini-pro-non,Gemini 2.5 pro (NT),option_3,fallacy of extension,ad populum,False,no_pass,"```lean
 /-
   Rule Concept: A Fallacy of Extension (or Straw Man) occurs when an argument misrepresents or caricatures an opponent's position to make it easier to attack.
@@ -6444,7 +6444,7 @@ temp_verify/tmpucekk14u.lean:41:5: error(lean.unknownIdentifier): Unknown identi
 temp_verify/tmpucekk14u.lean:41:34: error(lean.unknownIdentifier): Unknown identifier `is_caused_by_natural_factors`
 temp_verify/tmpucekk14u.lean:42:5: error(lean.unknownIdentifier): Unknown identifier `fact_actual_position`
 temp_verify/tmpucekk14u.lean:42:27: error(lean.unknownIdentifier): Unknown identifier `fact_caricatured_position`
-temp_verify/tmpucekk14u.lean:42:54: error(lean.unknownIdentifier): Unknown identifier `fact_refutation_target`",results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpucekk14u.lean:42:54: error(lean.unknownIdentifier): Unknown identifier `fact_refutation_target`",failure_example,other failure from allowed models and github-visible subset
 15,gemini-pro-non,Gemini 2.5 pro (NT),option_1,fallacy of extension,ad populum,False,no_pass,"Looking at this Fallacy of Extension (Straw Man) example, I need to create a theorem that proves `is_fallacy_of_extension` based on the three facts provided.
 
 The structure follows the pattern:
@@ -6582,7 +6582,7 @@ temp_verify/tmps8dwn_5z.lean:41:20: error(lean.unknownIdentifier): Unknown ident
 temp_verify/tmps8dwn_5z.lean:41:36: error(lean.unknownIdentifier): Unknown identifier `climate_science_predictions`
 temp_verify/tmps8dwn_5z.lean:41:65: error(lean.unknownIdentifier): Unknown identifier `fact1`
 temp_verify/tmps8dwn_5z.lean:41:72: error(lean.unknownIdentifier): Unknown identifier `fact2`
-temp_verify/tmps8dwn_5z.lean:41:79: error(lean.unknownIdentifier): Unknown identifier `fact3`",results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmps8dwn_5z.lean:41:79: error(lean.unknownIdentifier): Unknown identifier `fact3`",failure_example,other failure from allowed models and github-visible subset
 22,gemini-pro-non,Gemini 2.5 pro (NT),option_2,appeal_to_emotion,appeal to emotion,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: [This fallacy involves manipulating an audience's emotions, such as fear or pity, to win an argument, rather than using factual or logical reasoning.]
@@ -6655,7 +6655,7 @@ theorem prove_appeal_to_emotion
     (UsesEmotionalAppeal arg ∧ LacksLogicalSupport arg) → is_appeal_to_emotion)
   : is_appeal_to_emotion :=
   rule argument ⟨emotional_appeal_from_fear fact1 fact2, fact2⟩
-",Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 34,gemini-pro-non,Gemini 2.5 pro (NT),option_2,faulty generalization,circular reasoning,False,no_pass,"```lean
 /-
   Rule Concept: A faulty generalization occurs when a conclusion is drawn about a whole group based on the actions of a subset of that group. The text makes a claim about 'some political conservatives' but implies this is a characteristic approach, potentially misrepresenting the diverse views within the broader group of political conservatives on climate science and policy.
@@ -6794,7 +6794,7 @@ theorem prove_faulty_generalization
     all_political_conservatives 
     undermines_science_to_block_policies 
     ⟨h1, ⟨h2, h3⟩⟩)
-",Application type mismatch: The argument | Invalid `⟨...⟩` notation: The expected type of this term could not be determined,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Invalid `⟨...⟩` notation: The expected type of this term could not be determined,failure_example,other failure from allowed models and github-visible subset
 36,gemini-pro-non,Gemini 2.5 pro (NT),option_2,equivocation,circular reasoning,False,no_pass,"```lean
 /-
   Rule Concept: Equivocation is the misleading use of a term with more than one meaning or sense by glossing over which meaning is intended at a particular time. It uses the ambiguity of language to support a conclusion.
@@ -6901,7 +6901,7 @@ theorem prove_equivocation
   (fact2 : ∀ e, is_clean_in_sense2 e → ¬ makes_clean fossil_fuels e)
   : is_equivocation :=
   rule fossil_fuels environment ⟨fact1, fact2⟩
-",temp_verify/tmpgdspzq35.lean:34:20: error(lean.unknownIdentifier): Unknown identifier `environment`,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpgdspzq35.lean:34:20: error(lean.unknownIdentifier): Unknown identifier `environment`,failure_example,other failure from allowed models and github-visible subset
 41,gemini-pro-non,Gemini 2.5 pro (NT),option_3,faulty generalization,equivocation,False,no_pass,"/-
   General template for Faulty Generalization
   Rule Concept: A Faulty Generalization draws a broad conclusion from a small or unrepresentative sample of data. The conclusion is not logically justified by the evidence provided.
@@ -7034,7 +7034,7 @@ temp_verify/tmpnc2gff0m.lean:42:35: error(lean.unknownIdentifier): Unknown ident
 temp_verify/tmpnc2gff0m.lean:43:5: error(lean.unknownIdentifier): Unknown identifier `observation_made`
 temp_verify/tmpnc2gff0m.lean:43:23: error(lean.unknownIdentifier): Unknown identifier `conclusion_implied`
 temp_verify/tmpnc2gff0m.lean:43:43: error(lean.unknownIdentifier): Unknown identifier `inference_link`
-temp_verify/tmpnc2gff0m.lean:43:59: error(lean.unknownIdentifier): Unknown identifier `sample_is_small`",results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpnc2gff0m.lean:43:59: error(lean.unknownIdentifier): Unknown identifier `sample_is_small`",failure_example,other failure from allowed models and github-visible subset
 44,gemini-pro-non,Gemini 2.5 pro (NT),option_1,fallacy of extension,equivocation,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A fallacy of extension (straw man) occurs when an argument misrepresents an opponent's position to make it easier to attack. The argument refutes this misrepresented version rather than the actual position.
@@ -7105,7 +7105,7 @@ axiom rule_application : (IsDistortionOf misrepresented_global_warming actual_gl
 theorem prove_fallacy_of_extension :
   is_fallacy_of_extension :=
   rule_application fact_is_distortion
-",Application type mismatch: The argument | Type mismatch | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Type mismatch | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 44,gemini-pro-non,Gemini 2.5 pro (NT),option_3,fallacy of relevance,equivocation,False,no_pass,"/-
   General template for Fallacy of Relevance
   Rule Concept: A fallacy of relevance occurs when an argument introduces a premise or a point that is not logically related to the conclusion it is supposed to support, distracting from the core issue.
@@ -7207,7 +7207,7 @@ variable (fact_is_irrelevant : IsIrrelevantTo author_premise main_topic)
 theorem prove_fallacy_of_relevance :
   is_fallacy_of_relevance :=
   rule author_premise papers_argument main_topic ⟨fact_is_premise, fact_is_irrelevant⟩
-",temp_verify/tmp95ybqs9q.lean:35:2: error(lean.unknownIdentifier): Unknown identifier `rule`,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmp95ybqs9q.lean:35:2: error(lean.unknownIdentifier): Unknown identifier `rule`,failure_example,other failure from allowed models and github-visible subset
 50,gemini-pro-non,Gemini 2.5 pro (NT),option_1,ad hominem,fallacy of credibility,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: An argument is considered an Ad Hominem fallacy if, instead of addressing the substance of an opponent's argument, it attacks the opponent's character, motives, or other personal attributes. The attack is used as a basis to dismiss the argument itself.
@@ -7302,7 +7302,7 @@ theorem prove_ad_hominem
      fact_is_motive_attack, 
      fact_opponents_accused_of_scamming, 
      fact_attack_implies_dismissal fact_opponents_accused_of_scamming⟩
-",Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 56,gemini-pro-non,Gemini 2.5 pro (NT),option_1,faulty generalization,fallacy of credibility,False,no_pass,"```lean
 /-
   Rule Concept: A faulty generalization occurs when a conclusion about a whole population is drawn from an unrepresentative or insufficient sample. The fallacy lies in assuming that what is true for a specific case or a limited number of cases must be true for all cases.
@@ -7417,7 +7417,7 @@ theorem prove_faulty_generalization
   by
     apply rule research_finding all_coastal_areas
     exact ⟨fact1, fact2, fact3⟩
-",temp_verify/tmpuwha_zn3.lean:36:32: error(lean.unknownIdentifier): Unknown identifier `all_coastal_areas`,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpuwha_zn3.lean:36:32: error(lean.unknownIdentifier): Unknown identifier `all_coastal_areas`,failure_example,other failure from allowed models and github-visible subset
 58,gemini-pro-non,Gemini 2.5 pro (NT),option_1,false causality,fallacy of extension,False,lean_pass_with_type_error,"Looking at this False Causality fallacy, I need to create a theorem that captures how the argument incorrectly assumes causation from correlation.
 
 ```lean
@@ -7542,7 +7542,7 @@ theorem prove_false_causality
   : is_false_causality :=
   rule argument increased_co2_levels positive_global_trends gdp_per_capita 
     ⟨h1, h4, h3, h5⟩
-",Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 60,gemini-pro-non,Gemini 2.5 pro (NT),option_2,fallacy of relevance,fallacy of extension,False,lean_pass_with_type_error,"/-
   Rule Concept: A Fallacy of Relevance occurs when an argument includes premises or information that are not logically connected to the conclusion. The information, while perhaps true, does not actually support the point being made, serving instead as a distraction.
 -/
@@ -7641,7 +7641,7 @@ theorem prove_fallacy_of_relevance
   (fact3 : is_about Trump_opinion_on_global_warming)
   (fact4 : is_irrelevant_to_conclusion Trump_opinion_on_global_warming)
   : is_fallacy_of_relevance :=
-  fallacy_of_relevance_rule fact4",Type mismatch | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+  fallacy_of_relevance_rule fact4",Type mismatch | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 66,gemini-pro-non,Gemini 2.5 pro (NT),option_2,faulty generalization,fallacy of extension,False,lean_pass_with_type_error,"/-
   General template for Faulty Generalization
   Rule Concept: A faulty generalization occurs when a conclusion is drawn about an entire group based on an insufficient or unrepresentative sample. It stereotypes a diverse group by attributing a single motive or characteristic to all its members.
@@ -7706,7 +7706,7 @@ theorem prove_faulty_generalization
           (∀ (m : media_members), supports_global_warming_alarmism m → is_motivated_by m ""ideology, money, and headlines"") →
           is_faulty_generalization)
   : is_faulty_generalization :=
-  rule ⟨h_politician_motive, h_environmentalist_motive, h_media_motive⟩",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+  rule ⟨h_politician_motive, h_environmentalist_motive, h_media_motive⟩",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 105,gemini-pro-non,Gemini 2.5 pro (NT),option_2,false causality,false dilemma,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: False causality (post hoc ergo propter hoc) is a fallacy where a causal relationship is asserted without sufficient evidence, often simply because one event precedes another or is correlated with it. The argument jumps to a conclusion about causation.
@@ -7785,7 +7785,7 @@ theorem prove_false_causality
   (fact2 : ¬(Has_sufficient_evidence (Is_sole_determinant human_actions_now glacier_collapse_rate)))
   : is_false_causality :=
   rule human_actions_now glacier_collapse_rate ⟨fact1, fact2⟩
-",Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 116,gemini-pro-non,Gemini 2.5 pro (NT),option_1,fallacy of relevance,faulty generalization,False,lean_pass_with_type_error,"/-
   Rule Concept: A fallacy of relevance occurs when an argument relies on premises that are not logically relevant to the conclusion. The introduction of corrective factors (population, wealth) may be irrelevant if they obscure the primary relationship being examined (climate change and damage rates).
 -/
@@ -7868,7 +7868,7 @@ theorem prove_fallacy_of_relevance
   (fact1 : IsContingentOn P corrective_factors)
   (fact2 : ¬(IsRelevantTo corrective_factors P))
   : is_fallacy_of_relevance :=
-  rule P corrective_factors ⟨fact1, fact2⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+  rule P corrective_factors ⟨fact1, fact2⟩",Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 116,gemini-pro-non,Gemini 2.5 pro (NT),option_2,intentional,faulty generalization,False,no_pass,"Looking at the provided setup, I need to create a theorem that proves `is_intentional_fallacy` from the given facts. The definition shows that `is_intentional_fallacy` requires both that the method was chosen to support a conclusion AND that it leads to a misleading outcome.
 
 ```lean
@@ -8007,7 +8007,7 @@ theorem prove_intentional_fallacy
 temp_verify/tmp3xl95naa.lean:44:26: error(lean.unknownIdentifier): Unknown identifier `correction_method`
 temp_verify/tmp3xl95naa.lean:44:44: error(lean.unknownIdentifier): Unknown identifier `conclusion`
 temp_verify/tmp3xl95naa.lean:44:56: error(lean.unknownIdentifier): Unknown identifier `h_chooses`
-temp_verify/tmp3xl95naa.lean:44:67: error(lean.unknownIdentifier): Unknown identifier `h_misleading`",results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmp3xl95naa.lean:44:67: error(lean.unknownIdentifier): Unknown identifier `h_misleading`",failure_example,other failure from allowed models and github-visible subset
 119,gemini-pro-non,Gemini 2.5 pro (NT),option_1,false causality,intentional,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: A false causality fallacy occurs when an argument incorrectly assumes that because two events happen in sequence, the first event must be the cause of the second. The correlation between a reduction in solar activity and thermometers 'crashing' is asserted as a direct causal link without sufficient evidence provided in the text.
@@ -8078,7 +8078,7 @@ theorem prove_false_causality
     is_false_causality)
   : is_false_causality :=
   rule reduction_in_solar_activity thermometers_crashing argument ⟨F1, F2⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_gemini-pro-non_climate_20251114_122923---9cbfb1b9-2773-4f59-adb6-6e61f2806eff.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 39,moonshotai/kimi-k2-thinking,Kimi-k2 (T),option_2,equivocation,equivocation,False,no_pass,"```lean
 /-
   General template for Equivocation
@@ -8178,7 +8178,7 @@ theorem prove_equivocation_0
   (fact2 : shiftsMeaning topic)
   : is_equivocation :=
   rule argument topic ⟨fact1, fact2⟩
-",temp_verify/tmpgctn8enm.lean:33:7: error(lean.unknownIdentifier): Unknown identifier `argument`,results_moonshotai_kimi-k2-thinking_climate_20251113_204700---6cdf01b2-5329-4d56-9d6a-5d5a27e4073c.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpgctn8enm.lean:33:7: error(lean.unknownIdentifier): Unknown identifier `argument`,failure_example,other failure from allowed models and github-visible subset
 63,moonshotai/kimi-k2-thinking,Kimi-k2 (T),option_1,false dilemma,fallacy of extension,False,lean_pass_with_type_error,"```lean
 /-
   General template for False Dilemma
@@ -8253,7 +8253,7 @@ theorem prove_false_dilemma_0
   (fact3 : causes_trouble planet)
   : is_false_dilemma :=
   rule argument topic climate ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument | Application type mismatch: The argument,results_moonshotai_kimi-k2-thinking_climate_20251113_204700---6cdf01b2-5329-4d56-9d6a-5d5a27e4073c.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument | Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 63,moonshotai/kimi-k2-thinking,Kimi-k2 (T),option_3,faulty generalization,fallacy of extension,False,no_pass,"```lean
 /-
   General template for Faulty Generalization
@@ -8371,7 +8371,7 @@ theorem prove_faulty_generalization_0
   (fact3 : harmless topic)
   : is_faulty_generalization :=
   rule argument topic ⟨fact1, fact2, fact3⟩
-",temp_verify/tmpqdadxvpf.lean:39:7: error(lean.unknownIdentifier): Unknown identifier `argument`,results_moonshotai_kimi-k2-thinking_climate_20251113_204700---6cdf01b2-5329-4d56-9d6a-5d5a27e4073c.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpqdadxvpf.lean:39:7: error(lean.unknownIdentifier): Unknown identifier `argument`,failure_example,other failure from allowed models and github-visible subset
 89,moonshotai/kimi-k2-thinking,Kimi-k2 (T),option_1,faulty generalization,false causality,False,no_pass,"```lean
 /-
   Rule Concept: An informal fallacy wherein a conclusion is drawn about all or many instances of a phenomenon on the basis of one or a few instances of that phenomenon. It involves jumping to conclusions without sufficient evidence.
@@ -8495,7 +8495,7 @@ theorem prove_faulty_generalization
   (fact5 : represents_majority_pattern topic)
   : is_faulty_generalization :=
   rule argument topic ⟨fact1, fact2, fact3, fact4, fact5⟩
-",temp_verify/tmpzf90u9id.lean:41:7: error(lean.unknownIdentifier): Unknown identifier `argument`,results_moonshotai_kimi-k2-thinking_climate_20251113_204700---6cdf01b2-5329-4d56-9d6a-5d5a27e4073c.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpzf90u9id.lean:41:7: error(lean.unknownIdentifier): Unknown identifier `argument`,failure_example,other failure from allowed models and github-visible subset
 104,moonshotai/kimi-k2-thinking,Kimi-k2 (T),option_1,false causality,false dilemma,False,lean_pass_with_type_error,"Looking at this problem, I need to:
 
 1. Identify the false causality claim: ""humans can adjust to planet warming"" implies a causal relationship without evidence
@@ -8606,7 +8606,7 @@ theorem prove_false_causality
   (fact3 : implies_causality_without_evidence planet_warming human_adjustment)
   : is_false_causality :=
   rule scientists human_adjustment planet_warming ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument,results_moonshotai_kimi-k2-thinking_climate_20251113_204700---6cdf01b2-5329-4d56-9d6a-5d5a27e4073c.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 26,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,faulty generalization,appeal to emotion,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: An informal fallacy wherein a conclusion is drawn about all or many instances of a phenomenon on the basis of one or a few instances of that phenomenon, or overgeneralizing from a specific context to a broader category without sufficient evidence.
@@ -8693,7 +8693,7 @@ theorem prove_faulty_generalization
   (fact5 : overgeneralizes_to argument coastal_flooding flooding)
   : is_faulty_generalization :=
   rule argument coastal_flooding flooding ⟨fact1, fact2, fact3, fact4, fact5⟩
-",Application type mismatch: The argument,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 28,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,false causality,appeal to emotion,False,lean_pass_with_type_error,"Looking at this false causality case, I need to formalize how the argument assumes a causal relationship (meeting Paris goals causes uninhabitable cities and annual heat waves) without sufficient evidence of the causal mechanism.
 
 ```lean
@@ -8812,7 +8812,7 @@ theorem prove_false_causality_0
   (fact3 : cites_only_correlation argument heat_event_2015)
   : is_false_causality :=
   rule argument paris_goals cities_condition ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 28,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_2,faulty generalization,appeal to emotion,False,no_pass,"```lean
 /-
   Rule Concept: Faulty generalization occurs when a conclusion about a phenomenon is drawn from insufficient or unrepresentative samples, assuming broad patterns from isolated instances.
@@ -8921,7 +8921,7 @@ theorem prove_faulty_generalization
   (fact3 : cities_uninhabitable topic)
   : is_faulty_generalization :=
   rule argument topic ⟨fact1, fact2, fact3⟩
-",temp_verify/tmpj364pon7.lean:36:7: error(lean.unknownIdentifier): Unknown identifier `argument`,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpj364pon7.lean:36:7: error(lean.unknownIdentifier): Unknown identifier `argument`,failure_example,other failure from allowed models and github-visible subset
 42,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,faulty generalization,equivocation,False,no_pass,"```lean
 /-
   Rule Concept: Drawing broad conclusions about a diverse group based on insufficient or non-representative evidence, leading to overgeneralized claims that ignore heterogeneity.
@@ -9026,7 +9026,7 @@ theorem prove_faulty_generalization
   (h_heterogeneity : exhibits_risk_heterogeneity country_group)
   : is_faulty_generalization :=
   rule country_group ⟨hG, ⟨50000000, h_estimate⟩, h_heterogeneity⟩
-",failed to synthesize | failed to synthesize,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",failed to synthesize | failed to synthesize,failure_example,other failure from allowed models and github-visible subset
 60,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,false causality,fallacy of extension,False,lean_pass_with_type_error,"Looking at this false causality fallacy, I need to create a theorem that captures the pattern where temporal sequence or correlation is mistaken for causation without proper evidence.
 
 ```lean
@@ -9139,7 +9139,7 @@ theorem prove_false_causality
   : is_false_causality :=
   rule record_release agency_control_transfer trump_denial_statement 
     ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 75,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_3,faulty generalization,fallacy of logic,False,lean_pass_with_type_error,"Looking at the input, I need to complete the Pre-Lean Setup with a theorem that proves `is_faulty_generalization` based on the provided facts about carbon and its properties.
 
 The fallacy here is generalizing from limited examples (like soot) that carbon is black, while ignoring counter-examples (diamond, CO2 gas) that are relevant to the context.
@@ -9251,7 +9251,7 @@ theorem prove_faulty_generalization_0
   (fact3 : ignores carbon_instances counter_examples)
   (fact4 : has_property counter_examples ""non-black"")
   : is_faulty_generalization :=
-  rule carbon_instances limited_examples counter_examples ""black"" ⟨fact1, fact2, fact3, fact4⟩",Application type mismatch: The argument,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+  rule carbon_instances limited_examples counter_examples ""black"" ⟨fact1, fact2, fact3, fact4⟩",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 82,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,false causality,fallacy of relevance,False,no_pass,"Looking at this false causality fallacy, I need to model how jumping to a causal conclusion (that climate warming is net beneficial for disease) without proper evidence constitutes a logical fallacy.
 
 The key issue is that observing mixed effects (reducing one disease while increasing another) and concluding ""net beneficial"" without proper evidence or analysis is a false causality fallacy.
@@ -9384,7 +9384,7 @@ theorem prove_false_causality
   : is_false_causality :=
   rule climate_warming disease_category influenza lyme_disease 
     ⟨fact_in_category1, fact_in_category2, fact1, fact2, conclusion, fact3⟩
-",Function expected at | Function expected at | Function expected at | Invalid `⟨...⟩` notation: The expected type of this term could not be determined,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",Function expected at | Function expected at | Function expected at | Invalid `⟨...⟩` notation: The expected type of this term could not be determined,failure_example,other failure from allowed models and github-visible subset
 92,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,equivocation,false causality,False,no_pass,"```lean
 /-
   Rule Concept: Equivocation occurs when a key term is used with multiple ambiguous meanings within an argument, creating a misleading equivalence.
@@ -9511,7 +9511,7 @@ theorem prove_equivocation_0
   (fact4 : conflates_meanings argument ocean_pH blood_pH)
   : is_equivocation :=
   rule argument ocean_pH blood_pH (And.intro fact1 (And.intro fact2 (And.intro fact3 fact4)))
-",failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",failed to synthesize | failed to synthesize | failed to synthesize | failed to synthesize,failure_example,other failure from allowed models and github-visible subset
 100,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,equivocation,false dilemma,False,no_pass,"```lean
 /-
   Rule Concept: Equivocation occurs when a key term is used with multiple meanings within the same argument, leading to a misleading conclusion.
@@ -9649,7 +9649,7 @@ theorem prove_equivocation
   rule global_warming top_immediate top_global_scale ⟨fact4, fact5, diff⟩
 ","temp_verify/tmpmh2uhy8f.lean:45:7: error(lean.unknownIdentifier): Unknown identifier `global_warming`
 temp_verify/tmpmh2uhy8f.lean:45:54: error(lean.unknownIdentifier): Unknown identifier `fact4`
-temp_verify/tmpmh2uhy8f.lean:45:61: error(lean.unknownIdentifier): Unknown identifier `fact5`",results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+temp_verify/tmpmh2uhy8f.lean:45:61: error(lean.unknownIdentifier): Unknown identifier `fact5`",failure_example,other failure from allowed models and github-visible subset
 102,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_1,faulty generalization,false dilemma,False,lean_pass_with_type_error,"```lean
 /-
   Rule Concept: Drawing a conclusion about all or many instances of a phenomenon based on one or a few instances, which constitutes jumping to conclusions.
@@ -9765,7 +9765,7 @@ theorem prove_faulty_generalization
   (fact3 : generalizes_from_few_to_all argument)
   : is_faulty_generalization :=
   rule argument is_other_country ⟨fact1, fact2, fact3⟩
-",Application type mismatch: The argument,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",Application type mismatch: The argument,failure_example,other failure from allowed models and github-visible subset
 106,qwen/qwen3-235b-a22b-thinking-2507,Qwen3 235B (T),option_3,equivocation,false dilemma,False,no_pass,"```lean
 /-
   Rule Concept: Equivocation exploits ambiguous term usage, shifting meanings between different parts of an argument to mislead.
@@ -9868,4 +9868,4 @@ theorem prove_equivocation_0
   (fact3 : ambiguous_usage weather_term)
   : is_equivocation :=
   rule argument weather_term ⟨fact1, fact2, fact3⟩
-",temp_verify/tmpyjlfmxca.lean:34:7: error(lean.unknownIdentifier): Unknown identifier `argument`,results_qwen_qwen3_235b_a22b_thinking_2507_climate_20251113_---34c73b04-0775-4c0b-b920-9fcaa5bee3ae.json,failure_example,other failure from allowed models and github-visible subset
+",temp_verify/tmpyjlfmxca.lean:34:7: error(lean.unknownIdentifier): Unknown identifier `argument`,failure_example,other failure from allowed models and github-visible subset
