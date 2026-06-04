@@ -138,28 +138,43 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 ## 8. Repository Structure
 
 ```
-.
 ForEx/
-├── data/ # Datasets and annotation resources
-│ ├── climate_fallacy_definitions.txt # Fallacy definitions from Jin et al., Logical Fallacy Detection (2022)
-│ ├── data_extract.ipynb # Data preprocessing / extraction
-│ ├── sampling_logical_fallacy_data.xlsx # Sampled dataset
-│ ├── sampling_ground_truth.xlsx # Ground truth annotations
-│ └── new_labels_result.xlsx # Augmented labels (consensus-based)
+├── data/                                   # Datasets and annotation resources
+│   ├── climate_fallacy_definitions.txt     # Fallacy definitions from Jin et al., Logical Fallacy Detection (2022)
+│   ├── data_extract.ipynb                  # Data preprocessing / extraction
+│   ├── sampling_logical_fallacy_data.xlsx  # Sampled dataset
+│   ├── sampling_ground_truth.xlsx          # Ground truth annotations
+│   └── new_labels_result.xlsx              # Augmented labels (consensus-based)
 │
-├── scr/ # Core framework implementation
-│ ├── experiment_processor.py # Main pipeline (3-stage workflow)
-│ ├── llm_interface.py # LLM interaction (Reasoner / Executor)
-│ ├── lean_verifier.py # Lean4 verification interface
-│ └── format_converter.py # NL ↔ Lean format conversion
+├── scr/                                    # Core framework implementation
+│   ├── experiment_processor.py             # Main pipeline (3-stage workflow)
+│   ├── llm_interface.py                    # LLM interaction (Reasoner / Executor)
+│   ├── lean_verifier.py                    # Lean4 verification interface
+│   └── format_converter.py                 # NL ↔ Lean format conversion
 │
-├── lean_verifier_service/ # Lean4 execution / verification service
+├── lean_verifier_service/                  # Lean4 execution / verification service
+│   ├── api_server.py                       # Lean4 verification API server
+│   ├── Dockerfile                          # Container setup for the verification service
+│   ├── requirements.txt                    # Python dependencies for the service
+│   ├── lakefile.lean                       # Lean project configuration
+│   └── lean-toolchain                      # Lean toolchain version
 │
-├── main_runner.py # Entry point for running experiments
-├── analysis.py # Execution feedback loop result analysis
-├── Verification_Matrix.ipynb # Verification matrix analysis notebook
+├── case_study/                             # Reviewer-facing case-study materials
+│   ├── README.md                           # Guide to the released case-study files
+│   ├── APPENDIX_CASE_SELECTION_GUIDE.md    # Bilingual rationale for representative case selection
+│   ├── category_1_compilable_correct.csv   # Category 1: Compilable-Correct examples
+│   ├── category_2_compilable_alternative.csv # Category 2: Compilable-Alternative examples
+│   ├── category_3_no_fallacy_under_limited_context.csv # Category 3 examples under limited context
+│   ├── category_4_systematic_divergence_filtered_out.csv # Category 4 systematic-divergence examples
+│   ├── category_5_consensus_guided_augmentation_success.csv # Category 5 augmentation examples
+│   ├── category_6_uncompilable_correct.csv # Category 6: Uncompilable-Correct examples
+│   ├── category_7_success_examples.csv     # Category 7 successful repair examples
+│   └── category_7_failure_examples.csv     # Category 7 failed repair examples
 │
-└── README.md # Project documentation
+├── main_runner.py                          # Entry point for running experiments
+├── analysis.py                             # Execution feedback loop result analysis
+├── Verification_Matrix.ipynb               # Verification matrix analysis notebook
+└── README.md                               # Project documentation
 ```
 
 ---
