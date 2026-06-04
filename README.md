@@ -169,7 +169,8 @@ ForEx/
 │   ├── category_2b_compilable_alternative_selected.csv # Category 2b alternatives selected into new labels
 │   ├── category_4_uncompilable_correct.csv # Category 4: correct labels with unverifiable reasoning
 │   ├── category_5_repair_success_examples.csv # Category 5 repair success examples
-│   └── category_5_repair_failure_examples.csv # Category 5 repair failure examples
+│   ├── category_5_repair_failure_examples.csv # Category 5 repair failure examples
+│   └── category_5_repair_iteration.csv    # Full repair-iteration record behind Category 5 examples
 │
 ├── main_runner.py                          # Entry point for running experiments
 ├── analysis.py                             # Execution feedback loop result analysis
