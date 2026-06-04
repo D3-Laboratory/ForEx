@@ -30,14 +30,14 @@ The presentation style below is designed to support appendix writing in a compac
 
 ---
 
-## Case 3. Category 3, No Fallacy Under Limited Context
+## Case 3. Category 3, No Fallacy
 - **Question ID:** 124
 - **Statement:** “Barrie now works for the Climate Change Institute at Australian National University, Canberra.”
 - **Model Prediction:** No Fallacy
 - **Human Annotation:** Not foregrounded in the category summary file
-- **Why this case was selected:** This case was selected because it is an extreme but very clean illustration of what limited context looks like. On its own, the sentence is descriptive and contains almost no argumentative structure.
-- **Analysis:** In isolation, the statement simply reports an affiliation. It does not clearly present a premise-conclusion structure, nor does it provide enough information to justify a strong fallacy assignment. This is precisely the kind of case where the local excerpt is too underspecified for reliable classification.
-- **Representative value:** High. This case is useful because it makes the category’s central point immediately visible: some snippets are too context-poor for stable fallacy labeling.
+- **Why this case was selected:** This case was selected because it is an extreme but very clean illustration of a no-fallacy judgment. On its own, the sentence is descriptive and contains almost no argumentative structure.
+- **Analysis:** In isolation, the statement simply reports an affiliation. It does not clearly present a premise-conclusion structure, nor does it provide enough evidence to justify a strong fallacy assignment. This makes it a useful example of why a no-fallacy judgment may arise in the case-study setting.
+- **Representative value:** High. This case is useful because it makes the category’s central point immediately visible: some snippets do not support a stable fallacy label.
 
 ---
 
@@ -144,14 +144,14 @@ For that reason, these examples should be read as **representative teaching case
 
 ---
 
-## 案例 3. Category 3，No Fallacy Under Limited Context
+## 案例 3. Category 3，No Fallacy
 - **Question ID:** 124
 - **Statement:** “Barrie now works for the Climate Change Institute at Australian National University, Canberra.”
 - **Model Prediction:** No Fallacy
 - **Human Annotation:** 在此 category summary 中未被凸顯
-- **為什麼選這題：** 這題是一個非常極端但也非常乾淨的例子，清楚顯示什麼叫做上下文不足。單看這句話，它幾乎只是描述性敘述。
-- **Analysis:** 這句話本身只是報告一個任職資訊，缺乏清楚的論證結構，也沒有明確的 premise-conclusion 關係，因此很難支持強烈的 fallacy 指派。這正是局部文本資訊過少所導致的典型情況。
-- **代表性評估：** 很高。它很適合代表 Category 3，因為其核心訊息一眼就能看出來：有些句子本身就是太缺乏上下文。
+- **為什麼選這題：** 這題是一個非常極端但也非常乾淨的例子，清楚顯示 no-fallacy 判斷可能長什麼樣子。單看這句話，它幾乎只是描述性敘述。
+- **Analysis:** 這句話本身只是報告一個任職資訊，缺乏清楚的論證結構，也沒有明確的 premise-conclusion 關係，因此很難支持強烈的 fallacy 指派。這使它成為 case-study 中 no-fallacy 判斷的一個有代表性的例子。
+- **代表性評估：** 很高。它很適合代表 Category 3，因為其核心訊息一眼就能看出來：有些句子本身就不支持穩定的 fallacy 標註。
 
 ---
 
@@ -219,7 +219,7 @@ For that reason, these examples should be read as **representative teaching case
 這份 shortlist 的設計同時滿足兩個目標：
 
 1. **涵蓋整個 category 系統。**
-   這 8 題分別對應到：乾淨正例、合理替代標籤、有限上下文下的 no-fallacy、未被選入 new labels 的替代標籤、被選入 new labels 的替代標籤、正確但不可驗證、repair 成功，以及 repair 失敗。
+   這 8 題分別對應到：乾淨正例、合理替代標籤、no-fallacy、未被選入 new labels 的替代標籤、被選入 new labels 的替代標籤、正確但不可驗證、repair 成功，以及 repair 失敗。
 
 2. **強調可解釋性。**
    這些題目不是只因為「屬於那一類」才被挑中，而是因為它們能夠把那一類的核心邏輯講清楚。好的 appendix 案例不一定是最罕見的，而是最能讓分類理由一眼可見的。

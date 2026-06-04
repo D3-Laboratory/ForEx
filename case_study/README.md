@@ -55,13 +55,13 @@ Not every disagreement should be treated as noise. Some alternative labels remai
 ---
 
 ### `category_3_no_fallacy.csv`
-This file contains cases where the available local context appears too limited for a confident fallacy assignment, leading the model toward a no-fallacy judgment.
+This file contains cases where the output is best treated as a no-fallacy judgment.
 
 **Main use:**
-- understanding disagreement caused by short or underspecified context.
+- identifying cases that do not support a stable fallacy assignment.
 
 **Main insight:**
-Some apparent model errors are better interpreted as context limitations rather than straightforward failures of reasoning.
+Some model outputs are better interpreted as no-fallacy judgments rather than straightforward fallacy misclassifications.
 
 ---
 
@@ -247,13 +247,13 @@ That separation is the central reason the case study is presented as categorized
 ---
 
 ### `category_3_no_fallacy.csv`
-此檔案收錄在當前局部上下文不足的情況下，模型傾向判為 no fallacy 的案例。
+此檔案收錄較適合被視為 no_fallacy 判斷的案例。
 
 **主要用途：**
-- 理解由短文本或資訊不足所造成的分歧。
+- 找出那些不支持穩定 fallacy 指派的案例。
 
 **主要 insight：**
-某些看似錯誤的模型輸出，更適合被理解為上下文限制，而不只是單純推理失敗。
+某些模型輸出更適合被理解為 no_fallacy 判斷，而不只是單純的 fallacy 誤判。
 
 ---
 

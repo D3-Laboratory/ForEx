@@ -117,7 +117,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 3, No Fallacy Under Limited Context
+## Category 3, No Fallacy
 
 ### Case 1, Question ID 124
 
@@ -576,7 +576,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 3，No Fallacy Under Limited Context
+## Category 3，No Fallacy
 
 ### 案例 1，Question ID 124
 
