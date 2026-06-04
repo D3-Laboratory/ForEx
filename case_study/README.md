@@ -215,14 +215,15 @@ That separation is the central reason the case study is presented as categorized
 |---|---|---|
 | `category_1_compilable_correct.csv` | Category 1，可編譯且正確 | 預測標籤與人工標註一致，且 Lean4 reasoning 驗證成功的案例 |
 | `category_2_compilable_alternative.csv` | Category 2，可編譯的替代標籤 | reasoning 可驗證，但模型支持的是合理替代標籤而非原始標註，並標示是否最終被選入 new labels |
-| `category_4b_no_fallacy.csv` | Category 4b，no_fallacy | 局部文本資訊不足，因而難以做出明確 fallacy 指派的案例 |
 | `category_2a_compilable_alternative_not_selected.csv` | Category 2a，未被選入的替代標籤 | 雖然是可編譯的替代標籤，但最終未納入 new labels 的案例 |
 | `category_2b_compilable_alternative_selected.csv` | Category 2b，被選入的替代標籤 | 可編譯的替代標籤且最終被納入 new labels 的案例 |
 | `category_3_uncompilable_correct.csv` | Category 3，標籤正確但 reasoning 不可驗證 | 標籤判對，但 Lean4 reasoning 無法成功驗證的案例 |
+| `category_4a_verification_failure.csv` | Category 4a，verification failure | Invalid-incorrect 案例中，預測標籤不在 ground truth 內，且結果停在 `lean_pass_with_type_error` |
+| `category_4b_no_fallacy.csv` | Category 4b，no_fallacy | 較適合被視為 no_fallacy 判斷的案例 |
+| `category_4c_syntax_failure.csv` | Category 4c，syntax failure | Invalid-incorrect 案例中，模型有做出 prediction，但結果停在 `no_pass` |
 | `category_5_repair_success_examples.csv` | Category 5，repair 成功案例 | 初始驗證失敗，但經 repair 後最終成功驗證的精選案例 |
 | `category_5_repair_failure_examples.csv` | Category 5，repair 失敗案例 | 經 repair 後最終仍未得到乾淨 pass 的精選案例 |
-| `category_5_repair_iteration.csv` | 完整 repair 紀錄 | Category 5 repair examples 背後完整的 repair-iteration 過程資料 |
-| `case_study_candidates.csv` | 完整候選池 | 最終 case-study 分類之前的完整候選來源池 |
+| `category_5_repair_iteration.csv` | Category 5，完整 repair 紀錄 | Category 5 repair examples 背後完整的 repair-iteration 過程資料 |
 
 ## 這樣分類的目的
 
@@ -273,14 +274,14 @@ That separation is the central reason the case study is presented as categorized
 ---
 
 ### `category_4a_verification_failure.csv`
-This file contains invalid-incorrect cases where the predicted label is not in the ground-truth set and the final status is `lean_pass_with_type_error`.
+此檔案收錄 invalid-incorrect 案例中，預測標籤不在 ground-truth set 內，且最終狀態為 `lean_pass_with_type_error` 的案例。
 
-**Main use:**
-- examining verification-level failure among invalid-incorrect outputs,
-- identifying cases where a prediction exists but the formal result remains logically unsuccessful.
+**主要用途：**
+- 檢查 invalid-incorrect 輸出中的 verification-level failure，
+- 找出模型做出 prediction，但形式結果仍停留在邏輯驗證失敗狀態的案例。
 
-**Main insight:**
-These cases help isolate invalid predictions that survive into a verification-type failure state rather than a clean pass or a direct syntax failure.
+**主要 insight：**
+這些案例有助於把 invalid prediction 中屬於 verification failure 的部分單獨拉出來，而不是混在 syntax failure 或 no_fallacy 裡一起看。
 
 ---
 
