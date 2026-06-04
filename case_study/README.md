@@ -12,7 +12,7 @@ This folder contains the CSV files used to organize the ForEx case-study analysi
 | `category_2_compilable_alternative.csv` | Category 2, Compilable Alternative | Cases where the reasoning verifies, but the model supports a plausible alternative label rather than the original annotation, with a flag for whether that alternative was selected into the final new-label set |
 | `category_2a_compilable_alternative_not_selected.csv` | Category 2a, Compilable Alternative not selected | Recurring alternative labels that were not retained in the final new-label set |
 | `category_2b_compilable_alternative_selected.csv` | Category 2b, Compilable Alternative selected | Alternative labels that were retained in the final new-label set |
-| `category_3_uncompilable_correct.csv` | Category 4 | Cases where the final label is correct but the corresponding Lean4 reasoning does not verify |
+| `category_3_uncompilable_correct.csv` | Category 3 | Cases where the final label is correct but the corresponding Lean4 reasoning does not verify |
 | `category_4a_verification_failure.csv` | Category 4a, verification failure | Invalid-incorrect cases where the predicted label is not in ground truth and the result ends in `lean_pass_with_type_error` |
 | `category_4b_no_fallacy.csv` | Category 4b, no_fallacy | Cases best treated as no_fallacy judgments in the current case-study organization |
 | `category_4c_syntax_failure.csv` | Category 4c, syntax failure | Invalid-incorrect cases where a prediction was made but the result ends in `no_pass` |
