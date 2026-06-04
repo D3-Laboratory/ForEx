@@ -288,7 +288,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 6, Correct Label but Uncompilable Reasoning
+## Category 4, Correct Label but Uncompilable Reasoning
 
 ### Case 1, Question ID 89
 
@@ -345,7 +345,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 7 Success, Repair Recovered Verification
+## Category 5 Success, Repair Recovered Verification
 
 ### Case 1, Question ID 5
 
@@ -402,7 +402,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 7 Failure, Repair Did Not End in a Clean Pass
+## Category 5 Failure, Repair Did Not End in a Clean Pass
 
 ### Case 1, Question ID 48
 
@@ -747,7 +747,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 6，Correct Label but Uncompilable Reasoning
+## Category 4，Correct Label but Uncompilable Reasoning
 
 ### 案例 1，Question ID 89
 
@@ -804,7 +804,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 7 成功案例，Repair Recovered Verification
+## Category 5 成功案例，Repair Recovered Verification
 
 ### 案例 1，Question ID 5
 
@@ -861,7 +861,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 7 失敗案例，Repair Did Not End in a Clean Pass
+## Category 5 失敗案例，Repair Did Not End in a Clean Pass
 
 ### 案例 1，Question ID 48
 
