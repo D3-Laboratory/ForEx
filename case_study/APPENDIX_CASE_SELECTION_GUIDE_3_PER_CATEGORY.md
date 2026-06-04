@@ -12,7 +12,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** ad hominem
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** ad hominem
 
@@ -31,7 +30,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** appeal to emotion
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -50,7 +48,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** appeal to emotion
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -72,7 +69,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** appeal to emotion
 
 - **Model:** deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-thinking, gemini-pro-non, gemini-pro-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast (11/15)
-- **模型：** deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-thinking, gemini-pro-non, gemini-pro-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast （11/15）
 
 - **Human Annotation:** ad hominem
 
@@ -91,7 +87,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** ad hominem
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-5, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast (8/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-5, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast （8/15）
 
 - **Human Annotation:** ad hominem
 
@@ -110,7 +105,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** fallacy of credibility
 
 - **Model:** anthropic/claude-sonnet-4.5, gemini-flash-non, qwen_qwen3-235b-a22b-2507 (3/15)
-- **模型：** anthropic/claude-sonnet-4.5, gemini-flash-non, qwen_qwen3-235b-a22b-2507 （3/15）
 
 - **Human Annotation:** fallacy of credibility; intentional
 
@@ -132,7 +126,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** no_fallacy
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast (14/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast （14/15）
 
 - **Human Annotation:** N/A
 
@@ -151,7 +144,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** no_fallacy
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, gemini-flash-non, qwen_qwen3-235b-a22b-2507 (6/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, gemini-flash-non, qwen_qwen3-235b-a22b-2507 （6/15）
 
 - **Human Annotation:** N/A
 
@@ -170,7 +162,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** appeal to emotion
 
 - **Model:** openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (10/15)
-- **模型：** openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （10/15）
 
 - **Human Annotation:** N/A
 
@@ -192,7 +183,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** ad hominem
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507 (11/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507 （11/15）
 
 - **Human Annotation:** ad hominem
 
@@ -211,7 +201,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** fallacy of relevance
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-5, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast (10/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-5, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast （10/15）
 
 - **Human Annotation:** ad hominem
 
@@ -230,7 +219,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** faulty generalization
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (14/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （14/15）
 
 - **Human Annotation:** ad populum
 
@@ -252,7 +240,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** faulty generalization
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** fallacy of logic
 
@@ -271,7 +258,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** faulty generalization
 
 - **Model:** anthropic/claude-sonnet-4.5, deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-non, gemini-flash-thinking, gemini-pro-non, gemini-pro-thinking, moonshotai/kimi-k2-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, qwen_qwen3-235b-a22b-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-non, gemini-flash-thinking, gemini-pro-non, gemini-pro-thinking, moonshotai/kimi-k2-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, qwen_qwen3-235b-a22b-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** false causality
 
@@ -290,7 +276,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** false causality
 
 - **Model:** anthropic/claude-sonnet-4.5, deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-non, gemini-flash-thinking, gemini-pro-non, moonshotai/kimi-k2-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, qwen_qwen3-235b-a22b-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast (14/15)
-- **模型：** anthropic/claude-sonnet-4.5, deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-non, gemini-flash-thinking, gemini-pro-non, moonshotai/kimi-k2-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, qwen_qwen3-235b-a22b-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast （14/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -312,7 +297,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** false causality
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (14/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （14/15）
 
 - **Human Annotation:** false causality
 
@@ -331,7 +315,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** false causality
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (12/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （12/15）
 
 - **Human Annotation:** false causality
 
@@ -350,7 +333,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** false causality
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** false causality
 
@@ -372,7 +354,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** ad hominem
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (14/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （14/15）
 
 - **Human Annotation:** ad hominem
 
@@ -391,7 +372,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** appeal to emotion
 
 - **Model:** openai/gpt-4o-2024-11-20, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, openai/gpt-oss-120b, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non (7/15)
-- **模型：** openai/gpt-4o-2024-11-20, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, openai/gpt-oss-120b, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non （7/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -410,7 +390,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** appeal to emotion
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -432,7 +411,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** fallacy of credibility
 
 - **Model:** moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, gemini-flash-non, gemini-flash-thinking, x-ai_grok-4-fast (5/15)
-- **模型：** moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, gemini-flash-non, gemini-flash-thinking, x-ai_grok-4-fast （5/15）
 
 - **Human Annotation:** fallacy of credibility
 
@@ -451,7 +429,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** fallacy of relevance
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507 (12/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507 （12/15）
 
 - **Human Annotation:** fallacy of relevance
 
@@ -470,7 +447,6 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Model Prediction:** false dilemma
 
 - **Model:** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast (15/15)
-- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** false dilemma
 
@@ -494,6 +470,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** ad hominem
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
+
 - **Human Annotation:** ad hominem
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -509,6 +487,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Statement:** The glaciers of Pine Island Bay are two of the largest and fastest-melting in Antarctica . ( A Rolling Stone feature earlier this year dubbed Thwaites “ The Doomsday Glacier. ” ) Together , they act as a plug holding back enough ice to pour 11 feet of sea-level rise into the world ’ s oceans — an amount that would submerge every coastal city on the planet .
 
 - **Model Prediction:** appeal to emotion
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -526,6 +506,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** appeal to emotion
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
+
 - **Human Annotation:** appeal to emotion
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -539,11 +521,13 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ## Category 2，Compilable Alternative
 
-### 案例 1，Question ID 3
+### 案例 1，Question ID 2
 
-- **Statement:** For good reason : In the U.S. , and for much of the world , the most dangerous environmental pollutants have been cleaned up . U.S. emissions of particulates , metals and varied gases—all of these : ozone , lead , carbon monoxide , oxides of nitrogen and sulfur—fell almost 70 % between 1970 and 2014 .
+- **Statement:** Unfortunately for the doom-mongers , we sceptics have just received some heavy fire-support from a neutral authority .
 
-- **Model Prediction:** faulty generalization
+- **Model Prediction:** appeal to emotion
+
+- **模型：** deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-thinking, gemini-pro-non, gemini-pro-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast （11/15）
 
 - **Human Annotation:** ad hominem
 
@@ -559,7 +543,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Statement:** Sounding more like an Old Testament doomsayer than a president , Obama warned in his Alaska speech that unless carbon fuels are restricted , “ we will condemn our children to a planet beyond their capacity to repair : Submerged countries .
 
-- **Model Prediction:** appeal to emotion
+- **Model Prediction:** ad hominem
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-5, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast （8/15）
 
 - **Human Annotation:** ad hominem
 
@@ -575,7 +561,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Statement:** “ Global warming ” is a myth — so say 80 graphs from 58 peer-reviewed scientific papers published in 2017 .
 
-- **Model Prediction:** faulty generalization
+- **Model Prediction:** fallacy of credibility
+
+- **模型：** anthropic/claude-sonnet-4.5, gemini-flash-non, qwen_qwen3-235b-a22b-2507 （3/15）
 
 - **Human Annotation:** fallacy of credibility; intentional
 
@@ -596,6 +584,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** no_fallacy
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast （14/15）
+
 - **Human Annotation:** N/A
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -612,6 +602,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** no_fallacy
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, gemini-flash-non, qwen_qwen3-235b-a22b-2507 （6/15）
+
 - **Human Annotation:** N/A
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -626,7 +618,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Statement:** “ It ’ s sobering to think of this magnificent landscape and how fundamentally it can change over a relatively short time period , ” he added .
 
-- **Model Prediction:** no_fallacy
+- **Model Prediction:** appeal to emotion
+
+- **模型：** openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （10/15）
 
 - **Human Annotation:** N/A
 
@@ -645,7 +639,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Statement:** Unfortunately for the doom-mongers , we sceptics have just received some heavy fire-support from a neutral authority .
 
-- **Model Prediction:** appeal to emotion
+- **Model Prediction:** ad hominem
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507 （11/15）
 
 - **Human Annotation:** ad hominem
 
@@ -663,6 +659,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** fallacy of relevance
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-5, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, x-ai_grok-4-fast （10/15）
+
 - **Human Annotation:** ad hominem
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -678,6 +676,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Statement:** Nor is there evidence of an increase in floods globally . Since 1965 , more parts of the U.S. have seen a decrease in flooding than have seen an increase . And from 1940 to today , flood damage as a percentage of GDP has fallen to less than 0.05 per cent per year from about 0.2 per cent .
 
 - **Model Prediction:** faulty generalization
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （14/15）
 
 - **Human Annotation:** ad populum
 
@@ -698,6 +698,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** faulty generalization
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
+
 - **Human Annotation:** fallacy of logic
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -714,6 +716,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** faulty generalization
 
+- **模型：** anthropic/claude-sonnet-4.5, deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-non, gemini-flash-thinking, gemini-pro-non, gemini-pro-thinking, moonshotai/kimi-k2-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, qwen_qwen3-235b-a22b-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast （15/15）
+
 - **Human Annotation:** false causality
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -724,13 +728,15 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 ---
 
-### 案例 3，Question ID 16
+### 案例 3，Question ID 22
 
-- **Statement:** Over the past decades , our culture has gone apocalyptic with zombie movies and Mad Max dystopias , perhaps the collective result of displaced climate anxiety , and yet when it comes to contemplating real-world warming dangers , we suffer from an incredible failure of imagination .
+- **Statement:** And since the biggest risk to humanity is poverty , if we allow policymakers to have their way , the resulting energy poverty will indeed cause the deaths of some of our children and grandchildren .
 
 - **Model Prediction:** false causality
 
-- **Human Annotation:** ad populum
+- **模型：** anthropic/claude-sonnet-4.5, deepseek/deepseek-chat-v3.1, deepseek/deepseek-r1, gemini-flash-non, gemini-flash-thinking, gemini-pro-non, moonshotai/kimi-k2-thinking, openai/gpt-4o-2024-11-20, openai/gpt-5, openai/gpt-oss-120b, qwen/qwen3-235b-a22b-thinking-2507, qwen_qwen3-235b-a22b-2507, x-ai/grok-4-fast-thinking, x-ai_grok-4-fast （14/15）
+
+- **Human Annotation:** appeal to emotion
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
@@ -749,6 +755,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** false causality
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （14/15）
+
 - **Human Annotation:** false causality
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -765,6 +773,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** false causality
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （12/15）
+
 - **Human Annotation:** false causality
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -780,6 +790,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Statement:** Rebounding ground can accelerate the ice cracking and falling away , which may be what happened with this new island that potentially emerged off the coast of Antarctica around 2010 .
 
 - **Model Prediction:** false causality
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** false causality
 
@@ -800,6 +812,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** ad hominem
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （14/15）
+
 - **Human Annotation:** ad hominem
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -816,6 +830,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** appeal to emotion
 
+- **模型：** openai/gpt-4o-2024-11-20, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, openai/gpt-oss-120b, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non （7/15）
+
 - **Human Annotation:** appeal to emotion
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -831,6 +847,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Statement:** And since the biggest risk to humanity is poverty , if we allow policymakers to have their way , the resulting energy poverty will indeed cause the deaths of some of our children and grandchildren .
 
 - **Model Prediction:** appeal to emotion
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** appeal to emotion
 
@@ -851,6 +869,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** fallacy of credibility
 
+- **模型：** moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, gemini-flash-non, gemini-flash-thinking, x-ai_grok-4-fast （5/15）
+
 - **Human Annotation:** fallacy of credibility
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -867,6 +887,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Model Prediction:** fallacy of relevance
 
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-5, x-ai/grok-4-fast-thinking, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507 （12/15）
+
 - **Human Annotation:** fallacy of relevance
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
@@ -882,6 +904,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 - **Statement:** Will they be held legally responsible when floods do occur ? A strict policy could force some people from their homes . Conversely , should public money be spent to do the work , even if it largely benefits private property ?
 
 - **Model Prediction:** false dilemma
+
+- **模型：** anthropic/claude-sonnet-4.5, openai/gpt-4o-2024-11-20, openai/gpt-5, x-ai/grok-4-fast-thinking, deepseek/deepseek-r1, moonshotai/kimi-k2-thinking, deepseek/deepseek-chat-v3.1, qwen/qwen3-235b-a22b-thinking-2507, openai/gpt-oss-120b, gemini-flash-non, gemini-flash-thinking, gemini-pro-thinking, gemini-pro-non, qwen_qwen3-235b-a22b-2507, x-ai_grok-4-fast （15/15）
 
 - **Human Annotation:** false dilemma
 
