@@ -161,7 +161,7 @@ ForEx/
 │
 ├── case_study/                             # Reviewer-facing case-study materials
 │   ├── README.md                           # Guide to the released case-study files
-│   ├── APPENDIX_CASE_SELECTION_GUIDE.md    # Bilingual rationale for representative case selection
+│   ├── APPENDIX_CASE_SELECTION_GUIDE_3_PER_CATEGORY.md # Final bilingual appendix guide with 3 cases per category
 │   ├── category_1_compilable_correct.csv   # Category 1: Compilable-Correct examples
 │   ├── category_2_compilable_alternative.csv # Category 2: Compilable-Alternative examples
 │   ├── category_3_no_fallacy.csv           # Category 3 no_fallacy examples
