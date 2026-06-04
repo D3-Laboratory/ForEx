@@ -117,7 +117,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 3, No Fallacy
+## Category 4b, No Fallacy
 
 ### Case 1, Question ID 124
 
@@ -288,7 +288,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 4, Correct Label but Uncompilable Reasoning
+## Category 3, Correct Label but Uncompilable Reasoning
 
 ### Case 1, Question ID 89
 
@@ -576,7 +576,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 3，No Fallacy
+## Category 4b，No Fallacy
 
 ### 案例 1，Question ID 124
 
@@ -747,7 +747,7 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 ---
 
 
-## Category 4，Correct Label but Uncompilable Reasoning
+## Category 3，Correct Label but Uncompilable Reasoning
 
 ### 案例 1，Question ID 89
 

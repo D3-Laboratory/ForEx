@@ -164,10 +164,10 @@ ForEx/
 │   ├── APPENDIX_CASE_SELECTION_GUIDE_3_PER_CATEGORY.md # Final bilingual appendix guide with 3 cases per category
 │   ├── category_1_compilable_correct.csv   # Category 1: Compilable-Correct examples
 │   ├── category_2_compilable_alternative.csv # Category 2: Compilable-Alternative examples
-│   ├── category_3_no_fallacy.csv           # Category 3 no_fallacy examples
+│   ├── category_4b_no_fallacy.csv           # Category 4b no_fallacy examples
 │   ├── category_2a_compilable_alternative_not_selected.csv # Category 2a alternatives not selected into new labels
 │   ├── category_2b_compilable_alternative_selected.csv # Category 2b alternatives selected into new labels
-│   ├── category_4_uncompilable_correct.csv # Category 4: correct labels with unverifiable reasoning
+│   ├── category_3_uncompilable_correct.csv # Category 3: correct labels with unverifiable reasoning
 │   ├── category_5_repair_success_examples.csv # Category 5 repair success examples
 │   ├── category_5_repair_failure_examples.csv # Category 5 repair failure examples
 │   └── category_5_repair_iteration.csv    # Full repair-iteration record behind Category 5 examples

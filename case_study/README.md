@@ -10,10 +10,10 @@ This folder contains the CSV files used to organize the ForEx case-study analysi
 |---|---|---|
 | `category_1_compilable_correct.csv` | Category 1, Compilable Correct | Cases where the predicted label matches the human label and the Lean4 reasoning verifies successfully |
 | `category_2_compilable_alternative.csv` | Category 2, Compilable Alternative | Cases where the reasoning verifies, but the model supports a plausible alternative label rather than the original annotation, with a flag for whether that alternative was selected into the final new-label set |
-| `category_3_no_fallacy.csv` | Category 3, no_fallacy | Cases where the local excerpt appears too limited for confident fallacy assignment |
+| `category_4b_no_fallacy.csv` | Category 4b, no_fallacy | Cases best treated as no_fallacy judgments in the current case-study organization |
 | `category_2a_compilable_alternative_not_selected.csv` | Category 2a, Compilable Alternative not selected | Recurring alternative labels that were not retained in the final new-label set |
 | `category_2b_compilable_alternative_selected.csv` | Category 2b, Compilable Alternative selected | Alternative labels that were retained in the final new-label set |
-| `category_4_uncompilable_correct.csv` | Category 4 | Cases where the final label is correct but the corresponding Lean4 reasoning does not verify |
+| `category_3_uncompilable_correct.csv` | Category 4 | Cases where the final label is correct but the corresponding Lean4 reasoning does not verify |
 | `category_5_repair_success_examples.csv` | Category 5 repair success examples | Curated examples where initial verification fails but repair eventually produces a verifiable result |
 | `category_5_repair_failure_examples.csv` | Category 5 repair failure examples | Curated examples where repair does not end in a clean final pass |
 | `category_5_repair_iteration.csv` | Full repair record | The complete repair-iteration trail behind the repair examples |
@@ -54,7 +54,7 @@ Not every disagreement should be treated as noise. Some alternative labels remai
 
 ---
 
-### `category_3_no_fallacy.csv`
+### `category_4b_no_fallacy.csv`
 This file contains cases where the output is best treated as a no-fallacy judgment.
 
 **Main use:**
@@ -87,7 +87,7 @@ These cases show how formally supported alternative labeling can be used constru
 
 ---
 
-### `category_4_uncompilable_correct.csv`
+### `category_3_uncompilable_correct.csv`
 This file contains cases where the predicted fallacy label is correct, but the generated formal reasoning does not verify successfully in Lean4.
 
 **Main use:**
@@ -189,10 +189,10 @@ That separation is the central reason the case study is presented as categorized
 |---|---|---|
 | `category_1_compilable_correct.csv` | Category 1，可編譯且正確 | 預測標籤與人工標註一致，且 Lean4 reasoning 驗證成功的案例 |
 | `category_2_compilable_alternative.csv` | Category 2，可編譯的替代標籤 | reasoning 可驗證，但模型支持的是合理替代標籤而非原始標註，並標示是否最終被選入 new labels |
-| `category_3_no_fallacy.csv` | Category 3，no_fallacy | 局部文本資訊不足，因而難以做出明確 fallacy 指派的案例 |
+| `category_4b_no_fallacy.csv` | Category 4b，no_fallacy | 局部文本資訊不足，因而難以做出明確 fallacy 指派的案例 |
 | `category_2a_compilable_alternative_not_selected.csv` | Category 2a，未被選入的替代標籤 | 雖然是可編譯的替代標籤，但最終未納入 new labels 的案例 |
 | `category_2b_compilable_alternative_selected.csv` | Category 2b，被選入的替代標籤 | 可編譯的替代標籤且最終被納入 new labels 的案例 |
-| `category_4_uncompilable_correct.csv` | Category 4，標籤正確但 reasoning 不可驗證 | 標籤判對，但 Lean4 reasoning 無法成功驗證的案例 |
+| `category_3_uncompilable_correct.csv` | Category 3，標籤正確但 reasoning 不可驗證 | 標籤判對，但 Lean4 reasoning 無法成功驗證的案例 |
 | `category_5_repair_success_examples.csv` | Category 5，repair 成功案例 | 初始驗證失敗，但經 repair 後最終成功驗證的精選案例 |
 | `category_5_repair_failure_examples.csv` | Category 5，repair 失敗案例 | 經 repair 後最終仍未得到乾淨 pass 的精選案例 |
 | `category_5_repair_iteration.csv` | 完整 repair 紀錄 | Category 5 repair examples 背後完整的 repair-iteration 過程資料 |
@@ -246,7 +246,7 @@ That separation is the central reason the case study is presented as categorized
 
 ---
 
-### `category_3_no_fallacy.csv`
+### `category_4b_no_fallacy.csv`
 此檔案收錄較適合被視為 no_fallacy 判斷的案例。
 
 **主要用途：**
@@ -279,7 +279,7 @@ That separation is the central reason the case study is presented as categorized
 
 ---
 
-### `category_4_uncompilable_correct.csv`
+### `category_3_uncompilable_correct.csv`
 此檔案收錄標籤判斷正確，但生成的形式推理無法在 Lean4 中成功驗證的案例。
 
 **主要用途：**
