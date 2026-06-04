@@ -10,7 +10,9 @@ This folder contains the CSV files used to organize the ForEx case-study analysi
 |---|---|---|
 | `category_1_compilable_correct.csv` | Category 1, Compilable Correct | Cases where the predicted label matches the human label and the Lean4 reasoning verifies successfully |
 | `category_2_compilable_alternative.csv` | Category 2, Compilable Alternative | Cases where the reasoning verifies, but the model supports a plausible alternative label rather than the original annotation, with a flag for whether that alternative was selected into the final new-label set |
+| `category_4a_verification_failure.csv` | Category 4a, verification failure | Invalid-incorrect cases where the predicted label is not in ground truth and the result ends in `lean_pass_with_type_error` |
 | `category_4b_no_fallacy.csv` | Category 4b, no_fallacy | Cases best treated as no_fallacy judgments in the current case-study organization |
+| `category_4c_syntax_failure.csv` | Category 4c, syntax failure | Invalid-incorrect cases where a prediction was made but the result ends in `no_pass` |
 | `category_2a_compilable_alternative_not_selected.csv` | Category 2a, Compilable Alternative not selected | Recurring alternative labels that were not retained in the final new-label set |
 | `category_2b_compilable_alternative_selected.csv` | Category 2b, Compilable Alternative selected | Alternative labels that were retained in the final new-label set |
 | `category_3_uncompilable_correct.csv` | Category 4 | Cases where the final label is correct but the corresponding Lean4 reasoning does not verify |
@@ -51,6 +53,18 @@ This file contains cases where the Lean4 reasoning verifies successfully, but th
 
 **Main insight:**
 Not every disagreement should be treated as noise. Some alternative labels remain formally well-supported and may reflect genuine interpretive flexibility, but only some are ultimately retained.
+
+---
+
+### `category_4a_verification_failure.csv`
+This file contains invalid-incorrect cases where the predicted label is not in the ground-truth set and the final status is `lean_pass_with_type_error`.
+
+**Main use:**
+- examining verification-level failure among invalid-incorrect outputs,
+- identifying cases where a prediction exists but the formal result remains logically unsuccessful.
+
+**Main insight:**
+These cases help isolate invalid predictions that survive into a verification-type failure state rather than a clean pass or a direct syntax failure.
 
 ---
 
@@ -95,6 +109,18 @@ This file contains cases where the predicted fallacy label is correct, but the g
 
 **Main insight:**
 Correct labels do not guarantee formally executable reasoning. This category makes that gap explicit.
+
+---
+
+### `category_4c_syntax_failure.csv`
+This file contains invalid-incorrect cases where a prediction was made but the final status is `no_pass`.
+
+**Main use:**
+- examining syntax or technical failure among invalid-incorrect outputs,
+- separating technical failure from no_fallacy and verification-failure cases.
+
+**Main insight:**
+These cases show where the model attempted a fallacy prediction, but the formal result failed before reaching a usable verified form.
 
 ---
 
@@ -246,6 +272,18 @@ That separation is the central reason the case study is presented as categorized
 
 ---
 
+### `category_4a_verification_failure.csv`
+This file contains invalid-incorrect cases where the predicted label is not in the ground-truth set and the final status is `lean_pass_with_type_error`.
+
+**Main use:**
+- examining verification-level failure among invalid-incorrect outputs,
+- identifying cases where a prediction exists but the formal result remains logically unsuccessful.
+
+**Main insight:**
+These cases help isolate invalid predictions that survive into a verification-type failure state rather than a clean pass or a direct syntax failure.
+
+---
+
 ### `category_4b_no_fallacy.csv`
 此檔案收錄較適合被視為 no_fallacy 判斷的案例。
 
@@ -287,6 +325,18 @@ That separation is the central reason the case study is presented as categorized
 
 **主要 insight：**
 標籤正確不代表形式推理一定可執行。這一類明確展示了兩者之間的落差。
+
+---
+
+### `category_4c_syntax_failure.csv`
+This file contains invalid-incorrect cases where a prediction was made but the final status is `no_pass`.
+
+**Main use:**
+- examining syntax or technical failure among invalid-incorrect outputs,
+- separating technical failure from no_fallacy and verification-failure cases.
+
+**Main insight:**
+These cases show where the model attempted a fallacy prediction, but the formal result failed before reaching a usable verified form.
 
 ---
 
@@ -352,8 +402,8 @@ Repair 能提升形式化品質，但無法消除所有失敗案例。這份檔�
 1. **Category 1**，先看最強成功案例。
 2. **Category 2**，再看可編譯的替代標籤總表。
 3. **Category 2a 與 2b**，理解哪些替代標籤未被選入、哪些最終被選入 new labels。
-4. **Category 3**，理解受限上下文下的 no_fallacy 判斷。
-5. **Category 4**，理解正確但不可驗證的輸出。
+4. **Category 3**，理解正確但不可驗證的輸出。
+5. **Categories 4a, 4b, and 4c**，理解 invalid-incorrect 的不同子型。
 6. **Category 5**，觀察 repair 成功與 repair 失敗案例。
 
 這樣的順序有助於從最乾淨的成功對齊，逐步過渡到合理分歧、形式化失敗與 repair 行為。
