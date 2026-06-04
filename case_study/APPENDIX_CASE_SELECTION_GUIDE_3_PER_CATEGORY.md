@@ -476,9 +476,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -494,9 +494,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -512,9 +512,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -533,9 +533,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -551,9 +551,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -569,9 +569,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -590,9 +590,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -608,9 +608,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -626,9 +626,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -647,9 +647,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -665,9 +665,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -683,9 +683,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -704,9 +704,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -722,9 +722,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -740,9 +740,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -761,9 +761,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -779,9 +779,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -797,9 +797,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** selected for representative category coverage
+- **為什麼選這題：** 為了提供具代表性的 category 覆蓋而選入。
 
-- **代表性評估：** chosen to show what this category looks like
+- **代表性評估：** 用來具體展示這個 category 的典型樣貌。
 
 ---
 
@@ -875,9 +875,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** preferred failure: option_is_correct=true and final_verification_status!=pass
+- **為什麼選這題：** 優先選擇 option_is_correct=true 且 final_verification_status!=pass 的失敗案例。
 
-- **代表性評估：** chosen to illustrate repair failure behavior
+- **代表性評估：** 用來展示 repair 未能成功通過驗證時的典型行為。
 
 ---
 
@@ -893,9 +893,9 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** preferred failure: option_is_correct=true and final_verification_status!=pass
+- **為什麼選這題：** 優先選擇 option_is_correct=true 且 final_verification_status!=pass 的失敗案例。
 
-- **代表性評估：** chosen to illustrate repair failure behavior
+- **代表性評估：** 用來展示 repair 未能成功通過驗證時的典型行為。
 
 ---
 
@@ -911,8 +911,8 @@ This document expands the case-study shortlist into appendix-ready case blocks. 
 
 - **Analysis:** 此案例被保留，是因為它能用具體文本把該 category 的邊界直接呈現出來，讓 appendix 不只停留在摘要統計。
 
-- **為什麼選這題：** preferred failure: option_is_correct=true and final_verification_status!=pass
+- **為什麼選這題：** 優先選擇 option_is_correct=true 且 final_verification_status!=pass 的失敗案例。
 
-- **代表性評估：** chosen to illustrate repair failure behavior
+- **代表性評估：** 用來展示 repair 未能成功通過驗證時的典型行為。
 
 ---
