@@ -5,18 +5,15 @@
 ---
 ## 1. Overview
 
-Large Language Models (LLMs) are increasingly used for logical fallacy detection,
-but current evaluation remains centered on predicted labels rather than on whether
-the accompanying reasoning actually supports those labels.
+**ForEx** is a formal verification framework for analyzing whether LLM-generated explanations in logical fallacy detection can be translated into Lean4 and verified as derivable under encoded premises.
 
-**ForEx** addresses this by providing a formal verification framework that:
+It makes three main contributions:
 
-- Translates **LLM-generated explanations** into **Lean4 formal representations**
-- Uses an **execution feedback loop** to iteratively repair formalizations
-- Assesses whether the translated reasoning chain is **formally derivable under encoded premises**, not just whether the predicted label looks correct
-- Introduces the **LLM Argument Verification Matrix** to separate:
-  - label consistency  
-  - formal verification status  
+1. It provides a machine-checkable framework for translating LLM-generated explanations into Lean4 formal representations.
+2. It introduces the **LLM Argument Verification Matrix**, which separates **label consistency** from **formal verification status**.
+3. It supports **consensus-guided annotation analysis and augmentation** by identifying cases where formally derivable reasoning systematically diverges from existing human annotations.
+
+Together, the paper and repository are intended to help researchers inspect not only what label a model predicts, but also whether the accompanying reasoning can be formalized, verified, and compared against human annotation in a structured way.
 
 A verification pass in ForEx means that the translated conclusion is derivable
 from the encoded premises within the given formalization. It does **not** certify
