@@ -24,7 +24,8 @@ between formally valid reasoning and alignment with human annotations.
 
 ## 2. Framework Pipeline
 
-<img width="500" height="354" alt="ForEx_framework" src="https://github.com/user-attachments/assets/530dd659-29ab-452e-9032-24c345a15972" />
+<img width="500" height="354" alt="ForEx_framework (1)" src="https://github.com/user-attachments/assets/441e2ffb-2de3-40fa-ba9c-0332ed9d4873" />
+
 
 ## The ForEx workflow consists of three stages:
 
