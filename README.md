@@ -108,8 +108,8 @@ We use the **LOGIC-Climate** dataset, derived from:
 The original dataset contains 1,074 instances across 13 fallacy categories.
 
 ### 5.2 Subset Construction
-- We sample **10% of the dataset (107 instances)** while preserving category balance
-
+- We sample **10% of the dataset (107 instances)**.
+  
 ### 5.3 Usage Notes
 - The dataset is used strictly for research purposes
 - Please refer to the original dataset license and terms of use
