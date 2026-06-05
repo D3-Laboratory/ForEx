@@ -61,7 +61,7 @@ Each candidate is evaluated by a **Checker** using the
 
 ### 3.1 Argument Verification Matrix
 
-<img width="500" height="165" alt="image" src="https://github.com/user-attachments/assets/f948689e-8ce9-43a9-b7e5-f6af728bd1ed" />
+<img width="500" height="170" alt="image" src="https://github.com/user-attachments/assets/f948689e-8ce9-43a9-b7e5-f6af728bd1ed" />
 
 
 Each output is assigned to one of four categories:
