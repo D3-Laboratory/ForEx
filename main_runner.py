@@ -43,7 +43,7 @@ def run_experiment_for_llm(llm_config, all_datasets, label_list, logger, output_
 
         # 根據 config 中的設定，選取要測試的問題子集
         questions = sorted(dataset_content.items(), key=lambda item: int(item[0]))
-        questions_to_test = questions[:config.NUM_THEOREMS_TO_TEST]
+        questions_to_test = questions if config.NUM_THEOREMS_TO_TEST is None else questions[:config.NUM_THEOREMS_TO_TEST]
 
         for question_id, question_data in questions_to_test:
             print(f"LLM: {unique_model_id} is processing question: {question_id}")

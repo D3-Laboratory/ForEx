@@ -148,6 +148,11 @@ ForEx/
 │   ├── sampling_ground_truth.xlsx          # Ground truth annotations
 │   └── new_labels_result.xlsx              # Augmented labels (consensus-based)
 │
+├── config/                                 # Runtime configuration templates
+│   ├── __init__.py                         # Config package marker
+│   ├── config.py                           # Pipeline configuration and dataset mapping
+│   └── llm_credentials.json.template       # Template for local LLM/API credentials
+│
 ├── src/                                    # Core framework implementation
 │   ├── experiment_processor.py             # Main pipeline (3-stage workflow)
 │   ├── llm_interface.py                    # LLM interaction (Reasoner / Executor)
@@ -210,7 +215,8 @@ ForEx/
     *(Note: If `requirements.txt` is missing, you may need to install `openai`, `google-generativeai`, `python-dotenv`, `openpyxl`, etc.)*
 
 3.  Set up environment variables:
-    *   Create a `.env` file or configure your API keys directly in `config/llm_credentials.json`.
+    *   Create a `.env` file if needed for your local environment.
+    *   Copy `config/llm_credentials.json.template` to `config/llm_credentials.json` and fill in your local credentials.
     *   
 ---
 ## 10. Usage
@@ -226,6 +232,9 @@ This script will:
 2.  Run the analysis pipeline for each question.
 3.  Save detailed logs to the `results/` directory.
 4.  Automatically consolidate logs and generate an Excel summary (e.g., `YYYYMMDD_summary.xlsx`).
+
+> Note: the current pipeline expects a local dataset file at `data/logic/climate.json`.
+> This file is referenced by `config/config.py` and `analysis.py` and must be prepared locally for end-to-end execution.
 
 ---
 ## 11. Output
