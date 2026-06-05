@@ -32,7 +32,7 @@ the original natural-language argument itself as logically valid.
 ## The ForEx workflow consists of three stages:
 
 ### 2.1 Reasoning Candidate Generation  
-A Reasoner LLM generates up to **k** candidates, each represented as:
+In the released experiment setting, a Reasoner LLM generates up to **3 candidates** per statement, each represented as:
 - Predicted fallacy label  
 - Natural language argument (reasoning)  
 - Lean4 structure  
@@ -48,7 +48,7 @@ These are converted by a **Modifier** into executable Lean4 code.
 - No new logic can be introduced during repair  
 - The process stops when:
   - compilation succeeds, or  
-  - maximum iterations are reached  
+  - the maximum of **4 repair iterations** is reached  
 
 
 ### 2.3 Label Consistency Evaluation  
@@ -131,9 +131,9 @@ We evaluate a diverse set of thinking and non-thinking models, including:
 Non-thinking models are prompted using Chain-of-Thought to externalize reasoning into a Lean4-verifiable format.
 
 ### Executor LLM
-- **Claude Sonnet 4.5** is used as the Executor
+- **Claude Sonnet 4.5** is used as the fixed Executor across experiments
 - Selected for strong performance in structured code generation and reliable incorporation of compiler feedback
-- The Executor is fixed across experiments to isolate Reasoner performance from Executor variability
+- This fixed setting isolates Reasoner performance from Executor variability
 
 ---
 
