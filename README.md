@@ -151,7 +151,7 @@ ForEx/
 ├── config/                                 # Runtime configuration templates
 │   ├── __init__.py                         # Config package marker
 │   ├── config.py                           # Pipeline configuration and dataset mapping
-│   └── llm_credentials.json.template       # Template for local LLM/API credentials
+│   └── llm_credentials.json.template       # Model configuration template for local setup
 │
 ├── src/                                    # Core framework implementation
 │   ├── experiment_processor.py             # Main pipeline (3-stage workflow)
@@ -215,8 +215,8 @@ ForEx/
     *(Note: If `requirements.txt` is missing, you may need to install `openai`, `google-generativeai`, `python-dotenv`, `openpyxl`, etc.)*
 
 3.  Set up environment variables:
-    *   Create a `.env` file if needed for your local environment.
-    *   Copy `config/llm_credentials.json.template` to `config/llm_credentials.json` and fill in your local credentials.
+    *   Create a `.env` file if needed for your local environment and fill in your own API-related values locally.
+    *   Copy `config/llm_credentials.json.template` to `config/llm_credentials.json`.
     *   
 ---
 ## 10. Usage
