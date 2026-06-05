@@ -12,13 +12,13 @@ but their reasoning processes remain unverified.
 
 - Translates LLM-generated reasoning into **Lean4 formal representations**
 - Uses an **execution feedback loop** to iteratively repair formalizations
-- Verifies reasoning at the **proof level**, not just prediction accuracy
+- Assesses whether the translated reasoning chain is **formally derivable under encoded premises**, not just whether the predicted label looks correct
 - Introduces the **LLM Argument Verification Matrix** to separate:
-  - label correctness  
-  - reasoning validity  
+  - label consistency  
+  - formal verification status  
 
-This enables a more fine-grained analysis of LLM reasoning and reveals the gap
-between formally valid reasoning and alignment with human annotations.
+This enables a more structured analysis of model outputs and highlights the gap
+between formal derivability and agreement with human annotations.
 
 ---
 
@@ -66,10 +66,10 @@ Each candidate is evaluated by a **Checker** using the
 
 Each output is assigned to one of four categories:
 
-- **Compilable-Correct (CC)**: Reasoning passes verification and label matches  
-- **Compilable-Alternative (CA)**: Reasoning is valid but label differs  
-- **Uncompilable-Correct (UC)**: Correct label without valid reasoning  
-- **Uncompilable-Incorrect (UI)**: Both reasoning and label are incorrect  
+- **Compilable-Correct (CC)**: The formalized reasoning chain passes verification and the label matches  
+- **Compilable-Alternative (CA)**: The formalized reasoning chain passes verification but the label differs  
+- **Uncompilable-Correct (UC)**: The formalized reasoning chain fails verification but the label matches  
+- **Uncompilable-Incorrect (UI)**: The formalized reasoning chain fails verification and the label differs  
 
 ---
 ## 4. Annotation Augmentation
@@ -96,7 +96,7 @@ annotations reflect **plausible and consistent interpretations** rather than noi
 We use the **LOGIC-Climate** dataset, derived from:
 - Jin et al., *Logical Fallacy Detection* (2022)
 
-The original dataset contains 1,351 instances across 13 fallacy categories.
+The original dataset contains 1,074 instances across 13 fallacy categories.
 
 ### 5.2 Subset Construction
 - Final subset size: **107 instances (class-balanced)**
@@ -128,15 +128,7 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 
 ---
 
-## 7. Experimental Setup
-
-- Number of candidates per instance: `k = 3`
-- Maximum repair iterations: `iter_max = 5`
-- Evaluation follows a priority-based assignment:
-  `VC > VA > IC > II`
-
----
-## 8. Repository Structure
+## 7. Repository Structure
 
 ```
 ForEx/
@@ -165,12 +157,12 @@ ForEx/
 │   ├── APPENDIX_CASE_SELECTION_GUIDE_3_PER_CATEGORY.md # Final bilingual appendix guide with 3 cases per category
 │   ├── category_1_compilable_correct.csv   # Category 1: Compilable-Correct examples
 │   ├── category_2_compilable_alternative.csv # Category 2: Compilable-Alternative examples
-│   ├── category_4a_verification_failure.csv # Category 4a verification failure examples
-│   ├── category_4b_no_fallacy.csv           # Category 4b no_fallacy examples
-│   └── category_4c_syntax_failure.csv       # Category 4c syntax failure examples
 │   ├── category_2a_compilable_alternative_not_selected.csv # Category 2a alternatives not selected into new labels
 │   ├── category_2b_compilable_alternative_selected.csv # Category 2b alternatives selected into new labels
 │   ├── category_3_uncompilable_correct.csv # Category 3: correct labels with unverifiable reasoning
+│   ├── category_4a_verification_failure.csv # Category 4a verification failure examples
+│   ├── category_4b_no_fallacy.csv         # Category 4b no_fallacy examples
+│   ├── category_4c_syntax_failure.csv     # Category 4c syntax failure examples
 │   ├── category_5_repair_success_examples.csv # Category 5 repair success examples
 │   ├── category_5_repair_failure_examples.csv # Category 5 repair failure examples
 │   └── category_5_repair_iteration.csv    # Full repair-iteration record behind Category 5 examples
@@ -182,14 +174,14 @@ ForEx/
 ```
 
 ---
-## 9. Prerequisites
+## 8. Prerequisites
 
 *   Python 3.8+
 *   Access to OpenRouter API
 *   A running instance of the Lean 4 verification service (or local setup)
 
 ---
-## 10. Installation
+## 9. Installation
 
 1.  Clone the repository:
     ```bash
@@ -207,7 +199,7 @@ ForEx/
     *   Create a `.env` file or configure your API keys directly in `config/llm_credentials.json`.
     *   
 ---
-## 11. Usage
+## 10. Usage
 
 Run the execution feedback loop experiment script:
 
@@ -222,7 +214,7 @@ This script will:
 4.  Automatically consolidate logs and generate an Excel summary (e.g., `YYYYMMDD_summary.xlsx`).
 
 ---
-## 12. Output
+## 11. Output
 
 *   **JSON Logs**: Detailed step-by-step records of the Analyst, Coder, and Verifier stages.
 *   **Excel Summary**: A spreadsheet comparing the Ground Truth with the LLM's identified fallacies and verification status.
