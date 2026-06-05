@@ -144,7 +144,9 @@ ForEx/
 │   ├── data_extract.ipynb                  # Data preprocessing / extraction
 │   ├── sampling_logical_fallacy_data.xlsx  # Sampled dataset
 │   ├── sampling_ground_truth.xlsx          # Ground truth annotations
-│   └── new_labels_result.xlsx              # Augmented labels (consensus-based)
+│   ├── new_labels_result.xlsx              # Augmented labels (consensus-based)
+│   └── logic/
+│       └── climate.json                    # Sampled JSON dataset used by the current pipeline
 │
 ├── config/                                 # Runtime configuration templates
 │   ├── __init__.py                         # Config package marker
