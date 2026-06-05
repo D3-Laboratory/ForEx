@@ -17,7 +17,12 @@ Together, the paper and repository are intended to help researchers inspect not 
 
 A verification pass in ForEx means that the translated conclusion is derivable
 from the encoded premises within the given formalization. It does **not** certify
-the original natural-language argument itself as logically valid.
+the original natural-language argument itself as logically valid. Instead, it
+provides a machine-checkable test of whether an LLM-generated explanation can be
+formalized into a structurally coherent reasoning chain under explicit premises.
+This makes it possible to evaluate model outputs beyond predicted labels alone,
+by examining whether the accompanying explanation supports a formally analyzable
+line of reasoning.
 
 ---
 
