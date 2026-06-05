@@ -148,7 +148,7 @@ ForEx/
 │   ├── sampling_ground_truth.xlsx          # Ground truth annotations
 │   └── new_labels_result.xlsx              # Augmented labels (consensus-based)
 │
-├── scr/                                    # Core framework implementation
+├── src/                                    # Core framework implementation
 │   ├── experiment_processor.py             # Main pipeline (3-stage workflow)
 │   ├── llm_interface.py                    # LLM interaction (Reasoner / Executor)
 │   ├── lean_verifier.py                    # Lean4 verification interface
@@ -158,12 +158,17 @@ ForEx/
 │   ├── api_server.py                       # Lean4 verification API server
 │   ├── Dockerfile                          # Container setup for the verification service
 │   ├── requirements.txt                    # Python dependencies for the service
+│   ├── ToolTest01.lean                     # Lean test file for local verification checks
+│   ├── docker_test.py                      # Minimal test script for the service container
+│   ├── lake-manifest.json                  # Lean package manifest
 │   ├── lakefile.lean                       # Lean project configuration
 │   └── lean-toolchain                      # Lean toolchain version
 │
 ├── case_study/                             # Reviewer-facing case-study materials
+│   ├── .gitkeep                            # Preserves the directory in version control
 │   ├── README.md                           # Guide to the released case-study files
 │   ├── APPENDIX_CASE_SELECTION_GUIDE_3_PER_CATEGORY.md # Final bilingual appendix guide with 3 cases per category
+│   ├── appendix_case_shortlist_3_per_category.csv # Shortlist used to assemble appendix case blocks
 │   ├── category_1_compilable_correct.csv   # Category 1: Compilable-Correct examples
 │   ├── category_2_compilable_alternative.csv # Category 2: Compilable-Alternative examples
 │   ├── category_2a_compilable_alternative_not_selected.csv # Category 2a alternatives not selected into new labels
