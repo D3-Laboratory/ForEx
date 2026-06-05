@@ -95,8 +95,6 @@ Only labels with sufficient support are retained, supporting **conservative
 label augmentation** rather than unconstrained expansion.
 
 > Note: This repository provides the final augmented annotations.
-> The full consensus generation pipeline (e.g., model aggregation and filtering)
-> is described in the paper but not included in this codebase.
 ---
 
 ## 5. Dataset
