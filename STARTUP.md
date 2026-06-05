@@ -29,12 +29,7 @@ cd ForEx
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is incomplete or unavailable in your environment, you may also need packages such as:
-
-- `openai`
-- `google-generativeai`
-- `python-dotenv`
-- `openpyxl`
+The current root `requirements.txt` covers the main Python dependencies used by the experiment pipeline.
 
 ### Step 3. Prepare `.env`
 

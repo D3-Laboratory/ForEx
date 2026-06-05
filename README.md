@@ -212,7 +212,6 @@ ForEx/
     ```bash
     pip install -r requirements.txt
     ```
-    *(Note: If `requirements.txt` is missing, you may need to install `openai`, `google-generativeai`, `python-dotenv`, `openpyxl`, etc.)*
 
 3.  Set up environment variables:
     *   Create a `.env` file if needed for your local environment and fill in your own API-related values locally.
