@@ -135,7 +135,21 @@ Non-thinking models are prompted using Chain-of-Thought to externalize reasoning
 
 ---
 
-## 7. Repository Structure
+## 7. Quick Start
+
+To reproduce the released workflow at a repository level:
+
+1. Clone the repository and enter the project directory.
+2. Install Python dependencies with `pip install -r requirements.txt`.
+3. Create a local `.env` file and fill in your own API-related values.
+4. Copy `config/llm_credentials.json.template` to `config/llm_credentials.json`.
+5. Ensure the Lean verifier service is running.
+6. Run `python main_runner.py` from the repository root.
+
+For detailed runtime assumptions, configuration notes, and execution guidance, see `STARTUP.md`.
+
+---
+## 8. Repository Structure
 
 ```
 ForEx/
@@ -193,52 +207,3 @@ ForEx/
 ```
 
 ---
-## 8. Prerequisites
-
-*   Python 3.8+
-*   Access to OpenRouter API
-*   A running instance of the Lean 4 verification service (or local setup)
-
----
-## 9. Installation
-
-1.  Clone the repository:
-    ```bash
-    git clone <repository_url>
-    cd <repository_name>
-    ```
-
-2.  Install Python dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  Set up environment variables:
-    *   Create a `.env` file if needed for your local environment and fill in your own API-related values locally.
-    *   Copy `config/llm_credentials.json.template` to `config/llm_credentials.json`.
-    *   
----
-## 10. Usage
-
-Run the execution feedback loop experiment script:
-
-```bash
-python main_runner.py
-```
-
-This script will:
-1.  Load the datasets and LLM configurations.
-2.  Run the analysis pipeline for each question.
-3.  Save detailed logs to the `results/` directory.
-4.  Automatically consolidate logs and generate an Excel summary (e.g., `YYYYMMDD_summary.xlsx`).
-
-> Note: the current pipeline expects a local dataset file at `data/logic/climate.json`.
-> This file is referenced by `config/config.py` and `analysis.py` and must be prepared locally for end-to-end execution.
-
----
-## 11. Output
-
-*   **JSON Logs**: Detailed step-by-step records of the Reasoner, Modifier, Executor, and Checker workflow.
-*   **Excel Summary**: A spreadsheet comparing human annotations, model predictions, and verification status.
-    *   **Green**: Correct fallacy identification or successful Lean verification.
-    *   **Red**: Verification failure.
