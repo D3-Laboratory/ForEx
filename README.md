@@ -5,20 +5,22 @@
 ---
 ## 1. Overview
 
-Large Language Models (LLMs) achieve high accuracy in logical fallacy detection,
-but their reasoning processes remain unverified.
+Large Language Models (LLMs) are increasingly used for logical fallacy detection,
+but current evaluation remains centered on predicted labels rather than on whether
+the accompanying reasoning actually supports those labels.
 
 **ForEx** addresses this by providing a formal verification framework that:
 
-- Translates LLM-generated reasoning into **Lean4 formal representations**
+- Translates **LLM-generated explanations** into **Lean4 formal representations**
 - Uses an **execution feedback loop** to iteratively repair formalizations
 - Assesses whether the translated reasoning chain is **formally derivable under encoded premises**, not just whether the predicted label looks correct
 - Introduces the **LLM Argument Verification Matrix** to separate:
   - label consistency  
   - formal verification status  
 
-This enables a more structured analysis of model outputs and highlights the gap
-between formal derivability and agreement with human annotations.
+A verification pass in ForEx means that the translated conclusion is derivable
+from the encoded premises within the given formalization. It does **not** certify
+the original natural-language argument itself as logically valid.
 
 ---
 
@@ -30,7 +32,7 @@ between formal derivability and agreement with human annotations.
 ## The ForEx workflow consists of three stages:
 
 ### 2.1 Reasoning Candidate Generation  
-A Reasoner LLM generates multiple candidates, each represented as:
+A Reasoner LLM generates up to **k** candidates, each represented as:
 - Predicted fallacy label  
 - Natural language argument (reasoning)  
 - Lean4 structure  
@@ -42,6 +44,7 @@ These are converted by a **Modifier** into executable Lean4 code.
 - Lean4 attempts to compile the generated code  
 - If compilation fails, error messages are sent to an **Executor LLM**  
 - The Executor iteratively repairs the code **based only on the original reasoning and code**  
+- Revisions are constrained to rely only on the original explanation and initial Lean4 code, reducing semantic drift  
 - No new logic can be introduced during repair  
 - The process stops when:
   - compilation succeeds, or  
@@ -52,7 +55,7 @@ These are converted by a **Modifier** into executable Lean4 code.
 Each candidate is evaluated by a **Checker** using the  
 **LLM Argument Verification Matrix**, based on:
 
-- **Label Consistency** (match / mismatch with ground truth)  
+- **Label Consistency** (match / mismatch with human annotation)  
 - **Lean4 Verification** (pass / fail)  
 
 ---
@@ -71,6 +74,11 @@ Each output is assigned to one of four categories:
 - **Uncompilable-Correct (UC)**: The formalized reasoning chain fails verification but the label matches  
 - **Uncompilable-Incorrect (UI)**: The formalized reasoning chain fails verification and the label differs  
 
+A verification pass means only that the formalized reasoning chain is derivable
+under the encoded premises in Lean4. It does **not** guarantee that the
+formalization fully captures the meaning or logical force of the original
+natural-language statement.
+
 ---
 ## 4. Annotation Augmentation
 
@@ -79,11 +87,12 @@ by identifying additional plausible fallacy labels.
 
 The augmented labels released in this repository are constructed using a
 **consensus-guided approach**, which combines:
-- agreement across multiple LLMs  
-- alignment with human annotation patterns  
+- human annotation standards  
+- cross-model consensus  
+- formal verification  
 
-Only labels with sufficient support are retained, ensuring that augmented
-annotations reflect **plausible and consistent interpretations** rather than noise.
+Only labels with sufficient support are retained, supporting **conservative
+label augmentation** rather than unconstrained expansion.
 
 > Note: This repository provides the final augmented annotations.
 > The full consensus generation pipeline (e.g., model aggregation and filtering)
@@ -99,7 +108,7 @@ We use the **LOGIC-Climate** dataset, derived from:
 The original dataset contains 1,074 instances across 13 fallacy categories.
 
 ### 5.2 Subset Construction
-- Final subset size: **107 instances**
+- We sample **10% of the dataset (107 instances)** while preserving category balance
 
 ### 5.3 Usage Notes
 - The dataset is used strictly for research purposes
@@ -119,12 +128,12 @@ We evaluate a diverse set of thinking and non-thinking models, including:
 - Kimi
 - Grok
 
-Non-thinking models are prompted using Chain-of-Thought to externalize reasoning.
+Non-thinking models are prompted using Chain-of-Thought to externalize reasoning into a Lean4-verifiable format.
 
 ### Executor LLM
 - **Claude Sonnet 4.5** is used as the Executor
-- Chosen for strong Lean4 syntax tolerance and cost efficiency
-- The Executor is fixed across experiments to ensure fair comparison
+- Selected for strong performance in structured code generation and reliable incorporation of compiler feedback
+- The Executor is fixed across experiments to isolate Reasoner performance from Executor variability
 
 ---
 
@@ -216,7 +225,7 @@ This script will:
 ---
 ## 11. Output
 
-*   **JSON Logs**: Detailed step-by-step records of the Analyst, Coder, and Verifier stages.
-*   **Excel Summary**: A spreadsheet comparing the Ground Truth with the LLM's identified fallacies and verification status.
+*   **JSON Logs**: Detailed step-by-step records of the Reasoner, Modifier, Executor, and Checker workflow.
+*   **Excel Summary**: A spreadsheet comparing human annotations, model predictions, and verification status.
     *   **Green**: Correct fallacy identification or successful Lean verification.
     *   **Red**: Verification failure.
