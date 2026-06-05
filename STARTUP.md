@@ -1,41 +1,34 @@
-# ForEx Startup Guide
+# ForEx Runtime Setup and Execution Notes
 
-This document explains the minimum setup needed to run the ForEx pipeline locally.
-It is intended as a practical startup note for reviewers and future users.
+This document summarizes the runtime assumptions and execution procedure for the released ForEx repository. It is intended to support reviewers and future users who wish to inspect or execute the current framework implementation.
 
-## 1. What this project expects
+## 1. Purpose of this document
 
-The current pipeline expects the following components to be available locally:
+The ForEx repository combines:
 
-- Python 3.8+
-- project dependencies installed in your Python environment
-- a running Lean 4 verification service
-- a local `.env` file for API credentials
-- a local `config/llm_credentials.json` file derived from the provided template
-- the sampled dataset file at `data/logic/climate.json`
+- the core pipeline for LLM-generated reasoning analysis,
+- Lean4-based verification components,
+- sampled data used in the released workflow,
+- reviewer-facing case-study materials.
 
-## 2. Recommended startup steps
+Because the framework depends on external model access and a local verification service, this document focuses on the minimum setup required to reproduce the released execution flow at the repository level.
 
-### Step 1. Clone the repository
+## 2. Runtime components
 
-```bash
-git clone <repository_url>
-cd ForEx
-```
+The current workflow assumes the following local components are available:
 
-### Step 2. Install Python dependencies
+1. Python 3.8 or above
+2. Python dependencies installed from the repository root
+3. a running Lean 4 verification service
+4. a local `.env` file for API-related variables
+5. a local `config/llm_credentials.json` file derived from the provided template
+6. the sampled dataset file at `data/logic/climate.json`
 
-```bash
-pip install -r requirements.txt
-```
+## 3. Repository-level configuration files
 
-The current root `requirements.txt` covers the main Python dependencies used by the experiment pipeline.
+### 3.1 `.env`
 
-### Step 3. Prepare `.env`
-
-Create a local `.env` file in the repository root.
-
-For reviewer use, API-related values should be filled in locally rather than stored in the repository.
+API-related values are expected to be supplied locally and are not committed to the repository.
 
 Example:
 
@@ -43,17 +36,21 @@ Example:
 OPENROUTER_API_KEY=your_api_key_here
 ```
 
-## 3. Prepare model configuration
+### 3.2 `config/llm_credentials.json`
 
-Copy the provided template:
+The repository provides:
+
+- `config/llm_credentials.json.template`
+
+Users should copy this file locally:
 
 ```bash
 cp config/llm_credentials.json.template config/llm_credentials.json
 ```
 
-The template preserves the structure used in the original workflow so that users can understand the intended model configuration format.
+The template preserves the released workflow structure and records the model-configuration format expected by `main_runner.py`.
 
-Current template content:
+Current template structure:
 
 ```json
 [
@@ -80,40 +77,91 @@ Current template content:
 ]
 ```
 
-You may keep these entries, remove some of them, or replace them with your own models depending on your local access.
+Users may retain this structure, reduce the list, or substitute locally available models.
 
-## 4. Dataset location expected by the current pipeline
+### 3.3 `config/config.py`
 
-The current configuration expects:
+This file stores the released runtime configuration, including:
+
+- number of candidate labels per input,
+- repair-attempt budget,
+- dataset mapping,
+- output directories,
+- Lean verifier endpoint.
+
+## 4. Data assumptions
+
+The current released workflow expects the sampled dataset file:
 
 - `data/logic/climate.json`
 
-This repository now includes that file in sampled form for the current workflow.
+This file is included in the repository and is aligned with the sampled workflow currently exposed by the release.
 
-## 5. Start the Lean verifier service
+The repository also includes supporting sampled resources such as:
 
-The pipeline depends on the local Lean verifier service under:
+- `data/sampling_ground_truth.xlsx`
+- `data/sampling_logical_fallacy_data.xlsx`
+- `data/new_labels_result.xlsx`
+- `data/climate_fallacy_definitions.txt`
+
+## 5. Lean verification service
+
+The execution pipeline depends on the local verifier under:
 
 - `lean_verifier_service/`
 
-At minimum, ensure that the verification service is running before launching the experiment pipeline.
+At minimum, this service must be available before running the main experiment pipeline, since the framework sends generated Lean code to the verifier during execution.
 
-## 6. Run the main pipeline
+## 6. Installation procedure
+
+### Step 1. Clone the repository
+
+```bash
+git clone <repository_url>
+cd ForEx
+```
+
+### Step 2. Install Python dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+The root `requirements.txt` covers the main Python dependencies used by the released experiment pipeline.
+
+### Step 3. Prepare local configuration
+
+1. Create `.env` locally.
+2. Copy `config/llm_credentials.json.template` to `config/llm_credentials.json`.
+3. Fill in locally available API-related values as needed.
+
+## 7. Execution procedure
+
+Run the main pipeline from the repository root:
 
 ```bash
 python main_runner.py
 ```
 
-The script will:
+The script coordinates the following stages:
 
-1. load the configured dataset and model list,
-2. run the reasoning / formalization / verification workflow,
-3. write JSON logs under `results/`,
-4. consolidate logs and export an Excel summary.
+1. dataset loading,
+2. LLM configuration loading,
+3. reasoning generation and formalization,
+4. Lean4 verification and repair,
+5. log consolidation,
+6. Excel summary export.
 
-## 7. Notes for reviewers
+## 8. Output artifacts
 
-- API credentials are intentionally **not** committed.
-- `config/llm_credentials.json.template` is provided to preserve the expected configuration structure.
-- `.env` values should be filled locally by the user.
-- The current repository is organized to make the workflow structure and runtime expectations explicit, even when local credentials differ across users.
+A typical run produces:
+
+- structured JSON logs under `results/`,
+- consolidated JSON output,
+- Excel and CSV summary files generated from the consolidated results.
+
+## 9. Reproducibility note
+
+The released repository is intended to expose the framework structure, runtime configuration, sampled data interface, and reviewer-facing case-study materials used in the current ForEx workflow.
+
+Credentials are intentionally excluded from version control. As a result, full execution still depends on locally supplied API access and a locally available Lean verification environment.
