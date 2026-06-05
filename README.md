@@ -84,7 +84,11 @@ natural-language statement.
 ---
 ## 4. Annotation Augmentation
 
-In addition to evaluation, ForEx supports **annotation augmentation**
+In addition to the three-stage workflow, the paper further introduces a
+**consensus-guided annotation pipeline** built on top of the ForEx framework
+and the **LLM Argument Verification Matrix**.
+
+This pipeline supports annotation analysis and conservative label augmentation
 by identifying additional plausible fallacy labels.
 
 The augmented labels released in this repository are constructed using a
